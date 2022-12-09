@@ -92,6 +92,67 @@
 						}
 					],
 					"sid": 320601275879394
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Ball",
+							"sid": 517033697723600,
+							"parameters": {
+								"object": "ReverseGravityZone"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 973939574234813
+						}
+					],
+					"actions": [
+						{
+							"id": "set-world-gravity",
+							"objectClass": "Ball",
+							"sid": 117007448447969,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "-10"
+							}
+						}
+					],
+					"sid": 804296748205730
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Ball",
+							"sid": 412167833170773,
+							"parameters": {
+								"object": "ReverseGravityZone"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 445280918213044
+						}
+					],
+					"actions": [
+						{
+							"id": "set-world-gravity",
+							"objectClass": "Ball",
+							"sid": 426545630004869,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "10"
+							}
+						}
+					],
+					"sid": 741081872969587
 				}
 			],
 			"sid": 847514808905615

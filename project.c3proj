@@ -106,7 +106,8 @@
 			"Tutorial",
 			"Touch",
 			"MovingGround",
-			"Button"
+			"Button",
+			"ReverseGravityZone"
 		],
 		"subfolders": []
 	},
