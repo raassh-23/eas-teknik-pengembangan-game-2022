@@ -4,7 +4,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Trail",
+			"title": "Ball",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -44,24 +44,14 @@
 						}
 					],
 					"sid": 513375288285421
-				}
-			],
-			"sid": 847514808905615
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Physics",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-velocity",
 							"objectClass": "Ball",
-							"sid": 733960976953719,
+							"sid": 781135525391162,
 							"behaviorType": "Physics",
 							"parameters": {
 								"which": "overall-velocity",
@@ -74,13 +64,13 @@
 						{
 							"id": "set-rate",
 							"objectClass": "Trail",
-							"sid": 577512177372703,
+							"sid": 465795525686858,
 							"parameters": {
 								"rate": "32"
 							}
 						}
 					],
-					"sid": 947442486459629
+					"sid": 704642834733908
 				},
 				{
 					"eventType": "block",
@@ -88,20 +78,40 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 766908521116124
+							"sid": 454241013432346
 						}
 					],
 					"actions": [
 						{
 							"id": "set-rate",
 							"objectClass": "Trail",
-							"sid": 151631311041228,
+							"sid": 549862966223691,
 							"parameters": {
 								"rate": "0"
 							}
 						}
 					],
-					"sid": 323530946794091
+					"sid": 320601275879394
+				}
+			],
+			"sid": 847514808905615
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Control",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "isAiming",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 469963920339035
 				},
 				{
 					"eventType": "block",
@@ -109,38 +119,56 @@
 						{
 							"id": "on-nth-touch-start",
 							"objectClass": "Touch",
-							"sid": 455260691235650,
+							"sid": 135841757044232,
 							"parameters": {
 								"touch-number": "0"
 							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 583393001188910,
+							"parameters": {
+								"object": "Button"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 232247978176799,
+							"sid": 186516855322554,
 							"parameters": {
 								"object-to-create": "Cursor",
-								"layer": "\"HUD\"",
+								"layer": "\"StaticUI\"",
 								"x": "Touch.X",
 								"y": "Touch.Y",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 452021848832418,
+							"parameters": {
+								"variable": "isAiming",
+								"value": "true"
+							}
 						}
 					],
-					"sid": 849774680590783
+					"sid": 391838264506355
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "has-nth-touch",
-							"objectClass": "Touch",
-							"sid": 346308859413011,
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 198338139073862,
 							"parameters": {
-								"touch-number": "0"
+								"variable": "isAiming"
 							}
 						}
 					],
@@ -148,7 +176,7 @@
 						{
 							"id": "set-angle-toward-position",
 							"objectClass": "DistanceRuler",
-							"sid": 530313070362679,
+							"sid": 781389189816334,
 							"parameters": {
 								"x": "Touch.X",
 								"y": "Touch.Y"
@@ -157,13 +185,13 @@
 						{
 							"id": "set-width",
 							"objectClass": "DistanceRuler",
-							"sid": 344131339963459,
+							"sid": 658155540805655,
 							"parameters": {
 								"width": "distance(Self.X, Self.Y, Touch.X, Touch.Y)"
 							}
 						}
 					],
-					"sid": 800979973229310
+					"sid": 391296213317852
 				},
 				{
 					"eventType": "block",
@@ -171,9 +199,17 @@
 						{
 							"id": "on-nth-touch-end",
 							"objectClass": "Touch",
-							"sid": 169616136168834,
+							"sid": 269695020936661,
 							"parameters": {
 								"touch-number": "0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 188584057678544,
+							"parameters": {
+								"variable": "isAiming"
 							}
 						}
 					],
@@ -181,7 +217,7 @@
 						{
 							"id": "set-velocity",
 							"objectClass": "Ball",
-							"sid": 313205508689745,
+							"sid": 576325156463003,
 							"behaviorType": "Physics",
 							"parameters": {
 								"x-component": "0",
@@ -191,7 +227,7 @@
 						{
 							"id": "apply-force-at-angle",
 							"objectClass": "Ball",
-							"sid": 263636086429725,
+							"sid": 606633654131521,
 							"behaviorType": "Physics",
 							"parameters": {
 								"force": "distance(Cursor.X, Cursor.Y, Touch.X, Touch.Y) * FORCE_MULTIPLIER",
@@ -200,36 +236,31 @@
 							}
 						},
 						{
-							"type": "comment",
-							"text": "Also destroy the cursor, since it wont be needed anymore."
-						},
-						{
 							"id": "destroy",
 							"objectClass": "Cursor",
-							"sid": 208623355258336
+							"sid": 243507136822715
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 786281554985419,
+							"parameters": {
+								"variable": "isAiming",
+								"value": "false"
+							}
 						}
 					],
-					"sid": 154750643250054
-				}
-			],
-			"sid": 904694577978590
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "SlowMotion",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
+					"sid": 219682162293117
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "has-nth-touch",
-							"objectClass": "Touch",
-							"sid": 341920037273070,
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 436185128734797,
 							"parameters": {
-								"touch-number": "0"
+								"variable": "isAiming"
 							}
 						}
 					],
@@ -265,6 +296,34 @@
 						}
 					],
 					"sid": 488495160200259
+				},
+				{
+					"functionName": "resetAim",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 163052627974010
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 156021811382977,
+							"parameters": {
+								"variable": "isAiming",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 474847675489127
 				}
 			],
 			"sid": 707766962196248
@@ -288,7 +347,13 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 863309813694325
+						}
+					],
 					"sid": 187135793502873,
 					"children": [
 						{
@@ -391,6 +456,340 @@
 				}
 			],
 			"sid": 687705041694378
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Panning Camera",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "TouchPanID",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "ID of the touch using to pan",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 351114839827571
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchLastX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial X position of touch (for pan)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 438116756160776
+				},
+				{
+					"eventType": "variable",
+					"name": "TouchLastY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Initial Y position of touch (for pan)",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 204118716272222
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 347015516254138
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 126067906547776,
+							"parameters": {
+								"variable": "TouchPanID",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 551773680734421,
+							"parameters": {
+								"variable": "TouchLastX",
+								"value": "Touch.X(\"UI\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 754431028493732,
+							"parameters": {
+								"variable": "TouchLastY",
+								"value": "Touch.Y(\"UI\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 380682664313579,
+							"parameters": {
+								"variable": "TouchPanID",
+								"value": "Touch.TouchID"
+							}
+						}
+					],
+					"sid": 807158779209594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 250676468488977,
+							"parameters": {
+								"variable": "TouchPanID",
+								"comparison": 1,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 510945209616179,
+							"parameters": {
+								"x": "scrollx - (Touch.X(\"UI\") - TouchLastX) / LayerScale(\"World\")",
+								"y": "scrolly - (Touch.Y(\"UI\") - TouchLastY) / LayerScale(\"World\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 734745827751123,
+							"parameters": {
+								"variable": "TouchLastX",
+								"value": "Touch.X(\"UI\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 355196012769289,
+							"parameters": {
+								"variable": "TouchLastY",
+								"value": "Touch.Y(\"UI\")"
+							}
+						}
+					],
+					"sid": 336152771399070
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 387485693138939
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 380191173386952,
+							"parameters": {
+								"variable": "TouchPanID",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 334546553235758
+				},
+				{
+					"functionName": "resetPanningCamera",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 588248712432677,
+							"parameters": {
+								"variable": "TouchPanID",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 498413256031244
+				}
+			],
+			"sid": 591471072878497
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 330509902614976
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 373202428985011,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 418446274389883,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Button",
+							"sid": 332328306304561,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "resetAim",
+							"sid": 528940693398981
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 318071014367182,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 764531769996429,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 190473653068409,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 385263918476124,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button",
+							"sid": 149503510131789,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 404396163489902
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Button",
+							"sid": 333594313775674,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "resetPanningCamera",
+							"sid": 699098121092049
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 870384455251213,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 878431685738450,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 702474409870818,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 433912586712353,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button",
+							"sid": 127990375952129,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 287424172970910
+				}
+			]
 		}
 	],
 	"sid": 492632890398101

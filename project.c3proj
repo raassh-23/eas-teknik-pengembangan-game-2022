@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 32100,
-	"name": "New project",
+	"name": "Golf In Space",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -82,6 +82,13 @@
 			"name": "Destroy outside layout",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "zze9ry5qdj7",
@@ -98,7 +105,8 @@
 			"TriggerZone",
 			"Tutorial",
 			"Touch",
-			"MovingGround"
+			"MovingGround",
+			"Button"
 		],
 		"subfolders": []
 	},
