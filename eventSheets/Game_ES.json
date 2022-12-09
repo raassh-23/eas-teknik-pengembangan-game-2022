@@ -2,16 +2,6 @@
 	"name": "Game_ES",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "FORCE_MULTIPLIER",
-			"type": "number",
-			"initialValue": "5",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 306045165055740
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Trail",
@@ -71,12 +61,12 @@
 						{
 							"id": "compare-velocity",
 							"objectClass": "Ball",
-							"sid": 293053119189030,
+							"sid": 733960976953719,
 							"behaviorType": "Physics",
 							"parameters": {
 								"which": "overall-velocity",
 								"comparison": 4,
-								"value": "32"
+								"value": "16"
 							}
 						}
 					],
@@ -352,6 +342,55 @@
 				}
 			],
 			"sid": 141573744638629
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Moving Ground",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 253965489472577
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 667483382477374,
+							"parameters": {
+								"object": "MovingGround"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "MovingGround",
+							"sid": 866309961168663,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "MOVING_GROUND_TWEEN_TAG",
+								"property": "position",
+								"end-x": "Self.targetX",
+								"end-y": "Self.targetY",
+								"time": "Self.seconds",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "yes",
+								"ping-pong": "yes",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 361687740910781
+				}
+			],
+			"sid": 687705041694378
 		}
 	],
 	"sid": 492632890398101

@@ -1,0 +1,26 @@
+{
+	"name": "Constant",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "FORCE_MULTIPLIER",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 306045165055740
+		},
+		{
+			"eventType": "variable",
+			"name": "MOVING_GROUND_TWEEN_TAG",
+			"type": "string",
+			"initialValue": "moving",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 596705945543702
+		}
+	],
+	"sid": 504631505296909
+}

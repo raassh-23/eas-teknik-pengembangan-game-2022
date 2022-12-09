@@ -1,0 +1,70 @@
+{
+	"name": "MovingGround",
+	"plugin-id": "Sprite",
+	"sid": 448570481165339,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "targetX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 804418800833650
+		},
+		{
+			"name": "targetY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 480772752681476
+		},
+		{
+			"name": "seconds",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 844420205537739
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 960145281713314
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 248526537259565
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 126433,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 982986261903662,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

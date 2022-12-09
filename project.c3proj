@@ -71,6 +71,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
@@ -90,7 +97,8 @@
 			"Flag",
 			"TriggerZone",
 			"Tutorial",
-			"Touch"
+			"Touch",
+			"MovingGround"
 		],
 		"subfolders": []
 	},
@@ -124,7 +132,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Game_ES"
+			"Game_ES",
+			"Constant"
 		],
 		"subfolders": []
 	},
