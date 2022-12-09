@@ -1,0 +1,358 @@
+{
+	"name": "Game_ES",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "FORCE_MULTIPLIER",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 306045165055740
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Trail",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Trail",
+							"sid": 522783662735168
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Trail",
+							"sid": 586991638458124,
+							"parameters": {
+								"object": "Ball",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Ball",
+							"sid": 728480819063635,
+							"parameters": {
+								"child": "Trail",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 513375288285421
+				}
+			],
+			"sid": 847514808905615
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Physics",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "Ball",
+							"sid": 293053119189030,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "overall-velocity",
+								"comparison": 4,
+								"value": "32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Trail",
+							"sid": 577512177372703,
+							"parameters": {
+								"rate": "32"
+							}
+						}
+					],
+					"sid": 947442486459629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 766908521116124
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Trail",
+							"sid": 151631311041228,
+							"parameters": {
+								"rate": "0"
+							}
+						}
+					],
+					"sid": 323530946794091
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-start",
+							"objectClass": "Touch",
+							"sid": 455260691235650,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 232247978176799,
+							"parameters": {
+								"object-to-create": "Cursor",
+								"layer": "\"HUD\"",
+								"x": "Touch.X",
+								"y": "Touch.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 849774680590783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-nth-touch",
+							"objectClass": "Touch",
+							"sid": 346308859413011,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "DistanceRuler",
+							"sid": 530313070362679,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "DistanceRuler",
+							"sid": 344131339963459,
+							"parameters": {
+								"width": "distance(Self.X, Self.Y, Touch.X, Touch.Y)"
+							}
+						}
+					],
+					"sid": 800979973229310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-end",
+							"objectClass": "Touch",
+							"sid": 169616136168834,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-velocity",
+							"objectClass": "Ball",
+							"sid": 313205508689745,
+							"behaviorType": "Physics",
+							"parameters": {
+								"x-component": "0",
+								"y-component": "0"
+							}
+						},
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "Ball",
+							"sid": 263636086429725,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "distance(Cursor.X, Cursor.Y, Touch.X, Touch.Y) * FORCE_MULTIPLIER",
+								"angle": "angle(Cursor.X, Cursor.Y, Touch.X, Touch.Y) + 180",
+								"image-point": "0"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Also destroy the cursor, since it wont be needed anymore."
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 208623355258336
+						}
+					],
+					"sid": 154750643250054
+				}
+			],
+			"sid": 904694577978590
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SlowMotion",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-nth-touch",
+							"objectClass": "Touch",
+							"sid": 341920037273070,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 573582140906585,
+							"parameters": {
+								"time-scale": "0.1"
+							}
+						}
+					],
+					"sid": 363584402228338
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 222913337296067
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 108656401683153,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 488495160200259
+				}
+			],
+			"sid": 707766962196248
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Confetti",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Ball",
+							"sid": 680197278903447,
+							"parameters": {
+								"object": "TriggerZone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 187135793502873,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 186198625767746,
+									"parameters": {
+										"count": "24"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 767487488392353,
+									"parameters": {
+										"object-to-create": "Confetti",
+										"layer": "\"World\"",
+										"x": "TriggerZone.X",
+										"y": "TriggerZone.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Confetti",
+									"sid": 137434516313348,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "random(270 - 15, 270 + 15)"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Confetti",
+									"sid": 106726942240735,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "random(192, 384)"
+									}
+								}
+							],
+							"sid": 915229961883094
+						}
+					]
+				}
+			],
+			"sid": 141573744638629
+		}
+	],
+	"sid": 492632890398101
+}
