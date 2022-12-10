@@ -75,7 +75,7 @@
 			"global": false
 		},
 		{
-			"name": "Ui",
+			"name": "MenuUI",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -98,7 +98,9 @@
 						"origin": "top-left"
 					},
 					"uid": 19,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"id": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 184,

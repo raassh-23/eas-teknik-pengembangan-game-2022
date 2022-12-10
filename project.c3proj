@@ -85,6 +85,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
@@ -124,7 +131,8 @@
 			"ReverseGravityZone",
 			"LevelSelectHtml",
 			"AJAX",
-			"levels"
+			"levels",
+			"Timer"
 		],
 		"subfolders": []
 	},
@@ -159,7 +167,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Level1"
+					"Level1",
+					"Level2"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -171,8 +180,7 @@
 			"Game_ES",
 			"Constant",
 			"Menu_ES",
-			"LevelSelect_ES",
-			"Event sheet 1"
+			"LevelSelect_ES"
 		],
 		"subfolders": []
 	},

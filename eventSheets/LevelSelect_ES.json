@@ -99,9 +99,45 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 713820750839934,
+					"parameters": {
+						"variable": "timeLimit",
+						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 0)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 366252368790796,
+					"parameters": {
+						"variable": "bronzeLimit",
+						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 1)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 697289283828927,
+					"parameters": {
+						"variable": "silverLimit",
+						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 2)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 952360228096161,
+					"parameters": {
+						"variable": "goldLimit",
+						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 3)"
+					}
+				},
+				{
 					"id": "go-to-layout-by-name",
 					"objectClass": "System",
-					"sid": 852690707241564,
+					"sid": 123185643913767,
 					"parameters": {
 						"layout": "\"Level\"&LevelSelectHtml.TargetID"
 					}

@@ -1,5 +1,5 @@
 {
-	"name": "Level1",
+	"name": "Level2",
 	"layers": [
 		{
 			"name": "Background",
@@ -25,7 +25,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 25,
+					"uid": 35,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -59,7 +59,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 26,
+					"uid": 36,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -83,7 +83,7 @@
 							"height": 23,
 							"max-width": 556,
 							"max-height": 228,
-							"data": "23x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,1hd,4x2,205x0,2,20x0,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,16x0,3x2h,3x2,205x0,2,16x0,3x2h,3x2,205x0,2,16x0,3x2h,3x2,205x0,2,17x2h,5x2,205x0,2,17x2h,5x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,3x0,1hd,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,108733x0"
+							"data": "23x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,8x0,1h,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,8x0,1,13x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,5x0,1h,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,8x0,14x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,7x2hd,15x2,205x0,23x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,3x0,1hd,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,108733x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -109,7 +109,7 @@
 					}
 				}
 			],
-			"sid": 889601800762085,
+			"sid": 161066863443917,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -151,7 +151,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 27,
+					"uid": 37,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -175,8 +175,8 @@
 						}
 					},
 					"world": {
-						"x": 144,
-						"y": 496,
+						"x": 104,
+						"y": 608,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -200,12 +200,12 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 28,
+					"uid": 38,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1104,
-						"y": 576,
+						"x": 1136,
+						"y": 200,
 						"width": 24,
 						"height": 56,
 						"originX": 0.5,
@@ -239,12 +239,12 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 29,
+					"uid": 39,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1072,
-						"y": 672,
+						"x": 1104,
+						"y": 288,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -260,7 +260,7 @@
 					}
 				}
 			],
-			"sid": 490481381256754,
+			"sid": 413959596063770,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -296,7 +296,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "Click and drag anywhere to hit the golf ball.",
+						"text": "You can even hit the golf ball in the air",
 						"enable-bbcode": true,
 						"character-width": 11,
 						"character-height": 16,
@@ -311,15 +311,15 @@
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 33,
+					"uid": 40,
 					"instanceVariables": {
 						"id": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 184,
-						"y": 200,
-						"width": 912,
+						"x": 440,
+						"y": 272,
+						"width": 408,
 						"height": 224,
 						"originX": 0,
 						"originY": 0,
@@ -334,7 +334,7 @@
 					}
 				}
 			],
-			"sid": 617163144120201,
+			"sid": 311466003177303,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -376,7 +376,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 34,
+					"uid": 41,
 					"instanceVariables": {
 						"id": "switch_camera"
 					},
@@ -399,7 +399,7 @@
 					}
 				}
 			],
-			"sid": 137337925686201,
+			"sid": 630968505492683,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -428,7 +428,7 @@
 			"global": false
 		}
 	],
-	"sid": 462803663086597,
+	"sid": 812664754709229,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,

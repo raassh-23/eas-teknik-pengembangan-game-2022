@@ -20,6 +20,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 596705945543702
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_TIMER_TAG",
+			"type": "string",
+			"initialValue": "game_time",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 842178183576410
 		}
 	],
 	"sid": 504631505296909

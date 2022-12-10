@@ -2,6 +2,227 @@
 	"name": "Game_ES",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "strokes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 351977026365324
+		},
+		{
+			"eventType": "variable",
+			"name": "goldLimit",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 813929362547539
+		},
+		{
+			"eventType": "variable",
+			"name": "silverLimit",
+			"type": "number",
+			"initialValue": "9",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 265795544478798
+		},
+		{
+			"eventType": "variable",
+			"name": "bronzeLimit",
+			"type": "number",
+			"initialValue": "15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 689630513149800
+		},
+		{
+			"eventType": "variable",
+			"name": "timeLimit",
+			"type": "number",
+			"initialValue": "120",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 101863135467986
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 404655988673919
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 460373098910352,
+							"parameters": {
+								"variable": "strokes",
+								"value": "0"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Timer",
+							"sid": 834081392854376,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "timeLimit",
+								"type": "once",
+								"tag": "GAME_TIMER_TAG"
+							}
+						}
+					],
+					"sid": 496020424328790
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 449871301378344,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"strokes\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 615363224753891,
+							"parameters": {
+								"text": "\"Strokes: \" & strokes & \"/\" & bronzeLimit"
+							}
+						}
+					],
+					"sid": 492462912167945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIText",
+							"sid": 639750762226431,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 276092968359509,
+							"parameters": {
+								"text": "\"Time left: \" & Functions.GetTimeFormatted(Timer.Timer.Duration(GAME_TIMER_TAG) - Timer.Timer.CurrentTime(GAME_TIMER_TAG))"
+							}
+						}
+					],
+					"sid": 166964189411429
+				},
+				{
+					"functionName": "GetTimeFormatted",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "string",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "inputInseconds",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 768128059002950
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 881302804155427,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "minute",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 734179710847057
+						},
+						{
+							"eventType": "variable",
+							"name": "seconds",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 795859105956103
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 686811777094126,
+									"parameters": {
+										"variable": "minute",
+										"value": "floor(inputInseconds/60)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 727399546921367,
+									"parameters": {
+										"variable": "seconds",
+										"value": "round(inputInseconds%60)"
+									}
+								},
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 450951697722407,
+									"parameters": {
+										"value": "zeropad(minute, 2)&\":\"&zeropad(seconds, 2)"
+									}
+								}
+							],
+							"sid": 136155221422069
+						}
+					]
+				}
+			],
+			"sid": 937213713020422
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Ball",
@@ -308,6 +529,15 @@
 							"parameters": {
 								"variable": "isAiming",
 								"value": "false"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 767058357664126,
+							"parameters": {
+								"variable": "strokes",
+								"value": "1"
 							}
 						}
 					],
@@ -723,6 +953,11 @@
 							"parameters": {
 								"animation": "\"game\""
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Button",
+							"sid": 106230293543489
 						}
 					],
 					"actions": [],
@@ -875,6 +1110,77 @@
 								}
 							],
 							"sid": 547339117781374
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 484095706943009
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 517525432920665,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"switch_camera\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 690632013712053,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 283023443590856,
+									"parameters": {
+										"first-value": "LayoutWidth",
+										"comparison": 0,
+										"second-value": "ViewportWidth(\"StaticUI\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 116797203246483,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 934069427961109
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 775548279295912
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 898522559576419,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 956827967808414
 						}
 					]
 				}
