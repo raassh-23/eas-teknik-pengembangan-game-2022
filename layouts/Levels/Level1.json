@@ -1,5 +1,5 @@
 {
-	"name": "Game",
+	"name": "Level1",
 	"layers": [
 		{
 			"name": "Background",
@@ -25,7 +25,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 6,
+					"uid": 25,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -46,7 +46,7 @@
 					}
 				}
 			],
-			"sid": 831738722915615,
+			"sid": 889601800762085,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -93,7 +93,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 7,
+					"uid": 26,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -115,9 +115,9 @@
 						"tilemapData": {
 							"width": 81,
 							"height": 23,
-							"max-width": 472,
+							"max-width": 553,
 							"max-height": 228,
-							"data": "23x2,205x0,2,14x0,1hd,7x2,205x0,2,19x0,3x2,205x0,2,19x0,1hd,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,19x0,1,2x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,1hd,4x2,205x0,2,18x0,1hd,3x2,205x0,2,19x0,1hd,2x2,205x0,2,12x0,3x2,1vd,4x0,2x2,205x0,2,12x0,7x2,0,2x2,205x0,2,14x0,1hd,4x2,0,2x2,205x0,2,14x0,1,1hv,4x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,17x0,1,4x2,205x0,2,10x0,1hd,11x2,205x0,2,14x0,1hd,7x2,205x0,2,15x0,1hd,6x2,205x0,2,10x0,1,2x2,1vd,2x0,1hd,5x2,205x0,2,11x0,1hd,2x2,3x0,5x2,205x0,2,12x0,2x2,3x0,5x2,205x0,2,12x0,1hd,2,3x0,2x2hvd,3x2,205x0,2,13x0,2,3x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,4x0,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,89581x0"
+							"data": "23x2,205x0,2,14x0,1hd,7x2,205x0,2,19x0,3x2,205x0,2,19x0,1hd,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,19x0,1,2x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,1hd,4x2,205x0,2,18x0,1hd,3x2,205x0,2,19x0,1hd,2x2,205x0,2,12x0,3x2,1vd,4x0,2x2,205x0,2,12x0,7x2,0,2x2,205x0,2,14x0,1hd,4x2,0,2x2,205x0,2,14x0,1,1hv,4x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,17x0,1,4x2,205x0,2,10x0,1hd,11x2,205x0,2,14x0,1hd,7x2,205x0,2,15x0,1hd,6x2,205x0,2,10x0,1,2x2,1vd,2x0,1hd,5x2,205x0,2,11x0,1hd,2x2,3x0,5x2,205x0,2,12x0,2x2,3x0,5x2,205x0,2,12x0,1hd,2,3x0,2x2hvd,3x2,205x0,2,13x0,2,3x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,4x0,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,108049x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -151,7 +151,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 8,
+					"uid": 27,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -200,7 +200,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 9,
+					"uid": 28,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -239,7 +239,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 10,
+					"uid": 29,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -268,7 +268,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 2,
+					"uid": 30,
 					"instanceVariables": {
 						"targetX": 1024,
 						"targetY": 80,
@@ -321,7 +321,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 3,
+					"uid": 31,
 					"instanceVariables": {
 						"targetX": 864,
 						"targetY": 328,
@@ -364,48 +364,9 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "ReverseGravityZone",
-					"properties": {
-						"initially-visible": true,
-						"origin": "bottom",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 5,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1152,
-						"y": 736,
-						"width": 1280,
-						"height": 736,
-						"originX": 0.5,
-						"originY": 1,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
-			"sid": 574560277606659,
+			"sid": 490481381256754,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -439,7 +400,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Tutorial",
+					"type": "UIText",
 					"properties": {
 						"text": "Click and drag anywhere to apply relative force to the golf ball.",
 						"enable-bbcode": true,
@@ -456,20 +417,9 @@
 						"initially-visible": true,
 						"origin": "top-left"
 					},
-					"uid": 11,
+					"uid": 33,
 					"instanceVariables": {},
-					"behaviors": {
-						"Fade": {
-							"properties": {
-								"fade-in-time": 0,
-								"wait-time": 5,
-								"fade-out-time": 1,
-								"destroy": true,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
+					"behaviors": {},
 					"world": {
 						"x": 184,
 						"y": 80,
@@ -488,7 +438,7 @@
 					}
 				}
 			],
-			"sid": 404278070087143,
+			"sid": 617163144120201,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -525,13 +475,15 @@
 					"type": "Button",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "game",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 4,
-					"instanceVariables": {},
+					"uid": 34,
+					"instanceVariables": {
+						"id": "switch_camera"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 72,
@@ -551,7 +503,7 @@
 					}
 				}
 			],
-			"sid": 611309806245742,
+			"sid": 137337925686201,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -580,7 +532,7 @@
 			"global": false
 		}
 	],
-	"sid": 820097207635083,
+	"sid": 462803663086597,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 2560,

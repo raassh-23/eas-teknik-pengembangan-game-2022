@@ -1,16 +1,10 @@
 {
-	"name": "Tutorial",
+	"name": "UIText",
 	"plugin-id": "Spritefont2",
 	"sid": 106204116248792,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Fade",
-			"name": "Fade",
-			"sid": 951235001939304
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
 		"width": 1024,

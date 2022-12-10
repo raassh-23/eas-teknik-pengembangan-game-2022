@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 973329960469284,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 490359769525760
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -36,7 +44,30 @@
 					}
 				],
 				"sid": 564211763475202,
-				"name": "Animation 1",
+				"name": "game",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3613191,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 177041705138130,
+				"name": "menu",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

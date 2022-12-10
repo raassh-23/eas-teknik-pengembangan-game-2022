@@ -8,6 +8,27 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "HTMLElement",
+			"name": "HTML Element",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Particles",
 			"name": "Particles",
 			"author": "Scirra",
@@ -57,13 +78,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Fade",
-			"name": "Fade",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -103,11 +117,14 @@
 			"Ball",
 			"Flag",
 			"TriggerZone",
-			"Tutorial",
+			"UIText",
 			"Touch",
 			"MovingGround",
 			"Button",
-			"ReverseGravityZone"
+			"ReverseGravityZone",
+			"LevelSelectHtml",
+			"AJAX",
+			"levels"
 		],
 		"subfolders": []
 	},
@@ -134,15 +151,28 @@
 	},
 	"layouts": {
 		"items": [
-			"Game",
-			"ObjectRepository"
+			"TestingEnvironment",
+			"ObjectRepository",
+			"Menu",
+			"LevelSelect"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Level1"
+				],
+				"subfolders": [],
+				"name": "Levels"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
 			"Game_ES",
-			"Constant"
+			"Constant",
+			"Menu_ES",
+			"LevelSelect_ES",
+			"Event sheet 1"
 		],
 		"subfolders": []
 	},
@@ -229,7 +259,40 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "level_select.html",
+					"type": "text/html",
+					"sid": 328663447770621,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "level_select.css",
+					"type": "text/css",
+					"sid": 147743426342891,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "levels.json",
+					"type": "application/json",
+					"sid": 654800626661004,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "level_item.html",
+					"type": "text/html",
+					"sid": 767545282669591,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
@@ -299,5 +362,5 @@
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,
-	"firstLayout": "Game"
+	"firstLayout": "Menu"
 }

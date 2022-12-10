@@ -1,0 +1,114 @@
+{
+	"name": "LevelSelect_ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 821524035731101
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "LevelSelectHtml",
+					"sid": 256324339818333,
+					"parameters": {
+						"content-type": "html",
+						"string": "level_select_html",
+						"selector": "\"\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 194136991310208,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-element",
+							"objectClass": "levels",
+							"sid": 568871991413138,
+							"parameters": {
+								"axes": "x"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "insert-content",
+							"objectClass": "LevelSelectHtml",
+							"sid": 569468145138408,
+							"parameters": {
+								"content-type": "html",
+								"string": "Functions.createLevelItem(levels.CurX + 1)",
+								"position": "end",
+								"selector": "\".levels\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 580813537124879
+				}
+			]
+		},
+		{
+			"functionName": "createLevelItem",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "level",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 952134055525749
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 724241561413795,
+					"parameters": {
+						"value": "replace(level_item_html, \"{{x}}\", str(level))"
+					}
+				}
+			],
+			"sid": 662789071871789
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-class",
+					"objectClass": "LevelSelectHtml",
+					"sid": 976008461525039,
+					"parameters": {
+						"class": "\"level\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 852690707241564,
+					"parameters": {
+						"layout": "\"Level\"&LevelSelectHtml.TargetID"
+					}
+				}
+			],
+			"sid": 916337490982151
+		}
+	],
+	"sid": 675197458732193
+}

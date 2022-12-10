@@ -1,0 +1,214 @@
+{
+	"name": "Menu_ES",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "level_select_html",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 989635220973009
+		},
+		{
+			"eventType": "variable",
+			"name": "level_item_html",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 942809437537615
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 103961256283915,
+					"parameters": {
+						"object": "Button"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Button",
+					"sid": 149735102377798,
+					"parameters": {
+						"animation": "\"menu\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 166579052261549,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Button",
+							"sid": 776459932189827,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 255153208440345,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 458851669975239,
+							"parameters": {
+								"layout": "LevelSelect"
+							}
+						}
+					],
+					"sid": 133331201325872
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 351318623477568
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 451575272793020,
+					"parameters": {
+						"tag": "\"level_select\"",
+						"file": "level_select.html"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 193600020291208,
+					"parameters": {
+						"tag": "\"level_item\"",
+						"file": "level_item.html"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 678211547769667,
+					"parameters": {
+						"tag": "\"levels\"",
+						"file": "levels.json"
+					}
+				}
+			],
+			"sid": 476976968878253
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 713446195031997,
+					"parameters": {
+						"tag": "\"level_select\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 556260629090361,
+					"parameters": {
+						"variable": "level_select_html",
+						"value": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 337352192234203
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 299467890438787,
+					"parameters": {
+						"tag": "\"level_item\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 359468937384317,
+					"parameters": {
+						"variable": "level_item_html",
+						"value": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 129531576158828
+		},
+		{
+			"eventType": "comment",
+			"text": "index:\n0 -> time limit\n1 -> bronze limit\n2 -> silver limit\n3 -> gold limit\n4 -> current best"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 373312083600407,
+					"parameters": {
+						"tag": "\"levels\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "levels",
+					"sid": 706619515539944,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "levels",
+					"sid": 334379594578109,
+					"parameters": {
+						"width": "Self.Width",
+						"height": "Self.Height + 1\n",
+						"depth": "Self.Depth"
+					}
+				}
+			],
+			"sid": 798385139511178
+		}
+	],
+	"sid": 846007172133742
+}

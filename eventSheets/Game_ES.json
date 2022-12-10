@@ -704,153 +704,182 @@
 			"title": "Buttons",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
-			"sid": 330509902614976
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-touched-object",
-					"objectClass": "Touch",
-					"sid": 373202428985011,
-					"parameters": {
-						"object": "Button"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 418446274389883,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-animation-frame",
-							"objectClass": "Button",
-							"sid": 332328306304561,
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 580466958625537,
 							"parameters": {
-								"comparison": 0,
-								"number": "0"
+								"object": "Button"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Button",
+							"sid": 839440051087844,
+							"parameters": {
+								"animation": "\"game\""
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 699852784582640,
+					"children": [
 						{
-							"callFunction": "resetAim",
-							"sid": 528940693398981
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Button",
+									"sid": 123451197125619,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 655334115091807,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"switch_camera\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "resetAim",
+									"sid": 620672281590967
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 652954688193464,
+									"parameters": {
+										"seconds": "0.01"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 652034794157635,
+									"parameters": {
+										"group-name": "\"Panning Camera\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 318803231644382,
+									"parameters": {
+										"group-name": "\"Control\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Ball",
+									"sid": 751886247219079,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 560902143074538,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 666425822093112
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 318071014367182,
-							"parameters": {
-								"seconds": "0.01"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 764531769996429,
-							"parameters": {
-								"group-name": "\"Panning Camera\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 190473653068409,
-							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Ball",
-							"sid": 385263918476124,
-							"behaviorType": "ScrollTo",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Button",
-							"sid": 149503510131789,
-							"parameters": {
-								"frame-number": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Button",
+									"sid": 522386244661301,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 885628494595645,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"switch_camera\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "resetPanningCamera",
+									"sid": 736611639917501
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 312487368514872,
+									"parameters": {
+										"seconds": "0.01"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 321830855319831,
+									"parameters": {
+										"group-name": "\"Control\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 502403875858455,
+									"parameters": {
+										"group-name": "\"Panning Camera\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Ball",
+									"sid": 469797387933012,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 686070071118822,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 547339117781374
 						}
-					],
-					"sid": 404396163489902
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Button",
-							"sid": 333594313775674,
-							"parameters": {
-								"comparison": 0,
-								"number": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "resetPanningCamera",
-							"sid": 699098121092049
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 870384455251213,
-							"parameters": {
-								"seconds": "0.01"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 878431685738450,
-							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 702474409870818,
-							"parameters": {
-								"group-name": "\"Panning Camera\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Ball",
-							"sid": 433912586712353,
-							"behaviorType": "ScrollTo",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Button",
-							"sid": 127990375952129,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 287424172970910
+					]
 				}
-			]
+			],
+			"sid": 330509902614976
 		}
 	],
 	"sid": 492632890398101
