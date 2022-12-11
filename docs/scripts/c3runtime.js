@@ -4552,6 +4552,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Acts.SetBoolVar,
@@ -4570,7 +4571,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetFunctionReturnValue,
 		C3.Plugins.System.Exps.zeropad,
 		C3.Behaviors.Timer.Cnds.OnTimer,
-		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Behaviors.Timer.Acts.StopTimer,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Cnds.CompareBoolVar,
@@ -4845,6 +4845,8 @@ function or(l, r)
 
 self.C3_ExpressionFuncs = [
 		() => "Game",
+		() => "Control",
+		() => "Panning Camera",
 		() => "UI",
 		() => "GameLose",
 		() => "GameWin",
@@ -4890,7 +4892,6 @@ self.C3_ExpressionFuncs = [
 			const v3 = p._GetNode(3).GetVar();
 			return () => ((f0(v1.GetValue(), 2) + ":") + f2(v3.GetValue(), 2));
 		},
-		() => "Control",
 		() => 0.01,
 		() => "lose",
 		() => "panel_move_in",
@@ -4959,7 +4960,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "Moving Ground",
 		() => "moving",
-		() => "Panning Camera",
 		() => -1,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();

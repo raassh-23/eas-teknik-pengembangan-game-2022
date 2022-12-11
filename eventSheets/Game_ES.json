@@ -113,6 +113,24 @@
 					],
 					"actions": [
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 944508792277891,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 900533189243250,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 215422459509775,
