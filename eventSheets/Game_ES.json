@@ -2,6 +2,10 @@
 	"name": "Game_ES",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
 			"eventType": "variable",
 			"name": "currentStrokes",
 			"type": "number",
@@ -1446,28 +1450,45 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-touched-object",
+							"id": "on-any-touch-end",
 							"objectClass": "Touch",
-							"sid": 580466958625537,
+							"sid": 423646708126751
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 451771609080672,
 							"parameters": {
 								"object": "Button"
 							}
 						},
 						{
-							"id": "is-animation-playing",
+							"id": "is-boolean-instance-variable-set",
 							"objectClass": "Button",
-							"sid": 839440051087844,
+							"sid": 876177522841753,
 							"parameters": {
-								"animation": "\"game\""
+								"instance-variable": "Clickable"
 							}
 						},
 						{
-							"id": "is-visible",
+							"id": "is-animation-playing",
 							"objectClass": "Button",
-							"sid": 106230293543489
+							"sid": 946239232025771,
+							"parameters": {
+								"animation": "\"game\""
+							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 958621431098766,
+							"parameters": {
+								"tag": "BUTTON_PRESSED_SIGNAL&Button.UID"
+							}
+						}
+					],
 					"sid": 699852784582640,
 					"children": [
 						{

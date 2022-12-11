@@ -1,0 +1,422 @@
+{
+	"name": "Common_ES",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 345975872735055
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "InitButtonOriginSize",
+					"sid": 675222066321255
+				}
+			],
+			"sid": 218939882350179
+		},
+		{
+			"functionName": "InitButtonOriginSize",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 433447172297676,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 117317792436652,
+							"parameters": {
+								"object": "Buttons"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Buttons",
+							"sid": 459536513287860,
+							"parameters": {
+								"instance-variable": "OriginalHeight",
+								"value": "Self.Height"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Buttons",
+							"sid": 331121390832489,
+							"parameters": {
+								"instance-variable": "OriginalWidth",
+								"value": "Self.Width"
+							}
+						}
+					],
+					"sid": 304466428790047
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 831136968622004,
+					"parameters": {
+						"object": "Buttons"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 683727807421266,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 898262256060650,
+							"parameters": {
+								"object": "Buttons"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ButtonReleased",
+							"sid": 820414765388492,
+							"parameters": [
+								"Buttons.UID"
+							]
+						}
+					],
+					"sid": 282908758708963
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 784735980266388,
+							"parameters": {
+								"layer": "Buttons.LayerName"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Buttons",
+							"sid": 537618238494549
+						},
+						{
+							"id": "collisions-enabled",
+							"objectClass": "Buttons",
+							"sid": 144813913388045
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Buttons",
+							"sid": 424115029121778,
+							"parameters": {
+								"instance-variable": "Clickable",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 269012294518055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 622889002949455
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Buttons",
+							"sid": 128663624779708,
+							"parameters": {
+								"instance-variable": "Clickable",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 175466253597775
+				}
+			]
+		},
+		{
+			"functionName": "ButtonClicked",
+			"functionDescription": "",
+			"functionCategory": "Button",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 732538564815699
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-comparison",
+					"objectClass": "System",
+					"sid": 723411494911663,
+					"parameters": {
+						"object": "Buttons",
+						"expression": "Buttons.UID",
+						"comparison": 0,
+						"value": "uid"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Buttons",
+					"sid": 640712647137604,
+					"parameters": {
+						"instance-variable": "IsClicked",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Buttons",
+					"sid": 315361975989199,
+					"parameters": {
+						"width": "0.9 * Self.OriginalWidth",
+						"height": "0.9 * Self.OriginalHeight"
+					}
+				},
+				{
+					"callFunction": "PlayTap",
+					"sid": 734848836052871
+				}
+			],
+			"sid": 701216737817670
+		},
+		{
+			"functionName": "ButtonReleased",
+			"functionDescription": "",
+			"functionCategory": "Button",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 723418518250548
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-comparison",
+					"objectClass": "System",
+					"sid": 509591726747020,
+					"parameters": {
+						"object": "Buttons",
+						"expression": "Buttons.UID",
+						"comparison": 0,
+						"value": "uid"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Buttons",
+					"sid": 264085663013533,
+					"parameters": {
+						"instance-variable": "IsClicked",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Buttons",
+					"sid": 635768097029032,
+					"parameters": {
+						"width": "Self.OriginalWidth",
+						"height": "Self.OriginalHeight"
+					}
+				}
+			],
+			"sid": 520209804853470
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 196269682416694
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 444024972685083,
+					"parameters": {
+						"object": "Buttons"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Buttons",
+					"sid": 670856273993775,
+					"parameters": {
+						"instance-variable": "Clickable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ButtonClicked",
+					"sid": 324718605642865,
+					"parameters": [
+						"Buttons.UID"
+					]
+				}
+			],
+			"sid": 114897130106919
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 746358862737446
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 101606224781791,
+					"parameters": {
+						"object": "Buttons"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Buttons",
+					"sid": 179884694607868,
+					"parameters": {
+						"instance-variable": "Clickable"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ButtonReleased",
+					"sid": 401725235269062,
+					"parameters": [
+						"Buttons.UID"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 947349355766149,
+					"parameters": {
+						"seconds": "0.05"
+					}
+				},
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 811505337545538,
+					"parameters": {
+						"tag": "BUTTON_PRESSED_SIGNAL&Buttons.UID"
+					}
+				}
+			],
+			"sid": 280137747569600
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-tag-playing",
+					"objectClass": "Audio",
+					"sid": 443419484433919,
+					"parameters": {
+						"tag": "\"bgm\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 903919578012918,
+					"disabled": true,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "looping",
+						"volume": "-25",
+						"stereo-pan": "0",
+						"tag-optional": "\"bgm\""
+					}
+				}
+			],
+			"sid": 330892981416581
+		},
+		{
+			"functionName": "PlayTap",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 227181002258183,
+					"parameters": {
+						"audio-file": "tap",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 345791549979466
+		}
+	],
+	"sid": 818326932602224
+}

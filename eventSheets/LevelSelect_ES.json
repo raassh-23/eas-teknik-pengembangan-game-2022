@@ -2,6 +2,10 @@
 	"name": "LevelSelect_ES",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -172,11 +176,24 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-any-touch-end",
 					"objectClass": "Touch",
-					"sid": 582212971293341,
+					"sid": 761542836874450
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 242230536958581,
 					"parameters": {
 						"object": "Button"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 445032333090294,
+					"parameters": {
+						"instance-variable": "Clickable"
 					}
 				},
 				{
@@ -188,7 +205,16 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 144240433893344,
+					"parameters": {
+						"tag": "BUTTON_PRESSED_SIGNAL&Button.UID"
+					}
+				}
+			],
 			"sid": 560401055073197,
 			"children": [
 				{

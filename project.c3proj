@@ -22,6 +22,20 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "HTMLElement",
 			"name": "HTML Element",
 			"author": "Scirra",
@@ -140,7 +154,10 @@
 			"AJAX",
 			"levels",
 			"Timer",
-			"Panel"
+			"Panel",
+			"Bg",
+			"Audio",
+			"Browser"
 		],
 		"subfolders": []
 	},
@@ -162,7 +179,9 @@
 		}
 	],
 	"families": {
-		"items": [],
+		"items": [
+			"Buttons"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -188,7 +207,8 @@
 			"Game_ES",
 			"Constant",
 			"Menu_ES",
-			"LevelSelect_ES"
+			"LevelSelect_ES",
+			"Common_ES"
 		],
 		"subfolders": []
 	},
@@ -198,7 +218,16 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "tap.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 814595789042373,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

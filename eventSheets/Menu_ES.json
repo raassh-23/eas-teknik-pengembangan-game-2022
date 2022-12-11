@@ -2,6 +2,10 @@
 	"name": "Menu_ES",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
 			"eventType": "variable",
 			"name": "level_select_html",
 			"type": "string",
@@ -45,11 +49,24 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-touched-object",
+					"id": "on-any-touch-end",
 					"objectClass": "Touch",
-					"sid": 103961256283915,
+					"sid": 142031299237776
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 563532664120343,
 					"parameters": {
 						"object": "Button"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 612689710532027,
+					"parameters": {
+						"instance-variable": "Clickable"
 					}
 				},
 				{
@@ -61,7 +78,16 @@
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 554633081998988,
+					"parameters": {
+						"tag": "BUTTON_PRESSED_SIGNAL&Button.UID"
+					}
+				}
+			],
 			"sid": 166579052261549,
 			"children": [
 				{

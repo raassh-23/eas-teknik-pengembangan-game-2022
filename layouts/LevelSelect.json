@@ -84,12 +84,12 @@
 					"properties": {
 						"text": "Level Select",
 						"enable-bbcode": true,
-						"character-width": 11,
-						"character-height": 16,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£<>%",
-						"spacing-data": "[[5,\" \"],[4,\"!'|\"],[5,\"`\"],[6,\"Iil1.,;:\\\"()[]\"],[7,\"j°\"],[8,\"ABCDEFGHJKLMNOPRSTUVWXYZabcdefghkmnopqrstuvwxyz023456789?-_#&\\\\/@+=*$£<>%\"],[9,\"Q~\"]]",
-						"scale": 5,
-						"character-spacing": -6,
+						"character-width": 53,
+						"character-height": 60,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
+						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
+						"scale": 1,
+						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
@@ -178,6 +178,10 @@
 					},
 					"uid": 42,
 					"instanceVariables": {
+						"OriginalWidth": 0,
+						"OriginalHeight": 0,
+						"IsClicked": false,
+						"Clickable": false,
 						"id": "back"
 					},
 					"behaviors": {},
@@ -209,14 +213,18 @@
 					},
 					"uid": 43,
 					"instanceVariables": {
+						"OriginalWidth": 0,
+						"OriginalHeight": 0,
+						"IsClicked": false,
+						"Clickable": false,
 						"id": "test"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1227,
 						"y": 666,
-						"width": 64,
-						"height": 64,
+						"width": 42.496,
+						"height": 14.08,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -90,6 +90,16 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 518089340538990
+		},
+		{
+			"eventType": "variable",
+			"name": "BUTTON_PRESSED_SIGNAL",
+			"type": "string",
+			"initialValue": "button_pressed",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 767271484923760
 		}
 	],
 	"sid": 504631505296909
