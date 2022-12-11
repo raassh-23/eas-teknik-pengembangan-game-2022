@@ -4,7 +4,7 @@
 	"name": "Golf In Space",
 	"runtime": "c3",
 	"useWorker": "auto",
-	"bundleAddons": false,
+	"bundleAddons": true,
 	"usedAddons": [
 		{
 			"type": "plugin",
@@ -317,7 +317,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.0.3",
+		"version": "0.0.4",
 		"author": "RushHourDream",
 		"authorEmail": "",
 		"authorWebsite": "",

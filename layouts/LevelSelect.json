@@ -103,8 +103,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 184,
-						"y": 91.5,
+						"x": 184.5,
+						"y": 165.5,
 						"width": 912,
 						"height": 224,
 						"originX": 0,
@@ -153,10 +153,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 38.5,
-						"y": 272.5,
+						"x": 39,
+						"y": 346.5,
 						"width": 1203,
-						"height": 356,
+						"height": 208,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -165,6 +165,37 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "menu",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"instanceVariables": {
+						"id": "test"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 77,
+						"y": 666,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

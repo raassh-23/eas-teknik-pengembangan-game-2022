@@ -4834,7 +4834,8 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => ("Level" + n0.ExpObject());
-		}
+		},
+		() => "test"
 ];
 
 

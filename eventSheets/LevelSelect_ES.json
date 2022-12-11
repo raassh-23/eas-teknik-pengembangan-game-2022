@@ -144,6 +144,66 @@
 				}
 			],
 			"sid": 916337490982151
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 582212971293341,
+					"parameters": {
+						"object": "Button"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Button",
+					"sid": 155355429945501,
+					"parameters": {
+						"animation": "\"menu\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 560401055073197,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Button",
+							"sid": 468232721752649,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 652422499482157,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"test\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 207632204540337,
+							"parameters": {
+								"layout": "TestingEnvironment"
+							}
+						}
+					],
+					"sid": 384825075611849
+				}
+			]
 		}
 	],
 	"sid": 675197458732193
