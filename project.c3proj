@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 32100,
-	"name": "Golf In Space",
+	"name": "Space Golf",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": true,
