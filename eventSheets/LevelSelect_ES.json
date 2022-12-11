@@ -41,10 +41,10 @@
 						{
 							"id": "insert-content",
 							"objectClass": "LevelSelectHtml",
-							"sid": 569468145138408,
+							"sid": 673837786249806,
 							"parameters": {
 								"content-type": "html",
-								"string": "Functions.createLevelItem(levels.CurX + 1)",
+								"string": "Functions.createLevelItem(levels.CurX + 1, levels.CurX > currentOpenLevel, levels.At(levels.CurX, 4))",
 								"position": "end",
 								"selector": "\".levels\"",
 								"type": "one"
@@ -69,21 +69,71 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 952134055525749
+				},
+				{
+					"name": "locked",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"sid": 584348763910982
+				},
+				{
+					"name": "best",
+					"type": "number",
+					"initialValue": "-1",
+					"comment": "",
+					"sid": 286971068649775
 				}
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
+			"actions": [],
+			"sid": 662789071871789,
+			"children": [
 				{
-					"id": "set-function-return-value",
-					"objectClass": "Functions",
-					"sid": 724241561413795,
-					"parameters": {
-						"value": "replace(level_item_html, \"{{x}}\", str(level))"
-					}
+					"eventType": "variable",
+					"name": "temp",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 559246421229728
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 233834580219920,
+							"parameters": {
+								"variable": "temp",
+								"value": "replace(level_item_html, \"{{level}}\", str(level))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 904070762836088,
+							"parameters": {
+								"variable": "temp",
+								"value": "replace(temp, \"{{status}}\", locked ? \"Locked\" : Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX))"
+							}
+						},
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 714258738511922,
+							"parameters": {
+								"value": "temp"
+							}
+						}
+					],
+					"sid": 191485008160691
 				}
-			],
-			"sid": 662789071871789
+			]
 		},
 		{
 			"eventType": "block",
@@ -95,52 +145,25 @@
 					"parameters": {
 						"class": "\"level\""
 					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 872514094244345,
+					"parameters": {
+						"first-value": "int(LevelSelectHtml.TargetID) - 1",
+						"comparison": 3,
+						"second-value": "currentOpenLevel"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 713820750839934,
-					"parameters": {
-						"variable": "timeLimit",
-						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 0)"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 366252368790796,
-					"parameters": {
-						"variable": "bronzeLimit",
-						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 1)"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 697289283828927,
-					"parameters": {
-						"variable": "silverLimit",
-						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 2)"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 952360228096161,
-					"parameters": {
-						"variable": "goldLimit",
-						"value": "levels.At(int(LevelSelectHtml.TargetID) - 1, 3)"
-					}
-				},
-				{
-					"id": "go-to-layout-by-name",
-					"objectClass": "System",
-					"sid": 123185643913767,
-					"parameters": {
-						"layout": "\"Level\"&LevelSelectHtml.TargetID"
-					}
+					"callFunction": "goToLevel",
+					"sid": 400134800639963,
+					"parameters": [
+						"int(LevelSelectHtml.TargetID) - 1"
+					]
 				}
 			],
 			"sid": 916337490982151
@@ -172,15 +195,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-animation-frame",
-							"objectClass": "Button",
-							"sid": 468232721752649,
-							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
 							"sid": 652422499482157,
@@ -193,6 +207,42 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 725215188393152,
+							"parameters": {
+								"variable": "timeLimit",
+								"value": "999"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 569607908225973,
+							"parameters": {
+								"variable": "bronzeLimit",
+								"value": "15"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 276743400775979,
+							"parameters": {
+								"variable": "silverLimit",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 639781705017416,
+							"parameters": {
+								"variable": "goldLimit",
+								"value": "5"
+							}
+						},
+						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 207632204540337,
@@ -202,6 +252,294 @@
 						}
 					],
 					"sid": 384825075611849
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 647131796837769,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"back\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 574989392590108,
+							"parameters": {
+								"layout": "Menu"
+							}
+						}
+					],
+					"sid": 421341243846978
+				}
+			]
+		},
+		{
+			"functionName": "getLevelStatus",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "strokes",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 592555417107432
+				},
+				{
+					"name": "levelIndex",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 586042047382536
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 302368297538377,
+					"parameters": {
+						"value": "\"-\""
+					}
+				}
+			],
+			"sid": 194731368240500,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 464461468924453,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 4,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 957876854300142,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 3,
+								"value": "levels.At(levelIndex, 3)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 365233066378838,
+							"parameters": {
+								"value": "\"Gold\""
+							}
+						}
+					],
+					"sid": 563526845051043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 395321828232936,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 4,
+								"value": "levels.At(levelIndex, 3)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 136500616416573,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 3,
+								"value": "levels.At(levelIndex, 2)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 303721523921125,
+							"parameters": {
+								"value": "\"Silver\""
+							}
+						}
+					],
+					"sid": 148649575081139
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 986657460514791,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 4,
+								"value": "levels.At(levelIndex, 2)"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 224064057555127,
+							"parameters": {
+								"variable": "strokes",
+								"comparison": 3,
+								"value": "levels.At(levelIndex, 1)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 259770908585747,
+							"parameters": {
+								"value": "\"Bronze\""
+							}
+						}
+					],
+					"sid": 494481064031852
+				}
+			]
+		},
+		{
+			"functionName": "goToLevel",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "levelIndex",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 222849792809592
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 551388185817953,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 998010549003926,
+							"parameters": {
+								"first-value": "levelIndex",
+								"comparison": 2,
+								"second-value": "levels.Width"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 233297392788539,
+							"parameters": {
+								"variable": "currentLevelIndex",
+								"value": "levelIndex"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 330397807356679,
+							"parameters": {
+								"variable": "timeLimit",
+								"value": "levels.At(currentLevelIndex, 0)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 503086613898769,
+							"parameters": {
+								"variable": "bronzeLimit",
+								"value": "levels.At(currentLevelIndex, 1)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179356440770096,
+							"parameters": {
+								"variable": "silverLimit",
+								"value": "levels.At(currentLevelIndex, 2)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 722464273848767,
+							"parameters": {
+								"variable": "goldLimit",
+								"value": "levels.At(currentLevelIndex, 3)"
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 460484821949843,
+							"parameters": {
+								"layout": "\"Level\"&currentLevelIndex+1"
+							}
+						}
+					],
+					"sid": 383870212180690
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 604393776851521
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 334661598739073,
+							"parameters": {
+								"layout": "LevelSelect"
+							}
+						}
+					],
+					"sid": 931461076713821
 				}
 			]
 		}

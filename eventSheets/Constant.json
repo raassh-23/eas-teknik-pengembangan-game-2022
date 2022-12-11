@@ -30,6 +30,66 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 842178183576410
+		},
+		{
+			"eventType": "variable",
+			"name": "PANEL_TWEEN_TAG",
+			"type": "string",
+			"initialValue": "panel_move_in",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 543971469535374
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_DENSITY",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 125459071948070
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_FRICTION",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 549720908808400
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_ELASTICITY",
+			"type": "number",
+			"initialValue": "0.7",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 853946062654239
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_LINEAR_DAMPING",
+			"type": "number",
+			"initialValue": "0.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 423188413112526
+		},
+		{
+			"eventType": "variable",
+			"name": "BALL_ANGULAR_DAMPING",
+			"type": "number",
+			"initialValue": "0.25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 518089340538990
 		}
 	],
 	"sid": 504631505296909

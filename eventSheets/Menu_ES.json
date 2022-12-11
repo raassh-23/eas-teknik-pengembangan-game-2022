@@ -22,6 +22,26 @@
 			"sid": 942809437537615
 		},
 		{
+			"eventType": "variable",
+			"name": "currentOpenLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 687193642683934
+		},
+		{
+			"eventType": "variable",
+			"name": "hadRunOnce",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615487072159301
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -90,36 +110,63 @@
 					"sid": 351318623477568
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 476976968878253,
+			"children": [
 				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 451575272793020,
-					"parameters": {
-						"tag": "\"level_select\"",
-						"file": "level_select.html"
-					}
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 193600020291208,
-					"parameters": {
-						"tag": "\"level_item\"",
-						"file": "level_item.html"
-					}
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 678211547769667,
-					"parameters": {
-						"tag": "\"levels\"",
-						"file": "levels.json"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 917635875222541,
+							"parameters": {
+								"variable": "hadRunOnce"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 205580540330674,
+							"parameters": {
+								"tag": "\"level_select\"",
+								"file": "level_select.html"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 589738486924958,
+							"parameters": {
+								"tag": "\"level_item\"",
+								"file": "level_item.html"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 362233378491683,
+							"parameters": {
+								"tag": "\"levels\"",
+								"file": "levels.json"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 472044854672088,
+							"parameters": {
+								"variable": "hadRunOnce",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 105855938900746
 				}
-			],
-			"sid": 476976968878253
+			]
 		},
 		{
 			"eventType": "block",
@@ -173,7 +220,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "index:\n0 -> time limit\n1 -> bronze limit\n2 -> silver limit\n3 -> gold limit\n4 -> current best"
+			"text": "index:\n0 -> time limit\n1 -> bronze limit\n2 -> silver limit\n3 -> gold limit\n4 -> current best stroke"
 		},
 		{
 			"eventType": "block",

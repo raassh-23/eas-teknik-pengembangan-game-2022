@@ -3,13 +3,23 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "strokes",
+			"name": "currentStrokes",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 351977026365324
+		},
+		{
+			"eventType": "variable",
+			"name": "currentLevelIndex",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 422207302929200
 		},
 		{
 			"eventType": "variable",
@@ -45,11 +55,21 @@
 			"eventType": "variable",
 			"name": "timeLimit",
 			"type": "number",
-			"initialValue": "120",
+			"initialValue": "999",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 101863135467986
+		},
+		{
+			"eventType": "variable",
+			"name": "isPlaying",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 728776374147594
 		},
 		{
 			"eventType": "group",
@@ -69,12 +89,48 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 215422459509775,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 348799248605326,
+							"parameters": {
+								"layer": "\"GameLose\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 548696891075578,
+							"parameters": {
+								"layer": "\"GameWin\"",
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 460373098910352,
 							"parameters": {
-								"variable": "strokes",
+								"variable": "currentStrokes",
 								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 930839079658033,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "true"
 							}
 						},
 						{
@@ -86,6 +142,51 @@
 								"duration": "timeLimit",
 								"type": "once",
 								"tag": "GAME_TIMER_TAG"
+							}
+						},
+						{
+							"id": "set-density",
+							"objectClass": "Ball",
+							"sid": 738189212376999,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "BALL_DENSITY"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "Ball",
+							"sid": 578778841336533,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "BALL_ELASTICITY"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "Ball",
+							"sid": 591084591883697,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "BALL_FRICTION"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "Ball",
+							"sid": 980500718886284,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "BALL_LINEAR_DAMPING"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "Ball",
+							"sid": 516881215062512,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "BALL_ANGULAR_DAMPING"
 							}
 						}
 					],
@@ -111,7 +212,7 @@
 							"objectClass": "UIText",
 							"sid": 615363224753891,
 							"parameters": {
-								"text": "\"Strokes: \" & strokes & \"/\" & bronzeLimit"
+								"text": "\"Strokes: \" & currentStrokes & \"/\" & bronzeLimit"
 							}
 						}
 					],
@@ -144,7 +245,7 @@
 					"sid": 166964189411429
 				},
 				{
-					"functionName": "GetTimeFormatted",
+					"functionName": "getTimeFormatted",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "string",
@@ -216,6 +317,363 @@
 								}
 							],
 							"sid": 136155221422069
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Timer",
+							"sid": 326562103980553,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "GAME_TIMER_TAG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 669571212256270,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Timer",
+							"sid": 384646680518155,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "GAME_TIMER_TAG"
+							}
+						},
+						{
+							"callFunction": "showLose",
+							"sid": 889399266168392
+						}
+					],
+					"sid": 750990633507179
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 312920017137624,
+							"parameters": {
+								"variable": "currentStrokes",
+								"comparison": 0,
+								"value": "bronzeLimit"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 523556366149441
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 435531122932071,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 953919525493072,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 319471407865314
+				},
+				{
+					"functionName": "showLose",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 863309813694325
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 799054038934909,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 140875949156117,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 420575442425261,
+							"parameters": {
+								"layer": "\"GameLose\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 846653319734430,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Panel",
+									"sid": 611008493025700,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"lose\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Panel",
+									"sid": 402863341928577,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "PANEL_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.seconds",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 999674279370035
+						}
+					]
+				},
+				{
+					"functionName": "showWin",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 879778094764469
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 413610300161141,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 573187181238008,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 320656380382218,
+							"parameters": {
+								"layer": "\"GameWin\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Panel",
+							"sid": 603229333224373,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "PANEL_TWEEN_TAG",
+								"property": "position",
+								"end-x": "Self.targetX",
+								"end-y": "Self.targetY",
+								"time": "Self.seconds",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 367607625314262,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Panel",
+									"sid": 187050188740189,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"win\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Panel",
+									"sid": 404801882360607,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "PANEL_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.seconds",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 170395224982830
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 733875391433793,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"status\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 429158653478691,
+									"parameters": {
+										"text": "Functions.getLevelStatus(currentStrokes, currentLevelIndex)"
+									}
+								}
+							],
+							"sid": 868752609736968
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 920879874124385,
+									"parameters": {
+										"variable": "currentStrokes",
+										"comparison": 2,
+										"value": "levels.At(currentLevelIndex, 4)"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 359801506238142,
+									"parameters": {
+										"first-value": "levels.At(currentLevelIndex, 4)",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-xy",
+									"objectClass": "levels",
+									"sid": 530902350151016,
+									"parameters": {
+										"x": "currentLevelIndex",
+										"y": "4",
+										"value": "currentStrokes"
+									}
+								}
+							],
+							"sid": 167853362509083,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 147118722484269,
+									"parameters": {
+										"variable": "currentLevelIndex",
+										"comparison": 0,
+										"value": "currentOpenLevel"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 940119474459436,
+									"parameters": {
+										"variable": "currentOpenLevel",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 327549389726738
 						}
 					]
 				}
@@ -312,7 +770,31 @@
 							}
 						}
 					],
-					"sid": 320601275879394
+					"sid": 320601275879394,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 986799362796295,
+									"parameters": {
+										"variable": "currentStrokes",
+										"comparison": 0,
+										"value": "bronzeLimit"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "showLose",
+									"sid": 873919466919062
+								}
+							],
+							"sid": 190081034001427
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -536,7 +1018,7 @@
 							"objectClass": "System",
 							"sid": 767058357664126,
 							"parameters": {
-								"variable": "strokes",
+								"variable": "currentStrokes",
 								"value": "1"
 							}
 						}
@@ -563,6 +1045,15 @@
 							"parameters": {
 								"time-scale": "0.1"
 							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 784284524068394,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1.0"
+							}
 						}
 					],
 					"sid": 363584402228338
@@ -583,6 +1074,15 @@
 							"sid": 108656401683153,
 							"parameters": {
 								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 150422538166005,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1.0"
 							}
 						}
 					],
@@ -636,13 +1136,20 @@
 							"parameters": {
 								"object": "TriggerZone"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 878894629020664,
+							"parameters": {
+								"variable": "isPlaying"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "Cursor",
-							"sid": 863309813694325
+							"callFunction": "showWin",
+							"sid": 889051487374959
 						}
 					],
 					"sid": 187135793502873,
@@ -1110,6 +1617,80 @@
 								}
 							],
 							"sid": 547339117781374
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 402044186481533,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 957213505274047,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 189496546801718
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 344808720680866,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"restart\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 744623528399529
+								}
+							],
+							"sid": 508676241972679
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 878603542214645,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"next_level\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToLevel",
+									"sid": 341222097440757,
+									"parameters": [
+										"currentLevelIndex + 1"
+									]
+								}
+							],
+							"sid": 290763449125586
 						}
 					]
 				},

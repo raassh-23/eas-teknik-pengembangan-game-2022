@@ -160,10 +160,10 @@
 								"collision-mask": "circle",
 								"prevent-rotation": false,
 								"density": 1,
-								"friction": 0.75,
+								"friction": 1,
 								"elasticity": 0.5,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
+								"linear-damping": 0.2,
+								"angular-damping": 0.2,
 								"bullet": false,
 								"enabled": true
 							}
@@ -684,6 +684,72 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": true
+		},
+		{
+			"name": "GameLose",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 741594585566772,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "GameWin",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 967686298358017,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
 		}
 	],
 	"sid": 820097207635083,
