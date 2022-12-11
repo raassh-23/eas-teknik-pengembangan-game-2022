@@ -31,6 +31,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 574375126785904
+		},
+		{
+			"name": "originX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 911271422528451
+		},
+		{
+			"name": "originY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 372484925101240
 		}
 	],
 	"behaviorTypes": [
@@ -42,14 +56,14 @@
 	],
 	"effectTypes": [],
 	"image": {
-		"width": 256,
-		"height": 256,
+		"width": 1038,
+		"height": 626,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 7796267,
+		"imageSpriteId": 6444450,
 		"useCollisionPoly": true
 	}
 }

@@ -2,39 +2,29 @@
 	"name": "TestingEnvironment",
 	"layers": [
 		{
-			"name": "Background",
+			"name": "GameBackground",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Sky",
+					"type": "Bg",
 					"properties": {
 						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
+						"initial-animation": "Level",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
 					},
-					"uid": 6,
+					"uid": 35,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 2600,
+						"x": 640,
+						"y": 360,
+						"width": 1280,
 						"height": 720,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -44,72 +34,9 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "Ground",
-					"properties": {
-						"initially-visible": true,
-						"tile-width": 32,
-						"tile-height": 32,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0,
-						"tile-x-drawing-offset": 0,
-						"tile-y-drawing-offset": 0,
-						"drawing-mode": "top-to-right"
-					},
-					"uid": 7,
-					"instanceVariables": {},
-					"behaviors": {
-						"Physics": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"ownData": {
-						"tilemapData": {
-							"width": 81,
-							"height": 23,
-							"max-width": 472,
-							"max-height": 228,
-							"data": "23x2,205x0,2,14x0,1hd,7x2,205x0,2,19x0,3x2,205x0,2,19x0,1hd,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,19x0,1,2x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,19x0,3x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,1hd,4x2,205x0,2,18x0,1hd,3x2,205x0,2,19x0,1hd,2x2,205x0,2,12x0,3x2,1vd,4x0,2x2,205x0,2,12x0,7x2,0,2x2,205x0,2,14x0,1hd,4x2,0,2x2,205x0,2,14x0,1,1hv,4x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,17x0,1,4x2,205x0,2,10x0,1hd,11x2,205x0,2,14x0,1hd,7x2,205x0,2,15x0,1hd,6x2,205x0,2,10x0,1,2x2,1vd,2x0,1hd,5x2,205x0,2,11x0,1hd,2x2,3x0,5x2,205x0,2,12x0,2x2,3x0,5x2,205x0,2,12x0,1hd,2,3x0,2x2hvd,3x2,205x0,2,13x0,2,3x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,4x0,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,89581x0"
-						},
-						"tile-width": 32,
-						"tile-height": 32,
-						"tile-x-offset": 0,
-						"tile-y-offset": 0,
-						"tile-x-spacing": 0,
-						"tile-y-spacing": 0
-					},
-					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 2592,
-						"height": 752,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"zElevation": 0
-					}
 				}
 			],
-			"sid": 831738722915615,
+			"sid": 149545235816758,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -126,8 +53,8 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
@@ -177,8 +104,8 @@
 					"world": {
 						"x": 152,
 						"y": 584,
-						"width": 16,
-						"height": 16,
+						"width": 25,
+						"height": 25,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -196,7 +123,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 0,
+						"initial-frame": 2,
 						"enable-collisions": false,
 						"live-preview": false
 					},
@@ -205,9 +132,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 2000,
-						"y": 552,
-						"width": 24,
-						"height": 56,
+						"y": 560,
+						"width": 20,
+						"height": 47,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -434,6 +361,103 @@
 			"global": false
 		},
 		{
+			"name": "Ground",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Ground",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 32,
+						"tile-height": 32,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 7,
+					"instanceVariables": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 81,
+							"height": 23,
+							"max-width": 472,
+							"max-height": 228,
+							"data": "13x0,10x2,220x0,1hd,7x2,225x0,3x2,225x0,1hd,2x2,226x0,2x2,226x0,2x2,226x0,2x2,226x0,2x2,225x0,1,2x2,225x0,3x2,225x0,3x2,225x0,3x2,222x0,1,5x2,222x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,16x0,1hd,5x2,205x0,2,17x0,1hd,4x2,205x0,2,18x0,1hd,3x2,205x0,2,19x0,1hd,2x2,205x0,2,12x0,3x2,1vd,4x0,2x2,205x0,2,12x0,7x2,0,2x2,205x0,2,14x0,1hd,4x2,0,2x2,205x0,2,14x0,1,1hv,4x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,17x0,1,4x2,205x0,2,10x0,1hd,11x2,205x0,2,14x0,1hd,7x2,205x0,2,15x0,1hd,6x2,205x0,2,10x0,1,2x2,1vd,2x0,1hd,5x2,205x0,2,11x0,1hd,2x2,3x0,5x2,205x0,2,12x0,2x2,3x0,5x2,205x0,2,12x0,1hd,2,3x0,2x2hvd,3x2,205x0,2,13x0,2,3x0,5x2,205x0,2,16x0,1,5x2,205x0,2,16x0,6x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,4x0,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,89581x0"
+						},
+						"tile-width": 32,
+						"tile-height": 32,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 2592,
+						"height": 752,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 831738722915615,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "StaticUi",
 			"overriden": 0,
 			"subLayers": [],
@@ -447,8 +471,8 @@
 						"character-height": 60,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
-						"scale": 3,
-						"character-spacing": -6,
+						"scale": 0.5,
+						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
 						"vertical-alignment": "center",

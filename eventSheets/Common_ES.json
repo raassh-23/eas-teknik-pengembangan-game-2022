@@ -16,7 +16,43 @@
 					"sid": 675222066321255
 				}
 			],
-			"sid": 218939882350179
+			"sid": 218939882350179,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 327594361087029,
+							"parameters": {
+								"object": "Panel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Panel",
+							"sid": 887843950290743,
+							"parameters": {
+								"instance-variable": "originX",
+								"value": "Self.X"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Panel",
+							"sid": 162656414070858,
+							"parameters": {
+								"instance-variable": "originY",
+								"value": "Self.Y"
+							}
+						}
+					],
+					"sid": 971327951567137
+				}
+			]
 		},
 		{
 			"functionName": "InitButtonOriginSize",

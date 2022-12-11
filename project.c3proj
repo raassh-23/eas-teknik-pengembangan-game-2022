@@ -140,7 +140,6 @@
 			"DistanceRuler",
 			"Trail",
 			"Confetti",
-			"Sky",
 			"Ground",
 			"Ball",
 			"Flag",
@@ -157,7 +156,8 @@
 			"Panel",
 			"Bg",
 			"Audio",
-			"Browser"
+			"Browser",
+			"Decoration"
 		],
 		"subfolders": []
 	},
@@ -354,7 +354,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.0.5",
+		"version": "0.0.6",
 		"author": "RushHourDream",
 		"authorEmail": "",
 		"authorWebsite": "",

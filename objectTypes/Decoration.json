@@ -1,7 +1,7 @@
 {
-	"name": "Cursor",
+	"name": "Decoration",
 	"plugin-id": "Sprite",
-	"sid": 388961262453485,
+	"sid": 375626657765809,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,39 +11,31 @@
 			{
 				"frames": [
 					{
-						"width": 128,
-						"height": 128,
+						"width": 297,
+						"height": 54,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3723934,
-						"collisionPoly": {
-							"points": [
-								0.1484375,
-								0.1484375,
-								0.5,
-								0,
-								0.8515625,
-								0.1484375,
-								1,
-								0.5,
-								0.8515625,
-								0.8515625,
-								0.5,
-								1,
-								0.1484375,
-								0.8515625,
-								0,
-								0.5
-							]
-						},
+						"imageSpriteId": 3573940,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 465,
+						"height": 229,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2233682,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 129236970101121,
+				"sid": 111634694635395,
 				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,

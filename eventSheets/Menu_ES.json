@@ -94,15 +94,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-animation-frame",
-							"objectClass": "Button",
-							"sid": 776459932189827,
-							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
 							"sid": 255153208440345,
@@ -124,6 +115,98 @@
 						}
 					],
 					"sid": 133331201325872
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 557840776446035,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"credits\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Panel",
+							"sid": 159018953190846,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Panel",
+							"sid": 244647532732249,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "PANEL_TWEEN_TAG",
+								"property": "position",
+								"end-x": "Self.targetX",
+								"end-y": "Self.targetY",
+								"time": "Self.seconds",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 200342425710322
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 391014346777033,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"close_credits\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Panel",
+							"sid": 171568672615540,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Panel",
+							"sid": 244510871899538,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "PANEL_TWEEN_TAG",
+								"property": "position",
+								"end-x": "Self.originX",
+								"end-y": "Self.originY",
+								"time": "Self.seconds",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 189303554373194
 				}
 			]
 		},

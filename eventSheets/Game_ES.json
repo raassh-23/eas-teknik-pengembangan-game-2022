@@ -76,6 +76,26 @@
 			"sid": 728776374147594
 		},
 		{
+			"eventType": "variable",
+			"name": "ballSpawnX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 379715547003058
+		},
+		{
+			"eventType": "variable",
+			"name": "ballSpawnY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 741994652171985
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game",
@@ -191,6 +211,24 @@
 							"behaviorType": "Physics",
 							"parameters": {
 								"angular-damping": "BALL_ANGULAR_DAMPING"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 366579795864607,
+							"parameters": {
+								"variable": "ballSpawnX",
+								"value": "Ball.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 801867497535958,
+							"parameters": {
+								"variable": "ballSpawnY",
+								"value": "Ball.Y"
 							}
 						}
 					],
@@ -860,6 +898,86 @@
 						}
 					],
 					"sid": 741081872969587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Ball",
+							"sid": 811757861188019
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 454264287172870
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 415527353202931,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 891815562595837,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Ball",
+							"sid": 249251409666721
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 230855583933205,
+							"parameters": {
+								"object-to-create": "Ball",
+								"layer": "\"World\"",
+								"x": "ballSpawnX",
+								"y": "ballSpawnY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 638070450070004,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 637654874969557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Ball",
+							"sid": 531097384964578
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Ball",
+							"sid": 273727788336094
+						}
+					],
+					"sid": 846384771432635
 				}
 			],
 			"sid": 847514808905615
