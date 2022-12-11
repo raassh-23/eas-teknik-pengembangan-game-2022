@@ -149,28 +149,76 @@
 					"parameters": {
 						"class": "\"level\""
 					}
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 872514094244345,
-					"parameters": {
-						"first-value": "int(LevelSelectHtml.TargetID) - 1",
-						"comparison": 3,
-						"second-value": "currentOpenLevel"
-					}
 				}
 			],
 			"actions": [
 				{
-					"callFunction": "goToLevel",
-					"sid": 400134800639963,
-					"parameters": [
-						"int(LevelSelectHtml.TargetID) - 1"
-					]
+					"callFunction": "playTap",
+					"sid": 111615501919524
 				}
 			],
-			"sid": 916337490982151
+			"sid": 916337490982151,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "levelIndex",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 845715780653418
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 266304009906293,
+							"parameters": {
+								"variable": "levelIndex",
+								"value": "int(LevelSelectHtml.TargetID) - 1"
+							}
+						}
+					],
+					"sid": 319753852690934
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 918482302777313,
+							"parameters": {
+								"first-value": "levelIndex",
+								"comparison": 3,
+								"second-value": "currentOpenLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 960629529857154,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 375596450163966,
+							"parameters": [
+								"levelIndex"
+							]
+						}
+					],
+					"sid": 973920734540678
+				}
+			]
 		},
 		{
 			"eventType": "block",

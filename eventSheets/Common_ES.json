@@ -12,7 +12,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "InitButtonOriginSize",
+					"callFunction": "initButtonOriginSize",
 					"sid": 675222066321255
 				}
 			],
@@ -55,7 +55,7 @@
 			]
 		},
 		{
-			"functionName": "InitButtonOriginSize",
+			"functionName": "initButtonOriginSize",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -133,7 +133,7 @@
 					],
 					"actions": [
 						{
-							"callFunction": "ButtonReleased",
+							"callFunction": "buttonReleased",
 							"sid": 820414765388492,
 							"parameters": [
 								"Buttons.UID"
@@ -202,7 +202,7 @@
 			]
 		},
 		{
-			"functionName": "ButtonClicked",
+			"functionName": "buttonClicked",
 			"functionDescription": "",
 			"functionCategory": "Button",
 			"functionReturnType": "none",
@@ -251,14 +251,14 @@
 					}
 				},
 				{
-					"callFunction": "PlayTap",
+					"callFunction": "playTap",
 					"sid": 734848836052871
 				}
 			],
 			"sid": 701216737817670
 		},
 		{
-			"functionName": "ButtonReleased",
+			"functionName": "buttonReleased",
 			"functionDescription": "",
 			"functionCategory": "Button",
 			"functionReturnType": "none",
@@ -336,7 +336,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "ButtonClicked",
+					"callFunction": "buttonClicked",
 					"sid": 324718605642865,
 					"parameters": [
 						"Buttons.UID"
@@ -372,7 +372,7 @@
 			],
 			"actions": [
 				{
-					"callFunction": "ButtonReleased",
+					"callFunction": "buttonReleased",
 					"sid": 401725235269062,
 					"parameters": [
 						"Buttons.UID"
@@ -414,12 +414,11 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 903919578012918,
-					"disabled": true,
+					"sid": 983289158659877,
 					"parameters": {
-						"audio-file": "tap",
+						"audio-file": "through space",
 						"loop": "looping",
-						"volume": "-25",
+						"volume": "-20",
 						"stereo-pan": "0",
 						"tag-optional": "\"bgm\""
 					}
@@ -428,7 +427,7 @@
 			"sid": 330892981416581
 		},
 		{
-			"functionName": "PlayTap",
+			"functionName": "playTap",
 			"functionDescription": "",
 			"functionCategory": "Audio",
 			"functionReturnType": "none",
@@ -452,6 +451,84 @@
 				}
 			],
 			"sid": 345791549979466
+		},
+		{
+			"functionName": "playGolfShot",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 242201186517346,
+					"parameters": {
+						"audio-file": "593483__scottrex05__driver-hitting-golf-ball",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 329667899034527
+		},
+		{
+			"functionName": "playWIn",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 159587891239891,
+					"parameters": {
+						"audio-file": "511484__mlaudio__success-bell",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 852074554874655
+		},
+		{
+			"functionName": "playLose",
+			"functionDescription": "",
+			"functionCategory": "Audio",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 383038499502718,
+					"parameters": {
+						"audio-file": "138490__justinvoke__powerdown-2",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"sfx\""
+					}
+				}
+			],
+			"sid": 902639349706264
 		}
 	],
 	"sid": 818326932602224

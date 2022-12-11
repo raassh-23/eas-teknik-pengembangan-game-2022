@@ -415,6 +415,14 @@
 							}
 						},
 						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 370344744041196,
+							"parameters": {
+								"variable": "isPlaying"
+							}
+						},
+						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
 							"sid": 523556366149441
@@ -452,6 +460,18 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 713773477328672,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"callFunction": "playLose",
+							"sid": 285866886040845
+						},
 						{
 							"id": "destroy",
 							"objectClass": "Cursor",
@@ -536,6 +556,18 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 140268843000110,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"callFunction": "playWIn",
+							"sid": 174045211541310
+						},
 						{
 							"id": "destroy",
 							"objectClass": "Cursor",
@@ -825,6 +857,14 @@
 										"variable": "currentStrokes",
 										"comparison": 0,
 										"value": "bronzeLimit"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 102251673577896,
+									"parameters": {
+										"variable": "isPlaying"
 									}
 								}
 							],
@@ -1143,6 +1183,10 @@
 								"variable": "currentStrokes",
 								"value": "1"
 							}
+						},
+						{
+							"callFunction": "playGolfShot",
+							"sid": 993163609544601
 						}
 					],
 					"sid": 219682162293117

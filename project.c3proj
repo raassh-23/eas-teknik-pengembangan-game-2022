@@ -226,6 +226,38 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "593483__scottrex05__driver-hitting-golf-ball.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 297076209277656,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "through space.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 509911386961543,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "511484__mlaudio__success-bell.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 603563836176214,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "138490__justinvoke__powerdown-2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 687440684893970,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -354,7 +386,7 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.0.6",
+		"version": "0.0.7",
 		"author": "RushHourDream",
 		"authorEmail": "",
 		"authorWebsite": "",

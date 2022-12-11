@@ -4573,8 +4573,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.SetGroupActive,
 		C3.Behaviors.Timer.Acts.StopTimer,
 		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.System.Acts.Wait,
+		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
@@ -4598,7 +4600,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.Touch.Exps.X,
 		C3.Plugins.Touch.Exps.Y,
-		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.TiledBg.Acts.SetTowardPosition,
 		C3.Plugins.TiledBg.Acts.SetWidth,
 		C3.Plugins.TiledBg.Exps.X,
@@ -4606,7 +4607,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnNthTouchEnd,
 		C3.Behaviors.Physics.Acts.SetVelocity,
 		C3.Behaviors.Physics.Acts.ApplyForceAtAngle,
-		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Cnds.Repeat,
@@ -4741,8 +4741,8 @@ self.C3_JsPropNameTable = [
 	{level: 0},
 	{locked: 0},
 	{best: 0},
-	{strokes: 0},
 	{levelIndex: 0},
+	{strokes: 0},
 	{uid: 0}
 ];
 }
@@ -5075,6 +5075,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 0.05,
 		() => "bgm",
+		() => -20,
 		() => "sfx"
 ];
 
