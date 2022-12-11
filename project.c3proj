@@ -131,6 +131,13 @@
 			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "zze9ry5qdj7",
@@ -195,7 +202,8 @@
 			{
 				"items": [
 					"Level1",
-					"Level2"
+					"Level2",
+					"Level3"
 				],
 				"subfolders": [],
 				"name": "Levels"

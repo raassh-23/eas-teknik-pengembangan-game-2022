@@ -267,6 +267,26 @@
 						"tile-x-spacing": 0,
 						"tile-y-spacing": 0
 					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.10196078431372549,
+									0.19215686274509805,
+									0.3803921568627451,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
 					"world": {
 						"x": 0,
 						"y": 0,

@@ -1,5 +1,5 @@
 {
-	"name": "Level2",
+	"name": "Level3",
 	"layers": [
 		{
 			"name": "GameBackground",
@@ -11,11 +11,11 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Level",
-						"initial-frame": 1,
-						"enable-collisions": true,
+						"initial-frame": 2,
+						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 6,
+					"uid": 66,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -36,7 +36,7 @@
 					}
 				}
 			],
-			"sid": 554447760973982,
+			"sid": 527613255344459,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -78,7 +78,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 37,
+					"uid": 67,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -102,8 +102,8 @@
 						}
 					},
 					"world": {
-						"x": 104,
-						"y": 608,
+						"x": 105,
+						"y": 557,
 						"width": 25,
 						"height": 25,
 						"originX": 0.5,
@@ -123,16 +123,16 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 1,
+						"initial-frame": 2,
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 38,
+					"uid": 68,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1136,
-						"y": 200,
+						"x": 1132,
+						"y": 521,
 						"width": 20,
 						"height": 47,
 						"originX": 0.5,
@@ -166,12 +166,12 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 39,
+					"uid": 69,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1104,
-						"y": 288,
+						"x": 1103.561611611239,
+						"y": 607.821935102345,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -187,7 +187,7 @@
 					}
 				}
 			],
-			"sid": 413959596063770,
+			"sid": 709630653870535,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -234,7 +234,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 36,
+					"uid": 70,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -258,7 +258,7 @@
 							"height": 23,
 							"max-width": 556,
 							"max-height": 228,
-							"data": "23x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,8x0,1h,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,8x0,1,13x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,5x0,1h,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,8x0,14x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,6x0,16x2,205x0,2,7x2hd,15x2,205x0,23x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,3x0,1hd,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,108733x0"
+							"data": "23x2,205x0,2,0,1hd,5x2hd,6x2,5x0,4x2,205x0,2,2x0,10x2hd,1hv,5x0,4x2,205x0,2,2x0,1hd,8x2hd,1hv,6x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,8x0,1,9x2hd,4x2,205x0,2,3x2hd,1vd,4x0,10x2hd,4x2,205x0,2,4x2hv,3x0,1,14x2,205x0,2,4x2hv,3x0,15x2,205x0,2,3x2hv,1hv,3x0,15x2,205x0,2,2hv,1hv,4x0,1,15x2,205x0,2,10x0,1hd,7x2hd,4x2,205x0,2,11x0,1hd,7x2hd,3x2,205x0,2,227x0,2,227x0,2,2x2vd,1vd,224x0,2,6x2hd,3x2vd,2,1vd,216x0,2,5x2hd,5x2vd,2hv,216x0,2,5x2hd,5x2vd,2hv,216x0,2hv,5x2hd,4x2vd,2hv,1hv,216x0,2,4x2hv,1hv,222x0,2,227x0,2,15x0,1,6x2,205x0,2,15x0,7x2hd,205x0,2,15x0,1hd,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,16x0,6x2,205x0,2,18x0,4x2,205x0,2,15x0,1,6x2,205x0,2,5x0,1,16x2,205x0,2,5x0,14x2hv,3x2,205x0,2,5x0,14x2hv,3x2,205x0,2,7x2hd,15x2,205x0,23x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,4x2,205x0,2,18x0,1h,3x2,205x0,2,7x0,3x2h,1v,8x0,3x2,205x0,2,6x0,1d,4x2h,8x0,1h,2x2,205x0,2,5x0,1hd,5x2h,9x0,1h,2,205x0,2,6x0,1h,4x2h,10x0,2,205x0,2,7x0,1h,3x2h,10x0,2,205x0,2,21x0,2,205x0,2,20x0,1,2,205x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,17x0,1,4x2,205x0,2,17x0,5x2,205x0,2,14x0,1d,2x0,5x2,205x0,2,7x0,2h,1v,5x0,2hvd,2x0,5x2,205x0,2,7x0,2x2h,1v,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,4x2h,3x0,2x2hvd,2x0,5x2,205x0,2,6x0,1h,3x2h,3x0,2x2hvd,2x0,5x2,205x0,2,7x0,1h,2x2h,3x0,2x2hvd,3x0,1hd,2hvd,2x2,205x0,2,8x0,2h,3x0,1d,2hvd,1hvd,2x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,108733x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -278,9 +278,9 @@
 									1
 								],
 								"replace-color": [
-									0.30196078431372547,
-									0.07058823529411765,
-									0.054901960784313725,
+									0.0196078431372549,
+									0.3411764705882353,
+									0.3058823529411765,
 									1
 								],
 								"tolerance": 0.01
@@ -304,7 +304,7 @@
 					}
 				}
 			],
-			"sid": 161066863443917,
+			"sid": 730054586865601,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -336,49 +336,8 @@
 			"name": "StaticUi",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "You can even hit the golf ball in the air",
-						"enable-bbcode": true,
-						"character-width": 53,
-						"character-height": 60,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
-						"scale": 0.5,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 40,
-					"instanceVariables": {
-						"id": ""
-					},
-					"behaviors": {},
-					"world": {
-						"x": 440,
-						"y": 272,
-						"width": 408,
-						"height": 224,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
-			"sid": 311466003177303,
+			"instances": [],
+			"sid": 242668257753550,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -420,7 +379,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 41,
+					"uid": 72,
 					"instanceVariables": {
 						"OriginalWidth": 0,
 						"OriginalHeight": 0,
@@ -447,7 +406,7 @@
 					}
 				}
 			],
-			"sid": 630968505492683,
+			"sid": 703215178756294,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -480,7 +439,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 780706188699604,
+			"sid": 268087031336638,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -513,7 +472,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 843675141957492,
+			"sid": 383783651892209,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -542,7 +501,7 @@
 			"global": false
 		}
 	],
-	"sid": 812664754709229,
+	"sid": 663983839850198,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1280,

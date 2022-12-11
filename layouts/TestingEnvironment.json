@@ -412,6 +412,26 @@
 						"tile-x-spacing": 0,
 						"tile-y-spacing": 0
 					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
 					"world": {
 						"x": 0,
 						"y": 0,
@@ -628,7 +648,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 40,
+						"x": 48,
 						"y": 112,
 						"width": 912,
 						"height": 64,
@@ -668,7 +688,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 40,
+						"x": 48,
 						"y": 40,
 						"width": 912,
 						"height": 64,
