@@ -1,5 +1,5 @@
 {
-	"name": "Level4",
+	"name": "Level5",
 	"layers": [
 		{
 			"name": "GameBackground",
@@ -11,11 +11,11 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Level",
-						"initial-frame": 3,
+						"initial-frame": 4,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 71,
+					"uid": 77,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -36,7 +36,7 @@
 					}
 				}
 			],
-			"sid": 198185827455112,
+			"sid": 749877356723248,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -78,7 +78,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 73,
+					"uid": 79,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -127,7 +127,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 74,
+					"uid": 80,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -166,7 +166,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 75,
+					"uid": 81,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -187,7 +187,7 @@
 					}
 				}
 			],
-			"sid": 902018872531182,
+			"sid": 483366869491925,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -234,7 +234,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 76,
+					"uid": 82,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -254,11 +254,11 @@
 					},
 					"ownData": {
 						"tilemapData": {
-							"width": 63,
+							"width": 69,
 							"height": 23,
-							"max-width": 587,
+							"max-width": 598,
 							"max-height": 228,
-							"data": "23x2,205x0,2,8x0,14x2,205x0,2,8x0,14x2,205x0,2,8x0,14x2,205x0,2,8x0,1hd,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,13x2,205x0,2,9x0,1hd,10x2hd,2x2,205x0,2,14x0,1hd,5x2hd,2x2,205x0,2,19x0,1hd,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,20x0,2x2,205x0,2,4x0,1,2hv,1vd,13x0,2x2,205x0,2,4x0,1hd,2x2hd,13x0,1hd,2,205x0,2,5x0,2x2hd,5x0,1,2hd,1vd,212x0,2,5x0,2x2hd,5x0,2x2hd,3x2hv,1vd,209x0,2,5x0,2x2hd,5x0,2x2hd,3x2hv,2vd,209x0,2,5x0,2x2hd,1vd,4x0,2x2hd,3x2hv,1hv,209x0,2,5x0,1hd,3x2hd,1vd,0,1,2x2hd,2hv,1hv,211x0,2,6x0,1hd,7x2hd,2hv,212x0,2,7x0,6x2hd,2x2hv,212x0,2,7x0,6x2hd,2hv,1hv,212x0,2,7x0,1hd,4x2hd,1hv,214x0,2,227x0,2,19x0,1,2x2,205x0,2,18x0,1,3x2,205x0,2,12x0,1,9x2,205x0,2,1vd,5x0,1,15x2,205x0,2,2x2hd,1vd,3x0,16x2,205x0,2,3x2hd,3x0,2x2hd,14x2,205x0,2,1hv,5x0,16x2,205x0,2,6x0,1hd,15x2,205x0,2,9x0,1hd,12x2,205x0,2,10x0,12x2,205x0,2,10x0,12x2,205x0,2,10x0,1hd,11x2,205x0,2,14x0,1hd,7x2hd,205x0,2,227x0,2,227x0,2,227x0,2,227x0,2,227x0,2,21x0,1,205x0,2,21x0,2,205x0,2,1vd,20x0,2,205x0,2,2hv,1vd,19x0,2,205x0,2,2x2hv,1vd,17x0,1,2,205x0,2,7x2hv,1vd,11x0,1,2x2,205x0,2,8x2hv,5x0,1,2,5x2hv,2x2,205x0,2,8x2hv,5x0,2hd,2,3x2hv,4x2,205x0,2,8x2hv,5x0,1hd,2x2,2x2hv,4x2,205x0,2,8x2hv,8x0,1hd,5x2,205x0,2,8x2hv,9x0,5x2,205x0,2,8x2hv,1vd,8x0,5x2,205x0,2,9x2hv,10x0,3x2,205x0,2,9x2hv,7x0,1,5x2,205x0,2,9x2hv,1vd,2x0,1,4x2hd,2x2,2hvd,2x2,205x0,2,18x2hv,4x2,205x0,2hv,12x0,2x2hvd,3x0,5x2,205x0,2,12x0,2x2hvd,3x0,5x2,205x0,2,13x0,2hvd,3x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,5x2,205x0,2,17x0,1h,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,115801x0"
+							"data": "23x2,205x0,2,5x2hd,1hv,4x0,1hd,11x2,205x0,2,5x2hd,6x0,11x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,1vd,5x0,2x2hd,9x2,205x0,2,6x2hd,1vd,4x0,2x2hd,9x2,205x0,2,7x2hd,3x0,1,2x2hd,9x2,205x0,2,7x2hd,2x0,1,3x2hd,9x2,205x0,2,6x2hd,1hv,2x0,11x2hd,2x2,205x0,2,3x2hv,1hv,5x0,1hd,10x2hd,2x2,205x0,2,1hv,18x0,1hd,2x2,205x0,2,20x0,1hd,2,205x0,2,227x0,2,227x0,2,227x0,2,3x0,1,2hv,1vd,7x0,1,1vd,212x0,2,3x0,2hd,2x2hv,1vd,6x0,2x2hv,212x0,2,3x0,1hd,3x2hv,5x0,1,2x2hv,212x0,2,4x0,3x2hv,1vd,3x0,1,3x2hv,1vd,211x0,2,3x0,1,4x2hv,3x0,5x2hv,211x0,2,3x0,5x2hv,3x0,1hd,4x2hv,211x0,2,3x0,5x2hv,4x0,4x2hv,211x0,2,3x0,1hd,3x2hv,1hv,4x0,4x2hv,211x0,2,4x0,1hd,2hv,1hv,5x0,1hd,2hv,2hd,1hv,211x0,2,13x0,1hd,1hv,212x0,2,227x0,2,227x0,2vd,10x0,1,2hd,1vd,6x0,1,2x2,205x0,4x2vd,1vd,4x0,1,4x2hd,2vd,1vd,4x0,3x2,205x0,2,13x2hd,2,2vd,4x0,3x2,205x0,2,13x2hd,2x2,4x0,3x2,205x0,2,2x2hd,5x2vd,8x2,4x0,3x2,205x0,2,2hd,5x2vd,2x2hd,7x2,3x0,1,3x2,205x0,2,6x2vd,9x2,3x0,2hd,3x2,205x0,2,9x2vd,5x2,1hv,3x0,2hd,3x2,205x0,2,9x2vd,1hv,8x0,2hd,3x2,205x0,2,5x2vd,1hv,12x0,2hd,3x2,205x0,2,2x2vd,1hv,15x0,1hd,3x2,205x0,2,2x2vd,17x0,3x2,205x0,2,2x2vd,17x0,1hd,2x2hd,205x0,2,2x2vd,1vd,224x0,2,2x2vd,2hd,1vd,223x0,2,2hv,3x2hd,223x0,2,4x2hd,223x0,2,4x2hd,5x0,1,2x2hd,1vd,214x0,2,4x2hd,4x0,1,4x2hd,214x0,2,3x2hd,1hv,4x0,5x2hd,1vd,213x0,2,2x2hd,1hv,5x0,6x2hd,213x0,2,2hd,1hv,6x0,6x2hd,213x0,2,2hd,6x0,1,6x2hd,1vd,5x0,1,2,205x0,2,2hd,6x0,8x2hd,1vd,3x0,1,2x2,205x0,2,2hd,1vd,4x0,1,8x2hd,5x2hv,2x2,205x0,2,2x2hd,1vd,3x0,8x2hd,2,3x2hv,4x2,205x0,2,3x2hd,1vd,2x0,8x2hd,2x2,2x2hv,4x2,205x0,2,4x2hd,2x0,1hd,2x2hd,2x2hv,1hv,4x0,1hd,5x2,205x0,2,4x2hd,3x0,3x2hd,1hv,6x0,5x2,205x0,2,4x2hd,3x0,3x2hd,7x0,5x2,205x0,2,3x2hd,1hv,3x0,3x2hd,9x0,3x2,205x0,2,3x2hd,4x0,3x2hd,1vd,5x0,1,5x2,205x0,2,3x2hd,4x0,4x2hd,3x0,1,2x2hd,2x2,2hvd,2x2,205x0,2,3x2hd,4x0,1hd,2x2hd,1hv,3x0,1hd,3x2hv,4x2,205x0,2hv,2x2hd,1hv,5x0,1hd,1hv,5x0,1hd,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,1vd,13x0,2hd,5x2,205x0,6x2hd,1vd,6x0,1,4x2hd,5x2,205x0,19x2hd,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,118309x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -278,9 +278,9 @@
 									1
 								],
 								"replace-color": [
-									0.6039215686274509,
-									0.13725490196078433,
-									0.23137254901960785,
+									0.16470588235294117,
+									0.01568627450980392,
+									0.2823529411764706,
 									1
 								],
 								"tolerance": 0.01
@@ -290,7 +290,7 @@
 					"world": {
 						"x": 0,
 						"y": 0,
-						"width": 2016,
+						"width": 2211,
 						"height": 752,
 						"originX": 0,
 						"originY": 0,
@@ -304,7 +304,7 @@
 					}
 				}
 			],
-			"sid": 996876725314857,
+			"sid": 345867477778436,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -337,7 +337,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 129564281896109,
+			"sid": 724499299618657,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -379,7 +379,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 78,
+					"uid": 83,
 					"instanceVariables": {
 						"OriginalWidth": 0,
 						"OriginalHeight": 0,
@@ -406,7 +406,7 @@
 					}
 				}
 			],
-			"sid": 472519938195248,
+			"sid": 699719697583699,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -439,7 +439,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 943359240027555,
+			"sid": 732823357326389,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -472,7 +472,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 901558431999921,
+			"sid": 285337523758950,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -501,10 +501,10 @@
 			"global": false
 		}
 	],
-	"sid": 307082193692441,
+	"sid": 822121861791543,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 2016,
+	"width": 2211,
 	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
