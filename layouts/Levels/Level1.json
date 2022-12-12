@@ -499,7 +499,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 91,
+					"uid": 99,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -592,7 +592,7 @@
 								}
 							},
 							{
-								"uid": 93,
+								"uid": 101,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -693,8 +693,8 @@
 						}
 					},
 					"world": {
-						"x": 387.99999029607625,
-						"y": -416,
+						"x": 388,
+						"y": -400,
 						"width": 504,
 						"height": 64,
 						"originX": 0,
@@ -753,8 +753,8 @@
 						}
 					},
 					"world": {
-						"x": 520.0000124906785,
-						"y": -256,
+						"x": 520,
+						"y": -240,
 						"width": 210,
 						"height": 55,
 						"originX": 0.5,
@@ -813,8 +813,8 @@
 						}
 					},
 					"world": {
-						"x": 760.0000124906785,
-						"y": -256,
+						"x": 760,
+						"y": -240,
 						"width": 210,
 						"height": 55,
 						"originX": 0.5,
@@ -838,12 +838,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 93,
+					"uid": 101,
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 44,
-						"uid": 93,
+						"uid": 101,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -867,8 +867,8 @@
 						}
 					},
 					"world": {
-						"x": 640.0000235879795,
-						"y": -504.5,
+						"x": 639.5,
+						"y": -488,
 						"width": 351,
 						"height": 54,
 						"originX": 0.5,
@@ -936,7 +936,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 92,
+					"uid": 104,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -1055,7 +1055,7 @@
 								}
 							},
 							{
-								"uid": 95,
+								"uid": 100,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1068,7 +1068,7 @@
 								}
 							},
 							{
-								"uid": 94,
+								"uid": 102,
 								"flags": {
 									"x": true,
 									"y": true,
@@ -1439,12 +1439,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 94,
+					"uid": 102,
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 48,
-						"uid": 94,
+						"uid": 102,
 						"flags": {
 							"x": true,
 							"y": true,
@@ -1493,12 +1493,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 95,
+					"uid": 100,
 					"instanceVariables": {},
 					"behaviors": {},
 					"sceneGraphData": {
 						"parent-uid": 48,
-						"uid": 95,
+						"uid": 100,
 						"flags": {
 							"x": true,
 							"y": true,

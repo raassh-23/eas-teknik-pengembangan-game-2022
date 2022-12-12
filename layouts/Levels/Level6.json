@@ -307,7 +307,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 96,
+					"uid": 103,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {

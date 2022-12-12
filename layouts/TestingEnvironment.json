@@ -615,10 +615,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 72,
-						"y": 656,
-						"width": 23.808,
-						"height": 23.808,
+						"x": 64,
+						"y": 648,
+						"width": 93,
+						"height": 93,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
