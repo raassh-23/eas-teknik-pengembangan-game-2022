@@ -38,7 +38,12 @@
 			"sid": 248526537259565
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "replacecolor",
+			"name": "ReplaceColor"
+		}
+	],
 	"animations": {
 		"items": [
 			{
@@ -51,7 +56,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 126433,
+						"imageSpriteId": 1015569,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
