@@ -120,10 +120,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 904070762836088,
+							"sid": 489156872268435,
 							"parameters": {
 								"variable": "temp",
-								"value": "replace(temp, \"{{status}}\", locked ? \"Locked\" : Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX))"
+								"value": "replace(temp, \"{{status}}\", locked ? \"Locked\" : str(Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX)))"
 							}
 						},
 						{
@@ -359,7 +359,7 @@
 			"functionName": "getLevelStatus",
 			"functionDescription": "",
 			"functionCategory": "",
-			"functionReturnType": "string",
+			"functionReturnType": "number",
 			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
@@ -368,14 +368,14 @@
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
-					"sid": 592555417107432
+					"sid": 864537281027274
 				},
 				{
 					"name": "levelIndex",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
-					"sid": 586042047382536
+					"sid": 808141883421007
 				}
 			],
 			"eventType": "function-block",
@@ -384,13 +384,13 @@
 				{
 					"id": "set-function-return-value",
 					"objectClass": "Functions",
-					"sid": 302368297538377,
+					"sid": 344646167355636,
 					"parameters": {
-						"value": "\"-\""
+						"value": "0"
 					}
 				}
 			],
-			"sid": 194731368240500,
+			"sid": 570807917508502,
 			"children": [
 				{
 					"eventType": "block",
@@ -398,7 +398,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 464461468924453,
+							"sid": 293246824097608,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 4,
@@ -408,7 +408,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 957876854300142,
+							"sid": 126227909244512,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 3,
@@ -420,13 +420,13 @@
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
-							"sid": 365233066378838,
+							"sid": 990011950675649,
 							"parameters": {
-								"value": "\"Gold\""
+								"value": "3"
 							}
 						}
 					],
-					"sid": 563526845051043
+					"sid": 857462649667457
 				},
 				{
 					"eventType": "block",
@@ -434,7 +434,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 395321828232936,
+							"sid": 604221908691590,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 4,
@@ -444,7 +444,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 136500616416573,
+							"sid": 626737126814989,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 3,
@@ -456,13 +456,13 @@
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
-							"sid": 303721523921125,
+							"sid": 161334260845193,
 							"parameters": {
-								"value": "\"Silver\""
+								"value": "2"
 							}
 						}
 					],
-					"sid": 148649575081139
+					"sid": 260261723048219
 				},
 				{
 					"eventType": "block",
@@ -470,7 +470,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 986657460514791,
+							"sid": 250633494385956,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 4,
@@ -480,7 +480,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 224064057555127,
+							"sid": 952124718326924,
 							"parameters": {
 								"variable": "strokes",
 								"comparison": 3,
@@ -492,13 +492,13 @@
 						{
 							"id": "set-function-return-value",
 							"objectClass": "Functions",
-							"sid": 259770908585747,
+							"sid": 959972392692006,
 							"parameters": {
-								"value": "\"Bronze\""
+								"value": "1"
 							}
 						}
 					],
-					"sid": 494481064031852
+					"sid": 176552063038037
 				}
 			]
 		},

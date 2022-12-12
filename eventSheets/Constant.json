@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "FORCE_MULTIPLIER",
 			"type": "number",
-			"initialValue": "7.5",
+			"initialValue": "15",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,

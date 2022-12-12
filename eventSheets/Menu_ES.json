@@ -142,6 +142,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 746227601334061,
+							"parameters": {
+								"layer": "\"Credits\"",
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "tween-two-properties",
 							"objectClass": "Panel",
 							"sid": 244647532732249,
@@ -204,6 +213,20 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 649986301891680
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 444720334858911,
+							"parameters": {
+								"layer": "\"Credits\"",
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 189303554373194
@@ -219,7 +242,17 @@
 					"sid": 351318623477568
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 184771362609784,
+					"parameters": {
+						"layer": "\"Credits\"",
+						"visibility": "invisible"
+					}
+				}
+			],
 			"sid": 476976968878253,
 			"children": [
 				{

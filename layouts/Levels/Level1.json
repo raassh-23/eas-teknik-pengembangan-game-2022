@@ -432,8 +432,8 @@
 					"world": {
 						"x": 72,
 						"y": 656,
-						"width": 64,
-						"height": 64,
+						"width": 23.808,
+						"height": 23.808,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -481,6 +481,45 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "BlackScreen",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 91,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -20,
+						"y": -24,
+						"width": 1344,
+						"height": 792,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							0.75
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Panel",
 					"properties": {
 						"left-margin": 150,
@@ -495,8 +534,8 @@
 					},
 					"uid": 44,
 					"instanceVariables": {
-						"targetX": 372,
-						"targetY": 68,
+						"targetX": 169,
+						"targetY": 64,
 						"seconds": 0.5,
 						"id": "lose",
 						"originX": 0,
@@ -551,6 +590,19 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 93,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -576,10 +628,10 @@
 						}
 					},
 					"world": {
-						"x": 376,
-						"y": -592,
-						"width": 536,
-						"height": 584,
+						"x": 169.00000056974943,
+						"y": -656,
+						"width": 942,
+						"height": 592,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -595,7 +647,7 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "You Lose",
+						"text": "Out of strokes",
 						"enable-bbcode": true,
 						"character-width": 53,
 						"character-height": 60,
@@ -612,7 +664,7 @@
 					},
 					"uid": 45,
 					"instanceVariables": {
-						"id": ""
+						"id": "lose_reason"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -641,10 +693,10 @@
 						}
 					},
 					"world": {
-						"x": 524,
-						"y": -400,
-						"width": 232,
-						"height": 112,
+						"x": 387.99999029607625,
+						"y": -416,
+						"width": 504,
+						"height": 64,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -701,10 +753,10 @@
 						}
 					},
 					"world": {
-						"x": 588,
-						"y": -200,
-						"width": 64,
-						"height": 64,
+						"x": 520.0000124906785,
+						"y": -256,
+						"width": 210,
+						"height": 55,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -722,7 +774,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "game",
-						"initial-frame": 3,
+						"initial-frame": 5,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -761,10 +813,64 @@
 						}
 					},
 					"world": {
-						"x": 700,
-						"y": -200,
-						"width": 64,
-						"height": 64,
+						"x": 760.0000124906785,
+						"y": -256,
+						"width": 210,
+						"height": 55,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Decoration",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 3,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 93,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 44,
+						"uid": 93,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 640.0000235879795,
+						"y": -504.5,
+						"width": 351,
+						"height": 54,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -812,6 +918,45 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "BlackScreen",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 92,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -24,
+						"y": -32,
+						"width": 1360,
+						"height": 792,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							0.75
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Panel",
 					"properties": {
 						"left-margin": 150,
@@ -826,8 +971,8 @@
 					},
 					"uid": 48,
 					"instanceVariables": {
-						"targetX": 372,
-						"targetY": 68,
+						"targetX": 169,
+						"targetY": 64,
 						"seconds": 0.5,
 						"id": "win",
 						"originX": 0,
@@ -844,19 +989,6 @@
 						"parent-uid": null,
 						"uid": 48,
 						"children": [
-							{
-								"uid": 49,
-								"flags": {
-									"x": true,
-									"y": true,
-									"z": true,
-									"w": true,
-									"h": true,
-									"a": true,
-									"d": true,
-									"sm": "normal"
-								}
-							},
 							{
 								"uid": 50,
 								"flags": {
@@ -908,6 +1040,45 @@
 									"d": true,
 									"sm": "normal"
 								}
+							},
+							{
+								"uid": 49,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 95,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							},
+							{
+								"uid": 94,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
 							}
 						],
 						"flags": {
@@ -933,75 +1104,10 @@
 						}
 					},
 					"world": {
-						"x": 376,
-						"y": -592,
-						"width": 536,
-						"height": 584,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UIText",
-					"properties": {
-						"text": "You Win",
-						"enable-bbcode": true,
-						"character-width": 53,
-						"character-height": 60,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
-						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
-						"scale": 0.75,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 49,
-					"instanceVariables": {
-						"id": ""
-					},
-					"behaviors": {},
-					"sceneGraphData": {
-						"parent-uid": 48,
-						"uid": 49,
-						"flags": {
-							"x": true,
-							"y": true,
-							"z": true,
-							"w": true,
-							"h": true,
-							"a": true,
-							"d": true,
-							"sm": "normal"
-						},
-						"preview": {
-							"transformX": 0,
-							"transformY": 0,
-							"transformZElevation": 0,
-							"transformW": 0,
-							"transformH": 0,
-							"transformA": 0,
-							"transformSX": 0,
-							"transformSY": 0,
-							"previewSceneGraph": false
-						}
-					},
-					"world": {
-						"x": 520,
-						"y": -448,
-						"width": 232,
-						"height": 112,
+						"x": 169.00000056974943,
+						"y": -664,
+						"width": 942,
+						"height": 592,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1058,10 +1164,10 @@
 						}
 					},
 					"world": {
-						"x": 531.9999972163741,
-						"y": -200,
-						"width": 64,
-						"height": 64,
+						"x": 520.0000124906785,
+						"y": -176,
+						"width": 210,
+						"height": 55,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1118,10 +1224,10 @@
 						}
 					},
 					"world": {
-						"x": 643.9999972163741,
-						"y": -200,
-						"width": 64,
-						"height": 64,
+						"x": 760.0000124906785,
+						"y": -176,
+						"width": 210,
+						"height": 55,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1178,10 +1284,10 @@
 						}
 					},
 					"world": {
-						"x": 747.9999972163741,
-						"y": -200,
-						"width": 64,
-						"height": 64,
+						"x": 639.999998619052,
+						"y": -248,
+						"width": 210,
+						"height": 55,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1197,13 +1303,13 @@
 				{
 					"type": "UIText",
 					"properties": {
-						"text": "status",
+						"text": "time",
 						"enable-bbcode": true,
 						"character-width": 53,
 						"character-height": 60,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
 						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
-						"scale": 0.75,
+						"scale": 0.5,
 						"character-spacing": 0,
 						"line-height": 0,
 						"horizontal-alignment": "center",
@@ -1214,7 +1320,7 @@
 					},
 					"uid": 53,
 					"instanceVariables": {
-						"id": "status"
+						"id": "total_time"
 					},
 					"behaviors": {},
 					"sceneGraphData": {
@@ -1243,12 +1349,185 @@
 						}
 					},
 					"world": {
-						"x": 520,
-						"y": -336,
-						"width": 232,
-						"height": 56,
+						"x": 451.999993562399,
+						"y": -384,
+						"width": 376,
+						"height": 40,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText",
+					"properties": {
+						"text": "strokes",
+						"enable-bbcode": true,
+						"character-width": 53,
+						"character-height": 60,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%^",
+						"spacing-data": "[[19,\" \"],[6,\"|\"],[11,\"'\"],[12,\".,;:\"],[13,\"I\"],[15,\"il!\"],[16,\"j[]\"],[17,\"J\"],[18,\"`\"],[20,\"*\"],[21,\"1\\\"°\"],[22,\"?()\"],[23,\"r-=\"],[24,\"ft^\"],[25,\"x<\"],[26,\"vy3>\"],[27,\"cz2+\"],[28,\"es69\\\\/\"],[29,\"EFbgopqu\"],[30,\"Lhkn058\"],[31,\"UZad7\"],[32,\"4$\"],[33,\"SV\"],[34,\"BDKNTY\"],[35,\"CHP£\"],[36,\"AR#\"],[37,\"GX\"],[38,\"m_~€\"],[39,\"w\"],[40,\"OQ\"],[43,\"&\"],[44,\"M\"],[46,\"%\"],[50,\"W\"],[51,\"@\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"id": "total_strokes"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 48,
+						"uid": 49,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 451.999993562399,
+						"y": -336,
+						"width": 376,
+						"height": 40,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Decoration",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 4,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 48,
+						"uid": 94,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 640.0000097163531,
+						"y": -552,
+						"width": 304,
+						"height": 55,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BigStar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 95,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 48,
+						"uid": 95,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 641.5000013933773,
+						"y": -448,
+						"width": 381,
+						"height": 117,
+						"originX": 0.5039370078740157,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

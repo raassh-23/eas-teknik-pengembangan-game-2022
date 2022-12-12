@@ -296,9 +296,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "UIText",
-							"sid": 276092968359509,
+							"sid": 184915813222236,
 							"parameters": {
-								"text": "\"Time left: \" & Functions.GetTimeFormatted(Timer.Timer.Duration(GAME_TIMER_TAG) - Timer.Timer.CurrentTime(GAME_TIMER_TAG))"
+								"text": "Functions.GetTimeFormatted(Timer.Timer.Duration(GAME_TIMER_TAG) - Timer.Timer.CurrentTime(GAME_TIMER_TAG))"
 							}
 						}
 					],
@@ -417,7 +417,35 @@
 							"sid": 889399266168392
 						}
 					],
-					"sid": 750990633507179
+					"sid": 750990633507179,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 408140027545905,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"lose_reason\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 880454143972814,
+									"parameters": {
+										"text": "\"Out of time\""
+									}
+								}
+							],
+							"sid": 383828592547295
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -689,6 +717,14 @@
 								"ping-pong": "no",
 								"repeat-count": "1"
 							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "BigStar",
+							"sid": 277802624287976,
+							"parameters": {
+								"frame-number": "Functions.getLevelStatus(currentStrokes, currentLevelIndex)"
+							}
 						}
 					],
 					"sid": 367607625314262,
@@ -735,11 +771,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "UIText",
-									"sid": 733875391433793,
+									"sid": 556542581275902,
 									"parameters": {
 										"instance-variable": "id",
 										"comparison": 0,
-										"value": "\"status\""
+										"value": "\"total_time\""
 									}
 								}
 							],
@@ -747,13 +783,39 @@
 								{
 									"id": "set-text",
 									"objectClass": "UIText",
-									"sid": 429158653478691,
+									"sid": 103700091052335,
 									"parameters": {
-										"text": "Functions.getLevelStatus(currentStrokes, currentLevelIndex)"
+										"text": "\"Finished in \" & Functions.getTimeFormatted(Timer.Timer.CurrentTime(GAME_TIMER_TAG))"
 									}
 								}
 							],
 							"sid": 868752609736968
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIText",
+									"sid": 619067887880242,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"total_strokes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "UIText",
+									"sid": 324196004459376,
+									"parameters": {
+										"text": "\"with \" & currentStrokes & \" strokes\""
+									}
+								}
+							],
+							"sid": 179760113091884
 						},
 						{
 							"eventType": "block",
@@ -946,7 +1008,35 @@
 									"sid": 873919466919062
 								}
 							],
-							"sid": 190081034001427
+							"sid": 190081034001427,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "UIText",
+											"sid": 523812338746612,
+											"parameters": {
+												"instance-variable": "id",
+												"comparison": 0,
+												"value": "\"lose_reason\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "UIText",
+											"sid": 820907442097046,
+											"parameters": {
+												"text": "\"Out of strokes\""
+											}
+										}
+									],
+									"sid": 226898058701580
+								}
+							]
 						}
 					]
 				},
@@ -1027,13 +1117,17 @@
 					],
 					"actions": [
 						{
-							"id": "set-group-active",
+							"id": "set-time-scale",
 							"objectClass": "System",
-							"sid": 415527353202931,
+							"sid": 743974339299098,
 							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "deactivated"
+								"time-scale": "1"
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 785327778109388
 						},
 						{
 							"id": "set-enabled",
@@ -1042,6 +1136,15 @@
 							"behaviorType": "ScrollTo",
 							"parameters": {
 								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 742144799288352,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
 							}
 						},
 						{
@@ -1277,6 +1380,15 @@
 								"force": "distance(Cursor.X, Cursor.Y, Touch.X, Touch.Y) * FORCE_MULTIPLIER",
 								"angle": "angle(Cursor.X, Cursor.Y, Touch.X, Touch.Y) + 180",
 								"image-point": "0"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 873542893935025,
+							"parameters": {
+								"type": "log",
+								"message": "distance(Cursor.X, Cursor.Y, Touch.X, Touch.Y) * FORCE_MULTIPLIER"
 							}
 						},
 						{

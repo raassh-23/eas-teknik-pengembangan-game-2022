@@ -165,7 +165,9 @@
 			"Audio",
 			"Browser",
 			"Decoration",
-			"Sprite"
+			"Sprite",
+			"BlackScreen",
+			"BigStar"
 		],
 		"subfolders": []
 	},

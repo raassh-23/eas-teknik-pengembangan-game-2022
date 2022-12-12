@@ -617,8 +617,8 @@
 					"world": {
 						"x": 72,
 						"y": 656,
-						"width": 64,
-						"height": 64,
+						"width": 23.808,
+						"height": 23.808,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -689,8 +689,8 @@
 					"behaviors": {},
 					"world": {
 						"x": 48,
-						"y": 112,
-						"width": 912,
+						"y": 40,
+						"width": 400,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,
@@ -716,7 +716,7 @@
 						"scale": 0.75,
 						"character-spacing": 0,
 						"line-height": 0,
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -728,9 +728,9 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 48,
+						"x": 456,
 						"y": 40,
-						"width": 912,
+						"width": 368,
 						"height": 64,
 						"originX": 0,
 						"originY": 0,
@@ -740,7 +740,7 @@
 							1,
 							1
 						],
-						"angle": 0,
+						"angle": 0.006545190982837221,
 						"zElevation": 0
 					}
 				}
@@ -828,8 +828,8 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
