@@ -1,0 +1,278 @@
+{
+	"name": "HowToPlay_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Common_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 406139565726220
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 573947503918215,
+					"parameters": {
+						"object": "Button"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 611528679236992,
+					"parameters": {
+						"instance-variable": "Clickable"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Button",
+					"sid": 948450592411218,
+					"parameters": {
+						"animation": "\"menu\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 623208958981944,
+					"parameters": {
+						"tag": "BUTTON_PRESSED_SIGNAL&Button.UID"
+					}
+				}
+			],
+			"sid": 530254997767620,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 928054219841178,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"next\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 397718917620477,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Button",
+									"sid": 694004481093617,
+									"parameters": {
+										"comparison": 0,
+										"number": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 763291524700259,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 849840922251044
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 534794435781392
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Tutorial",
+									"sid": 161071129407279,
+									"parameters": {
+										"frame-number": "Self.AnimationFrame + 1"
+									}
+								}
+							],
+							"sid": 859126557666833
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 156696543942360,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"back\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Tutorial",
+							"sid": 964566414673760,
+							"parameters": {
+								"frame-number": "Self.AnimationFrame - 1"
+							}
+						}
+					],
+					"sid": 864277963766743
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 694337387683107,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"next\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 278023854020774,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Tutorial",
+							"sid": 358387378922290,
+							"parameters": {
+								"comparison": 0,
+								"number": "Self.AnimationFrameCount - 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button",
+							"sid": 898648005267813,
+							"parameters": {
+								"frame-number": "8"
+							}
+						}
+					],
+					"sid": 990492882722930
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 319178355329512
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Button",
+							"sid": 262445050646785,
+							"parameters": {
+								"frame-number": "7"
+							}
+						}
+					],
+					"sid": 148546508108507
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 141464306936127,
+					"parameters": {
+						"instance-variable": "id",
+						"comparison": 0,
+						"value": "\"back\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 166193253517098,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Tutorial",
+							"sid": 363122179967326,
+							"parameters": {
+								"comparison": 4,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Button",
+							"sid": 404351888204660,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 996278121843164
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 354291871459902
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Button",
+							"sid": 931552159382012,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 274001176485327
+				}
+			]
+		}
+	],
+	"sid": 457244003537336
+}

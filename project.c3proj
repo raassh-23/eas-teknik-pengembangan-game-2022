@@ -167,7 +167,8 @@
 			"Decoration",
 			"Sprite",
 			"BlackScreen",
-			"BigStar"
+			"BigStar",
+			"Tutorial"
 		],
 		"subfolders": []
 	},
@@ -199,7 +200,8 @@
 			"TestingEnvironment",
 			"ObjectRepository",
 			"Menu",
-			"LevelSelect"
+			"LevelSelect",
+			"HowToPlay"
 		],
 		"subfolders": [
 			{
@@ -220,10 +222,11 @@
 	"eventSheets": {
 		"items": [
 			"Game_ES",
-			"Constant",
+			"Constant_ES",
 			"Menu_ES",
 			"LevelSelect_ES",
-			"Common_ES"
+			"Common_ES",
+			"HowToPlay_ES"
 		],
 		"subfolders": []
 	},

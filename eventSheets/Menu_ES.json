@@ -122,6 +122,32 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Button",
+							"sid": 514394239358254,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "\"how_to_play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 757798594658220,
+							"parameters": {
+								"layout": "HowToPlay"
+							}
+						}
+					],
+					"sid": 398099220433532
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
 							"sid": 557840776446035,
 							"parameters": {
 								"instance-variable": "id",
