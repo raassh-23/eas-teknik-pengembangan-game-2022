@@ -15,7 +15,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 84,
+					"uid": 91,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -36,7 +36,7 @@
 					}
 				}
 			],
-			"sid": 744164219348908,
+			"sid": 780479144634731,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -78,7 +78,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 85,
+					"uid": 92,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -102,8 +102,8 @@
 						}
 					},
 					"world": {
-						"x": 245,
-						"y": 543,
+						"x": 364,
+						"y": 554,
 						"width": 25,
 						"height": 25,
 						"originX": 0.5,
@@ -127,7 +127,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 86,
+					"uid": 93,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -166,7 +166,7 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 87,
+					"uid": 94,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -195,7 +195,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 90,
+					"uid": 95,
 					"instanceVariables": {
 						"targetX": 2096,
 						"targetY": 664,
@@ -245,8 +245,8 @@
 					"world": {
 						"x": 1448,
 						"y": 664,
-						"width": 136,
-						"height": 32,
+						"width": 128,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -260,7 +260,7 @@
 					}
 				}
 			],
-			"sid": 284204432640790,
+			"sid": 864844272388090,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -307,7 +307,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 88,
+					"uid": 96,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -377,7 +377,7 @@
 					}
 				}
 			],
-			"sid": 760448225616600,
+			"sid": 170810360021234,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -410,7 +410,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 264759202557001,
+			"sid": 948028546994241,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -452,7 +452,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 89,
+					"uid": 97,
 					"instanceVariables": {
 						"OriginalWidth": 0,
 						"OriginalHeight": 0,
@@ -479,7 +479,7 @@
 					}
 				}
 			],
-			"sid": 858599186303612,
+			"sid": 299704523319508,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -512,7 +512,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 949432475890637,
+			"sid": 551208251411119,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -545,7 +545,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 268291564954329,
+			"sid": 533280496877454,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -574,7 +574,7 @@
 			"global": false
 		}
 	],
-	"sid": 551753175269453,
+	"sid": 974272380538924,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 2528,
