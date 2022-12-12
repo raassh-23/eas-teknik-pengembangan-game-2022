@@ -954,6 +954,15 @@
 										"y": "4",
 										"value": "currentStrokes"
 									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 927834619548304,
+									"parameters": {
+										"key": "LEVELS_STORAGE_TAG",
+										"value": "levels.AsJSON"
+									}
 								}
 							],
 							"sid": 167853362509083,
@@ -981,6 +990,15 @@
 									"parameters": {
 										"variable": "currentOpenLevel",
 										"value": "1"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 122571742490859,
+									"parameters": {
+										"key": "OPEN_LEVEL_STORAGE_TAG",
+										"value": "currentOpenLevel"
 									}
 								}
 							],

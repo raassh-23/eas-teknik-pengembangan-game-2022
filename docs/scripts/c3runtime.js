@@ -4286,6 +4286,24 @@ ScreenWidth(){return this._screenWidth},ScreenHeight(){return this._screenHeight
 }
 
 {
+'use strict';{const C3=self.C3;C3.Plugins.LocalStorage=class LocalStoragePlugin extends C3.SDKPluginBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Plugins.LocalStorage.Type=class LocalStorageType extends C3.SDKTypeBase{constructor(objectClass){super(objectClass)}Release(){super.Release()}OnCreate(){}}}
+{const C3=self.C3;C3.Plugins.LocalStorage.Instance=class LocalStorageInstance extends C3.SDKInstanceBase{constructor(inst,properties){super(inst);this._currentKey="";this._lastValue="";this._keyNamesList=[];this._errorMessage="";this._pendingGets=0;this._pendingSets=0;this._storage=this._runtime._GetProjectStorage();this._debugCache=new Map;this._isLoadingDebugCache=false}Release(){super.Release()}async _TriggerStorageError(err){this._errorMessage=this._GetErrorString(err);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnError)}_GetErrorString(err){if(!err)return"unknown error";
+else if(typeof err==="string")return err;else if(typeof err.message==="string")return err.message;else if(typeof err.name==="string")return err.name;else if(typeof err.data==="string")return err.data;else return"unknown error"}GetDebuggerProperties(){if(!this._isLoadingDebugCache)this._DebugCacheStorage();return[{title:"plugins.localstorage.name",properties:[...this._debugCache.entries()].map(entry=>({name:"$"+entry[0],value:entry[1],onedit:v=>this._storage.setItem(entry[0],v)}))}]}async _DebugCacheStorage(){this._isLoadingDebugCache=
+true;try{const keyList=await this._storage.keys();keyList.sort((a,b)=>{const la=a.toLowerCase();const lb=b.toLowerCase();if(la<lb)return-1;else if(lb<la)return 1;else return 0});const values=await Promise.all(keyList.map(key=>this._storage.getItem(key)));this._debugCache.clear();for(let i=0,len=keyList.length;i<len;++i)this._debugCache.set(keyList[i],values[i])}catch(err){console.warn("[C3 debugger] Error displaying local storage: ",err)}finally{this._isLoadingDebugCache=false}}}}
+{const C3=self.C3;C3.Plugins.LocalStorage.Cnds={OnItemSet(key){return this._currentKey===key},OnAnyItemSet(){return true},OnItemGet(key){return this._currentKey===key},OnAnyItemGet(){return true},OnItemRemoved(key){return this._currentKey===key},OnAnyItemRemoved(){return true},OnCleared(){return true},OnAllKeyNamesLoaded(){return true},OnError(){return true},OnItemExists(key){return this._currentKey===key},OnItemMissing(key){return this._currentKey===key},CompareKey(cmp,key){return C3.compare(this._currentKey,
+cmp,key)},CompareValue(cmp,v){return C3.compare(this._lastValue,cmp,v)},IsProcessingSets(){return this._pendingSets>0},IsProcessingGets(){return this._pendingGets>0},OnAllSetsComplete(){return true},OnAllGetsComplete(){return true}}}
+{const C3=self.C3;function IsExpressionType(x){return typeof x==="string"||typeof x==="number"}C3.Plugins.LocalStorage.Acts={async SetItem(key,value){this._pendingSets++;try{const valueSet=await this._storage.setItem(key,value);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=valueSet;await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemSet);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemSet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingSets--;
+if(this._pendingSets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllSetsComplete)}},async SetBinaryItem(key,objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const sdkInst=inst.GetSdkInstance();if(!sdkInst)return;const buffer=sdkInst.GetArrayBufferReadOnly();this._pendingSets++;try{await this._storage.setItem(key,buffer);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue="";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemSet);
+await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemSet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingSets--;if(this._pendingSets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllSetsComplete)}},async GetItem(key){this._pendingGets++;try{const value=await this._storage.getItem(key);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=IsExpressionType(value)?value:"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemGet);
+await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemGet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingGets--;if(this._pendingGets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllGetsComplete)}},async GetBinaryItem(key,objectClass){if(!objectClass)return;const inst=objectClass.GetFirstPicked(this._inst);if(!inst)return;const sdkInst=inst.GetSdkInstance();this._pendingGets++;try{let value=await this._storage.getItem(key);value=value instanceof ArrayBuffer?
+value:new ArrayBuffer(0);await this.ScheduleTriggers(async()=>{this._lastValue="";this._currentKey=key;sdkInst.SetArrayBufferTransfer(value);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemGet);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemGet)})}catch(err){await this._TriggerStorageError(err)}finally{this._pendingGets--;if(this._pendingGets===0)await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllGetsComplete)}},async CheckItemExists(key){try{const value=await this._storage.getItem(key);
+await this.ScheduleTriggers(async()=>{this._currentKey=key;if(typeof value==="undefined"||value===null){this._lastValue="";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemMissing)}else{this._lastValue=IsExpressionType(value)?value:"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemExists)}})}catch(err){await this._TriggerStorageError(err)}},async RemoveItem(key){try{await this._storage.removeItem(key);await this.ScheduleTriggers(async()=>{this._currentKey=key;this._lastValue=
+"";await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAnyItemRemoved);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnItemRemoved)})}catch(err){await this._TriggerStorageError(err)}},async ClearStorage(){try{await this._storage.clear();await this.ScheduleTriggers(async()=>{this._currentKey="";this._lastValue="";C3.clearArray(this._keyNamesList);await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnCleared)})}catch(err){await this._TriggerStorageError(err)}},async GetAllKeyNames(){try{const keyList=
+await this._storage.keys();await this.ScheduleTriggers(async()=>{this._keyNamesList=keyList;await this.TriggerAsync(C3.Plugins.LocalStorage.Cnds.OnAllKeyNamesLoaded)})}catch(err){await this._TriggerStorageError(err)}}}}{const C3=self.C3;C3.Plugins.LocalStorage.Exps={ItemValue(){return this._lastValue},Key(){return this._currentKey},KeyCount(){return this._keyNamesList.length},KeyAt(i){i=Math.floor(i);if(i<0||i>=this._keyNamesList.length)return"";return this._keyNamesList[i]},ErrorMessage(){return this._errorMessage}}};
+
+}
+
+{
 'use strict';{const C3=self.C3;C3.Behaviors.Bullet=class BulletBehavior extends C3.SDKBehaviorBase{constructor(opts){super(opts)}Release(){super.Release()}}}{const C3=self.C3;C3.Behaviors.Bullet.Type=class BulletType extends C3.SDKBehaviorTypeBase{constructor(behaviorType){super(behaviorType)}Release(){super.Release()}OnCreate(){}}}
 {const C3=self.C3;const C3X=self.C3X;const IBehaviorInstance=self.IBehaviorInstance;const SPEED=0;const ACCELERATION=1;const GRAVITY=2;const BOUNCE_OFF_SOLIDS=3;const SET_ANGLE=4;const STEPPING=5;const ENABLE=6;C3.Behaviors.Bullet.Instance=class BulletInstance extends C3.SDKBehaviorInstanceBase{constructor(behInst,properties){super(behInst);const wi=this.GetWorldInfo();this._speed=0;this._acc=0;this._g=0;this._bounceOffSolid=false;this._setAngle=false;this._isStepping=false;this._isEnabled=true;this._dx=
 0;this._dy=0;this._lastX=wi.GetX();this._lastY=wi.GetY();this._lastKnownAngle=wi.GetAngle();this._travelled=0;this._stepSize=Math.min(Math.abs(wi.GetWidth()),Math.abs(wi.GetHeight())/2);this._stopStepping=false;if(properties){this._speed=properties[SPEED];this._acc=properties[ACCELERATION];this._g=properties[GRAVITY];this._bounceOffSolid=!!properties[BOUNCE_OFF_SOLIDS];this._setAngle=!!properties[SET_ANGLE];this._isStepping=!!properties[STEPPING];this._isEnabled=!!properties[ENABLE]}const a=wi.GetAngle();
@@ -4564,6 +4582,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.NinePatch,
 		C3.Plugins.Audio,
 		C3.Plugins.Browser,
+		C3.Plugins.LocalStorage,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.SetGroupActive,
@@ -4578,6 +4597,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Physics.Acts.SetAngularDamping,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
+		C3.Plugins.System.Acts.SetObjectTimescale,
+		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Spritefont2.Cnds.CompareInstanceVar,
 		C3.Plugins.Spritefont2.Acts.SetText,
 		C3.Behaviors.Timer.Exps.Duration,
@@ -4591,7 +4612,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.System.Acts.Wait,
 		C3.Behaviors.scrollto.Acts.SetEnabled,
-		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.NinePatch.Cnds.CompareInstanceVar,
 		C3.Behaviors.Tween.Acts.TweenTwoProperties,
@@ -4599,20 +4619,31 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Exps.At,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Arr.Acts.SetXY,
+		C3.Plugins.LocalStorage.Acts.SetItem,
+		C3.Plugins.Arr.Exps.AsJSON,
 		C3.Plugins.System.Acts.AddVar,
+		C3.Behaviors.Physics.Exps.VelocityX,
+		C3.Behaviors.Physics.Exps.VelocityY,
+		C3.Behaviors.Physics.Acts.SetEnabled,
+		C3.Plugins.System.Acts.WaitForPreviousActions,
+		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Plugins.Sprite.Acts.SetAnimSpeed,
+		C3.Plugins.Sprite.Cnds.OnAnimFinished,
+		C3.Behaviors.Physics.Acts.SetVelocity,
+		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
+		C3.Plugins.Sprite.Cnds.CompareFrame,
+		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Particles.Cnds.OnCreated,
 		C3.Plugins.Particles.Acts.SetPosToObject,
 		C3.Plugins.Sprite.Acts.AddChild,
 		C3.Behaviors.Physics.Cnds.CompareVelocity,
 		C3.Plugins.Particles.Acts.SetRate,
-		C3.Plugins.System.Cnds.Else,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Behaviors.Physics.Acts.SetWorldGravity,
 		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
-		C3.Plugins.System.Acts.CreateObject,
-		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Cnds.IsOnScreen,
 		C3.Plugins.Sprite.Acts.MoveToBottom,
+		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Touch.Cnds.OnNthTouchStart,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.Touch.Exps.X,
@@ -4622,10 +4653,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.TiledBg.Exps.X,
 		C3.Plugins.TiledBg.Exps.Y,
 		C3.Plugins.Touch.Cnds.OnNthTouchEnd,
-		C3.Behaviors.Physics.Acts.SetVelocity,
 		C3.Behaviors.Physics.Acts.ApplyForceAtAngle,
 		C3.Plugins.Browser.Acts.ConsoleLog,
-		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Cnds.Repeat,
 		C3.Behaviors.Bullet.Acts.SetAngleOfMotion,
@@ -4643,16 +4672,20 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.System.Acts.WaitForSignal,
 		C3.Plugins.Sprite.Exps.UID,
-		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.System.Exps.layoutwidth,
 		C3.Plugins.System.Exps.viewportwidth,
 		C3.Plugins.Sprite.Acts.SetVisible,
-		C3.Plugins.System.Acts.WaitForPreviousActions,
+		C3.Plugins.LocalStorage.Acts.CheckItemExists,
 		C3.Plugins.AJAX.Acts.RequestFile,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.AJAX.Exps.LastData,
+		C3.Plugins.LocalStorage.Cnds.OnItemExists,
+		C3.Plugins.LocalStorage.Acts.GetItem,
+		C3.Plugins.LocalStorage.Cnds.OnItemGet,
+		C3.Plugins.LocalStorage.Exps.ItemValue,
+		C3.Plugins.LocalStorage.Cnds.OnItemMissing,
 		C3.Plugins.Arr.Acts.JSONLoad,
 		C3.Plugins.Arr.Acts.SetSize,
 		C3.Plugins.Arr.Exps.Width,
@@ -4682,7 +4715,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.System.Acts.Signal,
 		C3.Plugins.Audio.Cnds.IsTagPlaying,
-		C3.Plugins.Audio.Acts.Play
+		C3.Plugins.Audio.Acts.Play,
+		C3.Plugins.Sprite.Exps.AnimationFrame,
+		C3.Plugins.Sprite.Exps.AnimationFrameCount
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4726,6 +4761,9 @@ self.C3_JsPropNameTable = [
 	{Sprite: 0},
 	{BlackScreen: 0},
 	{BigStar: 0},
+	{Tutorial: 0},
+	{Countdown: 0},
+	{LocalStorage: 0},
 	{Buttons: 0},
 	{currentStrokes: 0},
 	{currentLevelIndex: 0},
@@ -4736,6 +4774,8 @@ self.C3_JsPropNameTable = [
 	{isPlaying: 0},
 	{ballSpawnX: 0},
 	{ballSpawnY: 0},
+	{lassBallVelocityX: 0},
+	{lassBallVelocityY: 0},
 	{minute: 0},
 	{inputInseconds: 0},
 	{isAiming: 0},
@@ -4745,6 +4785,7 @@ self.C3_JsPropNameTable = [
 	{FORCE_MULTIPLIER: 0},
 	{MOVING_GROUND_TWEEN_TAG: 0},
 	{GAME_TIMER_TAG: 0},
+	{DESTROY_BALL_TIMER_TAG: 0},
 	{PANEL_TWEEN_TAG: 0},
 	{BALL_DENSITY: 0},
 	{BALL_FRICTION: 0},
@@ -4752,6 +4793,8 @@ self.C3_JsPropNameTable = [
 	{BALL_LINEAR_DAMPING: 0},
 	{BALL_ANGULAR_DAMPING: 0},
 	{BUTTON_PRESSED_SIGNAL: 0},
+	{OPEN_LEVEL_STORAGE_TAG: 0},
+	{LEVELS_STORAGE_TAG: 0},
 	{level_select_html: 0},
 	{level_item_html: 0},
 	{currentOpenLevel: 0},
@@ -4867,7 +4910,10 @@ self.C3_ExpressionFuncs = [
 		() => "Control",
 		() => "Panning Camera",
 		() => "UI",
+		() => "StaticUi",
 		() => "GameLose",
+		() => "Pause",
+		() => "Countdown",
 		() => "GameWin",
 		() => 0,
 		p => {
@@ -4944,6 +4990,15 @@ self.C3_ExpressionFuncs = [
 			return () => n0.ExpObject(v1.GetValue(), 4);
 		},
 		() => 4,
+		() => "levels",
+		() => "open_level",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpBehavior();
+		},
+		() => "paused",
+		() => "Default",
+		() => "switch_camera",
 		() => "Ball",
 		() => 16,
 		() => 32,
@@ -4951,9 +5006,9 @@ self.C3_ExpressionFuncs = [
 		() => -10,
 		() => 10,
 		() => 2,
+		() => "ball_timer",
 		() => "World",
 		() => "",
-		() => "switch_camera",
 		() => "StaticUI",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4983,7 +5038,6 @@ self.C3_ExpressionFuncs = [
 		() => 0.1,
 		() => "Confetti",
 		() => 24,
-		() => "StaticUi",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0((270 - 15), (270 + 15));
@@ -5008,6 +5062,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "Buttons",
 		() => "game",
+		() => "bruh",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => and("button_pressed", n0.ExpObject());
@@ -5019,17 +5074,19 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => (v0.GetValue() + 1);
 		},
+		() => "pause",
+		() => "resume",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0("StaticUI");
 		},
 		() => "play",
+		() => "how_to_play",
 		() => "credits",
 		() => "Credits",
 		() => "close_credits",
 		() => "level_select",
 		() => "level_item",
-		() => "levels",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() + 1);
@@ -5113,7 +5170,14 @@ self.C3_ExpressionFuncs = [
 		() => 0.05,
 		() => "bgm",
 		() => -20,
-		() => "sfx"
+		() => "sfx",
+		() => "next",
+		() => 8,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 1);
+		},
+		() => 7
 ];
 
 

@@ -110,6 +110,26 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 767271484923760
+		},
+		{
+			"eventType": "variable",
+			"name": "OPEN_LEVEL_STORAGE_TAG",
+			"type": "string",
+			"initialValue": "open_level",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 470227842617318
+		},
+		{
+			"eventType": "variable",
+			"name": "LEVELS_STORAGE_TAG",
+			"type": "string",
+			"initialValue": "levels",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 382636606451404
 		}
 	],
 	"sid": 504631505296909

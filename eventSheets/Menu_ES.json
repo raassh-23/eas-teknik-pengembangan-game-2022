@@ -296,6 +296,22 @@
 					],
 					"actions": [
 						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 245771023857578,
+							"parameters": {
+								"key": "OPEN_LEVEL_STORAGE_TAG"
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 443389263289251,
+							"parameters": {
+								"key": "LEVELS_STORAGE_TAG"
+							}
+						},
+						{
 							"id": "request-project-file",
 							"objectClass": "AJAX",
 							"sid": 205580540330674,
@@ -311,15 +327,6 @@
 							"parameters": {
 								"tag": "\"level_item\"",
 								"file": "level_item.html"
-							}
-						},
-						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 362233378491683,
-							"parameters": {
-								"tag": "\"levels\"",
-								"file": "levels.json"
 							}
 						},
 						{
@@ -385,6 +392,129 @@
 				}
 			],
 			"sid": 129531576158828
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 496822031708015,
+					"parameters": {
+						"key": "OPEN_LEVEL_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910665098866189,
+					"parameters": {
+						"key": "OPEN_LEVEL_STORAGE_TAG"
+					}
+				}
+			],
+			"sid": 584682002662426
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 412911587575724,
+					"parameters": {
+						"key": "OPEN_LEVEL_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 727588888265721,
+					"parameters": {
+						"variable": "currentOpenLevel",
+						"value": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 355448786156326
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 475412205426973,
+					"parameters": {
+						"key": "OPEN_LEVEL_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 247386723030778,
+					"parameters": {
+						"variable": "currentOpenLevel",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 897699834632692
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 855732548471899,
+					"parameters": {
+						"key": "LEVELS_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "levels",
+					"sid": 163446549387455,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 689500589301356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 399703864963486,
+					"parameters": {
+						"key": "LEVELS_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 362233378491683,
+					"parameters": {
+						"tag": "\"levels\"",
+						"file": "levels.json"
+					}
+				}
+			],
+			"sid": 172523751716765
 		},
 		{
 			"eventType": "comment",
