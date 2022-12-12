@@ -13,10 +13,10 @@
 }
 
 .levels:after {
-  content: "";
-  display: block;
-  height: 4.5em;
-  width: 100%;
+	content: "";
+	display: block;
+	height: 4.5em;
+	width: 100%;
 }
 
 
