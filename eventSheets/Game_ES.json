@@ -2222,10 +2222,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 795908992754806,
+									"sid": 131409150825578,
 									"parameters": {
 										"object-to-create": "Confetti",
-										"layer": "\"StaticUi\"",
+										"layer": "\"Ground\"",
 										"x": "TriggerZone.X",
 										"y": "TriggerZone.Y",
 										"create-hierarchy": false,
