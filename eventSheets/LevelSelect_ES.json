@@ -111,19 +111,28 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 233834580219920,
+							"sid": 745754175112595,
 							"parameters": {
 								"variable": "temp",
-								"value": "replace(level_item_html, \"{{level}}\", str(level))"
+								"value": "replace(level_item_html, \"{{level}}\",  locked ? \"\" : str(level))"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 489156872268435,
+							"sid": 355605470435827,
 							"parameters": {
 								"variable": "temp",
-								"value": "replace(temp, \"{{status}}\", locked ? \"Locked\" : str(Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX)))"
+								"value": "replace(temp, \"{{status}}\", str(Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX)))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 877277299163790,
+							"parameters": {
+								"variable": "temp",
+								"value": "replace(temp, \"{{locked}}\", locked ? \"locked\" : \"unlocked\")"
 							}
 						},
 						{

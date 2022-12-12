@@ -383,6 +383,54 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "locked.png",
+					"type": "image/png",
+					"sid": 862156779129522,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "unlocked.png",
+					"type": "image/png",
+					"sid": 113205947414696,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "star1.png",
+					"type": "image/png",
+					"sid": 732495387395587,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "star2.png",
+					"type": "image/png",
+					"sid": 580349466975742,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "star0.png",
+					"type": "image/png",
+					"sid": 679668431309520,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "star3.png",
+					"type": "image/png",
+					"sid": 844221778542372,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
