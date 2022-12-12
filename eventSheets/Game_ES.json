@@ -479,6 +479,33 @@
 					"conditions": [],
 					"actions": [
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 622042182056611,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 816892232633027,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 331433784813389,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
+						{
 							"id": "set-time-scale",
 							"objectClass": "System",
 							"sid": 713773477328672,
@@ -574,6 +601,33 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 894927002246485,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 527411508120752,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 540817743556929,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
 						{
 							"id": "set-time-scale",
 							"objectClass": "System",
@@ -982,6 +1036,24 @@
 							}
 						},
 						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 476278978317774,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 663270282788842,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 891815562595837,
@@ -1017,7 +1089,35 @@
 							}
 						}
 					],
-					"sid": 637654874969557
+					"sid": 637654874969557,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 339563417995981,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"switch_camera\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Button",
+									"sid": 677488040142785,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 510047831242505
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1354,10 +1454,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 767487488392353,
+									"sid": 795908992754806,
 									"parameters": {
 										"object-to-create": "Confetti",
-										"layer": "\"World\"",
+										"layer": "\"StaticUi\"",
 										"x": "TriggerZone.X",
 										"y": "TriggerZone.Y",
 										"create-hierarchy": false,
