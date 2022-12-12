@@ -96,6 +96,26 @@
 			"sid": 741994652171985
 		},
 		{
+			"eventType": "variable",
+			"name": "lassBallVelocityX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 576841329238483
+		},
+		{
+			"eventType": "variable",
+			"name": "lassBallVelocityY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 938980897955869
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Game",
@@ -142,9 +162,36 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
+							"sid": 769916604215991,
+							"parameters": {
+								"layer": "\"StaticUi\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
 							"sid": 348799248605326,
 							"parameters": {
 								"layer": "\"GameLose\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 585305215586151,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 922325551080795,
+							"parameters": {
+								"layer": "\"Countdown\"",
 								"visibility": "invisible"
 							}
 						},
@@ -247,6 +294,41 @@
 							"parameters": {
 								"variable": "ballSpawnY",
 								"value": "Ball.Y"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 835965821165987,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 219840327701563,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 625915812975028,
+							"parameters": {
+								"object": "Trail",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 579115595080227,
+							"parameters": {
+								"time-scale": "1"
 							}
 						}
 					],
@@ -507,13 +589,8 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 622042182056611,
-							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "deactivated"
-							}
+							"callFunction": "resetAim",
+							"sid": 721588018151754
 						},
 						{
 							"id": "set-enabled",
@@ -522,6 +599,15 @@
 							"behaviorType": "ScrollTo",
 							"parameters": {
 								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 480517868382737,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
 							}
 						},
 						{
@@ -562,9 +648,27 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
+							"sid": 815511494242928,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
 							"sid": 140875949156117,
 							"parameters": {
 								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 454246464349398,
+							"parameters": {
+								"layer": "\"StaticUi\"",
 								"visibility": "invisible"
 							}
 						},
@@ -639,6 +743,10 @@
 							}
 						},
 						{
+							"callFunction": "resetAim",
+							"sid": 535132782054109
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 527411508120752,
@@ -669,11 +777,6 @@
 							"sid": 174045211541310
 						},
 						{
-							"id": "destroy",
-							"objectClass": "Cursor",
-							"sid": 879778094764469
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 413610300161141,
@@ -694,28 +797,28 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
+							"sid": 405920554877534,
+							"parameters": {
+								"layer": "\"StaticUi\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 815511494242928,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
 							"sid": 320656380382218,
 							"parameters": {
 								"layer": "\"GameWin\"",
 								"visibility": "visible"
-							}
-						},
-						{
-							"id": "tween-two-properties",
-							"objectClass": "Panel",
-							"sid": 603229333224373,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "PANEL_TWEEN_TAG",
-								"property": "position",
-								"end-x": "Self.targetX",
-								"end-y": "Self.targetY",
-								"time": "Self.seconds",
-								"ease": "easeoutsine",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{
@@ -882,6 +985,454 @@
 								}
 							],
 							"sid": 327549389726738
+						}
+					]
+				},
+				{
+					"functionName": "pause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "resetAim",
+							"sid": 457111191073255
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 260902386537301,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 977716344549492,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 154146825323782,
+							"parameters": {
+								"layer": "\"StaticUi\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 498167857563738,
+							"parameters": {
+								"layer": "\"Pause\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 630893096447521,
+							"parameters": {
+								"group-name": "\"Control\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 239347228267580,
+							"parameters": {
+								"group-name": "\"Panning Camera\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 531961031112920,
+							"parameters": {
+								"variable": "lassBallVelocityX",
+								"value": "Ball.Physics.VelocityX"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 656959651695437,
+							"parameters": {
+								"variable": "lassBallVelocityY",
+								"value": "Ball.Physics.VelocityY"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 471727561696048,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 510847548153654,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 229937708868518,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 825282281980130,
+							"parameters": {
+								"object": "Trail",
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 134535560690639,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Panel",
+									"sid": 213002932401246,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"paused\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Panel",
+									"sid": 975171873181656,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "PANEL_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.targetX",
+										"end-y": "Self.targetY",
+										"time": "Self.seconds",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 441028251183846
+						}
+					]
+				},
+				{
+					"functionName": "resume",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 389296956222968,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Panel",
+									"sid": 654832203296995,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"paused\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "Panel",
+									"sid": 332085292595719,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "PANEL_TWEEN_TAG",
+										"property": "position",
+										"end-x": "Self.originX",
+										"end-y": "Self.originY",
+										"time": "Self.seconds",
+										"ease": "easeoutsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 623639447317541
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 332840047210247,
+									"parameters": {
+										"layer": "\"Countdown\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 878409755441272,
+									"parameters": {
+										"layer": "\"Pause\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Countdown",
+									"sid": 903074028285388,
+									"parameters": {
+										"animation": "\"Default\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "Countdown",
+									"sid": 966010340782716,
+									"parameters": {
+										"speed": "1"
+									}
+								}
+							],
+							"sid": 449907926274454
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Countdown",
+							"sid": 617362340302998,
+							"parameters": {
+								"animation": "\"Default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-speed",
+							"objectClass": "Countdown",
+							"sid": 211086181399456,
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 290893454476993,
+							"parameters": {
+								"layer": "\"Countdown\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 239953003795549,
+							"parameters": {
+								"layer": "\"UI\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 358505030444646,
+							"parameters": {
+								"layer": "\"StaticUi\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 842204242422348,
+							"parameters": {
+								"variable": "isPlaying",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 242246326797442,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 572929360086891,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 741007908183280,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 518709444278247,
+							"parameters": {
+								"object": "Trail",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-velocity",
+							"objectClass": "Ball",
+							"sid": 516266227662798,
+							"behaviorType": "Physics",
+							"parameters": {
+								"x-component": "lassBallVelocityX",
+								"y-component": "lassBallVelocityY"
+							}
+						}
+					],
+					"sid": 401087665544943,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 354183566974222,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"switch_camera\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 423619868734663,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "Button",
+											"sid": 394028668320961,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 690985190671542,
+											"parameters": {
+												"group-name": "\"Control\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Ball",
+											"sid": 419267397607480,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 114669925608403
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 635309476852908
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 200943438948638,
+											"parameters": {
+												"group-name": "\"Panning Camera\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Ball",
+											"sid": 140517445692076,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 523512833646099
+								}
+							]
 						}
 					]
 				}
@@ -1130,65 +1681,14 @@
 							"sid": 785327778109388
 						},
 						{
-							"id": "set-enabled",
-							"objectClass": "Ball",
-							"sid": 476278978317774,
-							"behaviorType": "ScrollTo",
+							"id": "start-timer",
+							"objectClass": "Timer",
+							"sid": 934271408169453,
+							"behaviorType": "Timer",
 							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 742144799288352,
-							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 663270282788842,
-							"parameters": {
-								"group-name": "\"Panning Camera\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 891815562595837,
-							"parameters": {
-								"seconds": "2"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Ball",
-							"sid": 249251409666721
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 230855583933205,
-							"parameters": {
-								"object-to-create": "Ball",
-								"layer": "\"World\"",
-								"x": "ballSpawnX",
-								"y": "ballSpawnY",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 638070450070004,
-							"parameters": {
-								"group-name": "\"Control\"",
-								"state": "activated"
+								"duration": "2",
+								"type": "once",
+								"tag": "DESTROY_BALL_TIMER_TAG"
 							}
 						}
 					],
@@ -1198,27 +1698,26 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Button",
-									"sid": 339563417995981,
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 419446559089932,
 									"parameters": {
-										"instance-variable": "id",
-										"comparison": 0,
-										"value": "\"switch_camera\""
+										"group-name": "\"Control\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "Button",
-									"sid": 677488040142785,
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 809088252033311,
 									"parameters": {
-										"frame-number": "0"
+										"group-name": "\"Control\"",
+										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 510047831242505
+							"sid": 198014645385484
 						}
 					]
 				},
@@ -1239,6 +1738,128 @@
 						}
 					],
 					"sid": 846384771432635
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Timer",
+							"sid": 187633609882517,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "DESTROY_BALL_TIMER_TAG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Ball",
+							"sid": 319528235247847
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 348120751278514,
+							"parameters": {
+								"object-to-create": "Ball",
+								"layer": "\"World\"",
+								"x": "ballSpawnX",
+								"y": "ballSpawnY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 522527835896965,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 152035332492842,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"switch_camera\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 325941776328087,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "Button",
+											"sid": 936417190838614,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 706455264828441,
+											"parameters": {
+												"group-name": "\"Control\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Ball",
+											"sid": 635703295804716,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 302655151972995
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 942065758534002
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 717011159643605,
+											"parameters": {
+												"group-name": "\"Panning Camera\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Ball",
+											"sid": 572425113222135,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"state": "disabled"
+											}
+										}
+									],
+									"sid": 836958718329659
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 847514808905615
@@ -1427,62 +2048,79 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 436185128734797,
+							"sid": 835849591134339,
 							"parameters": {
-								"variable": "isAiming"
+								"variable": "isPlaying"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 363584402228338,
+					"children": [
 						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 573582140906585,
-							"parameters": {
-								"time-scale": "0.1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 754084924188484,
+									"parameters": {
+										"variable": "isAiming"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 971587701051333,
+									"parameters": {
+										"time-scale": "0.1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 849257010995956,
+									"parameters": {
+										"object": "Timer",
+										"time-scale": "1.0"
+									}
+								}
+							],
+							"sid": 736106699172278
 						},
 						{
-							"id": "set-object-time-scale",
-							"objectClass": "System",
-							"sid": 784284524068394,
-							"parameters": {
-								"object": "Timer",
-								"time-scale": "1.0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 367551824622038
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 709770627791462,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 173059921041930,
+									"parameters": {
+										"object": "Timer",
+										"time-scale": "1.0"
+									}
+								}
+							],
+							"sid": 528304576951613
 						}
-					],
-					"sid": 363584402228338
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 222913337296067
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 108656401683153,
-							"parameters": {
-								"time-scale": "1"
-							}
-						},
-						{
-							"id": "set-object-time-scale",
-							"objectClass": "System",
-							"sid": 150422538166005,
-							"parameters": {
-								"object": "Timer",
-								"time-scale": "1.0"
-							}
-						}
-					],
-					"sid": 488495160200259
+					]
 				},
 				{
 					"functionName": "resetAim",
@@ -1873,6 +2511,15 @@
 					],
 					"actions": [
 						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 642827512361382,
+							"parameters": {
+								"type": "log",
+								"message": "\"bruh\""
+							}
+						},
+						{
 							"id": "wait-for-signal",
 							"objectClass": "System",
 							"sid": 958621431098766,
@@ -2047,6 +2694,32 @@
 							],
 							"actions": [
 								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 541819943797506,
+									"parameters": {
+										"type": "log",
+										"message": "\"menu\""
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 324677136736163,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 537971621743504,
+									"parameters": {
+										"object": "Timer",
+										"time-scale": "1.0"
+									}
+								},
+								{
 									"id": "go-to-layout",
 									"objectClass": "System",
 									"sid": 957213505274047,
@@ -2072,6 +2745,32 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 754165853745524,
+									"parameters": {
+										"type": "log",
+										"message": "\"restart\""
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 911960890143179,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 605008643924100,
+									"parameters": {
+										"object": "Timer",
+										"time-scale": "1.0"
+									}
+								},
 								{
 									"id": "restart-layout",
 									"objectClass": "System",
@@ -2104,6 +2803,50 @@
 								}
 							],
 							"sid": 290763449125586
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 401578081048280,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"pause\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "pause",
+									"sid": 886726783970610
+								}
+							],
+							"sid": 579691415295330
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 262161269374282,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"resume\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "resume",
+									"sid": 313078439297815
+								}
+							],
+							"sid": 569845749785988
 						}
 					]
 				},

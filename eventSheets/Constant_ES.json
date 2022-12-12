@@ -33,6 +33,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "DESTROY_BALL_TIMER_TAG",
+			"type": "string",
+			"initialValue": "ball_timer",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 157456191278169
+		},
+		{
+			"eventType": "variable",
 			"name": "PANEL_TWEEN_TAG",
 			"type": "string",
 			"initialValue": "panel_move_in",

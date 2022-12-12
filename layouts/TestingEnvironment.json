@@ -743,6 +743,41 @@
 						"angle": 0.006545190982837221,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "game",
+						"initial-frame": 7,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 108,
+					"instanceVariables": {
+						"OriginalWidth": 0,
+						"OriginalHeight": 0,
+						"IsClicked": false,
+						"Clickable": false,
+						"id": "pause"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1208,
+						"y": 72,
+						"width": 93,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 611309806245742,

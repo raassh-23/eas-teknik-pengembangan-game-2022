@@ -1,0 +1,61 @@
+{
+	"name": "Countdown",
+	"plugin-id": "Sprite",
+	"sid": 528142894128384,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 81,
+						"height": 139,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4162226,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 86,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6404073,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 65,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6547782,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 849485279909990,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
