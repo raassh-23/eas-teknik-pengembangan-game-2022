@@ -199,7 +199,7 @@
 					"instanceVariables": {
 						"targetX": 1459,
 						"targetY": 658,
-						"seconds": 4
+						"seconds": 5
 					},
 					"behaviors": {
 						"Physics": {
@@ -345,7 +345,7 @@
 					"instanceVariables": {
 						"targetX": 1826,
 						"targetY": 305,
-						"seconds": 5
+						"seconds": 6
 					},
 					"behaviors": {
 						"Physics": {
