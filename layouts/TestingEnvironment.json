@@ -881,7 +881,7 @@
 			"type": "levels",
 			"properties": {
 				"width": 10,
-				"height": 1,
+				"height": 4,
 				"depth": 1
 			},
 			"uid": 24,
