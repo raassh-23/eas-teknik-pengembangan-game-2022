@@ -1748,6 +1748,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 529120896439864,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
 							"id": "set-time-scale",
 							"objectClass": "System",
 							"sid": 743974339299098,
