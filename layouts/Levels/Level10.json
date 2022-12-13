@@ -1,5 +1,5 @@
 {
-	"name": "Level5",
+	"name": "Level10",
 	"layers": [
 		{
 			"name": "GameBackground",
@@ -11,11 +11,11 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Level",
-						"initial-frame": 4,
+						"initial-frame": 9,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 77,
+					"uid": 176,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -36,7 +36,7 @@
 					}
 				}
 			],
-			"sid": 749877356723248,
+			"sid": 369524158679762,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -70,6 +70,45 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "ReverseGravityZone",
+					"properties": {
+						"initially-visible": true,
+						"origin": "bottom",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 177,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2365,
+						"y": 735,
+						"width": 1724,
+						"height": 736,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Ball",
 					"properties": {
 						"initially-visible": true,
@@ -78,7 +117,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 79,
+					"uid": 178,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -102,8 +141,8 @@
 						}
 					},
 					"world": {
-						"x": 110,
-						"y": 226,
+						"x": 490,
+						"y": 444,
 						"width": 25,
 						"height": 25,
 						"originX": 0.5,
@@ -123,16 +162,16 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 4,
+						"initial-frame": 9,
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 80,
+					"uid": 179,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1934.181818181819,
-						"y": 549.727294921875,
+						"x": 2866.3512308918102,
+						"y": 240.89507176179032,
 						"width": 20,
 						"height": 47,
 						"originX": 0.5,
@@ -166,12 +205,12 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 81,
+					"uid": 180,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1903.5484918164204,
-						"y": 640.9249701512114,
+						"x": 2895.901808054499,
+						"y": 286.9055763069502,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -185,9 +224,228 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 181,
+					"instanceVariables": {
+						"targetX": 892,
+						"targetY": 304,
+						"seconds": 4
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.22745098039215686,
+									0.2549019607843137,
+									0.2901960784313726,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 1515,
+						"y": 304,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 182,
+					"instanceVariables": {
+						"targetX": 2734,
+						"targetY": 352,
+						"seconds": 4
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.22745098039215686,
+									0.2549019607843137,
+									0.2901960784313726,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 2466,
+						"y": 352,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 183,
+					"instanceVariables": {
+						"targetX": 3087,
+						"targetY": 94,
+						"seconds": 5
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.22745098039215686,
+									0.2549019607843137,
+									0.2901960784313726,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 3087,
+						"y": 355,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
-			"sid": 483366869491925,
+			"sid": 496600276716007,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -234,7 +492,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 82,
+					"uid": 184,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -254,11 +512,11 @@
 					},
 					"ownData": {
 						"tilemapData": {
-							"width": 69,
+							"width": 101,
 							"height": 23,
-							"max-width": 598,
+							"max-width": 670,
 							"max-height": 228,
-							"data": "23x2,205x0,2,5x2hd,1hv,4x0,1hd,11x2,205x0,2,5x2hd,6x0,11x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,1vd,5x0,2x2hd,9x2,205x0,2,6x2hd,1vd,4x0,2x2hd,9x2,205x0,2,7x2hd,3x0,1,2x2hd,9x2,205x0,2,7x2hd,2x0,1,3x2hd,9x2,205x0,2,6x2hd,1hv,2x0,11x2hd,2x2,205x0,2,3x2hv,1hv,5x0,1hd,10x2hd,2x2,205x0,2,1hv,18x0,1hd,2x2,205x0,2,20x0,1hd,2,205x0,2,227x0,2,227x0,2,227x0,2,3x0,1,2hv,1vd,7x0,1,1vd,212x0,2,3x0,2hd,2x2hv,1vd,6x0,2x2hv,212x0,2,3x0,1hd,3x2hv,5x0,1,2x2hv,212x0,2,4x0,3x2hv,1vd,3x0,1,3x2hv,1vd,211x0,2,3x0,1,4x2hv,3x0,5x2hv,211x0,2,3x0,5x2hv,3x0,1hd,4x2hv,211x0,2,3x0,5x2hv,4x0,4x2hv,211x0,2,3x0,1hd,3x2hv,1hv,4x0,4x2hv,211x0,2,4x0,1hd,2hv,1hv,5x0,1hd,2hv,2hd,1hv,211x0,2,13x0,1hd,1hv,212x0,2,227x0,2,227x0,2vd,10x0,1,2hd,1vd,6x0,1,2x2,205x0,4x2vd,1vd,4x0,1,4x2hd,2vd,1vd,4x0,3x2,205x0,2,13x2hd,2,2vd,4x0,3x2,205x0,2,13x2hd,2x2,4x0,3x2,205x0,2,2x2hd,5x2vd,8x2,4x0,3x2,205x0,2,2hd,5x2vd,2x2hd,7x2,3x0,1,3x2,205x0,2,6x2vd,9x2,3x0,2hd,3x2,205x0,2,9x2vd,5x2,1hv,3x0,2hd,3x2,205x0,2,9x2vd,1hv,8x0,2hd,3x2,205x0,2,5x2vd,1hv,12x0,2hd,3x2,205x0,2,2x2vd,1hv,15x0,1hd,3x2,205x0,2,2x2vd,17x0,3x2,205x0,2,2x2vd,17x0,1hd,2x2hd,205x0,2,2x2vd,1vd,224x0,2,2x2vd,2hd,1vd,223x0,2,2hv,3x2hd,223x0,2,4x2hd,223x0,2,4x2hd,5x0,1,2x2hd,1vd,214x0,2,4x2hd,4x0,1,4x2hd,214x0,2,3x2hd,1hv,4x0,5x2hd,1vd,213x0,2,2x2hd,1hv,5x0,6x2hd,213x0,2,2hd,1hv,6x0,6x2hd,213x0,2,2hd,6x0,1,6x2hd,1vd,5x0,1,2,205x0,2,2hd,6x0,8x2hd,1vd,3x0,1,2x2,205x0,2,2hd,1vd,4x0,1,8x2hd,5x2hv,2x2,205x0,2,2x2hd,1vd,3x0,8x2hd,2,3x2hv,4x2,205x0,2,3x2hd,1vd,2x0,8x2hd,2x2,2x2hv,4x2,205x0,2,4x2hd,2x0,1hd,2x2hd,2x2hv,1hv,4x0,1hd,5x2,205x0,2,4x2hd,3x0,3x2hd,1hv,6x0,5x2,205x0,2,4x2hd,3x0,3x2hd,7x0,5x2,205x0,2,3x2hd,1hv,3x0,3x2hd,9x0,3x2,205x0,2,3x2hd,4x0,3x2hd,1vd,5x0,1,5x2,205x0,2,3x2hd,4x0,4x2hd,3x0,1,2x2hd,2x2,2hvd,2x2,205x0,2,3x2hd,4x0,1hd,2x2hd,1hv,3x0,1hd,3x2hv,4x2,205x0,2hv,2x2hd,1hv,5x0,1hd,1hv,5x0,1hd,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,1vd,13x0,2hd,5x2,205x0,6x2hd,1vd,6x0,1,4x2hd,5x2,205x0,19x2hd,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,118309x0"
+							"data": "23x2,205x0,2,5x2hd,2x2hv,15x2,205x0,2,5x2hd,2x2hv,2,1hvd,6x0,1h,6x2,205x0,2,4x2hd,2hvd,2x2hd,1hvd,8x0,1h,2hv,4x2,205x0,2,4x2hd,3x2hvd,13x0,1hd,2hd,205x0,2,3x2hd,3x2hvd,1hvd,220x0,2,2x2hd,4x2hvd,221x0,2,2x2hd,3x2hvd,1hvd,13x0,1d,2x2d,205x0,2,2x2hd,2v,2x2hvd,14x0,4x2d,204x0,2,2x2hd,2v,2x2hvd,13x0,1,3x2,205x0,2,2hd,2hv,2v,2x2hvd,1v,10x0,1,5x2hv,205x0,2,2x2hv,2v,3x2hvd,10x0,2hd,5x2hv,205x0,2,2hd,2hv,2x2v,2x2hvd,9x0,1,2hd,2hv,4x2h,205x0,2,2hd,2,2hvd,2v,2x2hvd,1v,8x0,2x2hd,2hv,4x2h,205x0,2,2hd,2hv,2x2v,3x2hvd,1v,7x0,2x2hd,5x2h,205x0,2,2hd,2hv,3x2v,4x2hvd,1v,5x0,2hd,6x2h,205x0,2,2hd,9x2v,5x0,2x2hd,6x2h,204x0,2,2hd,9x2v,5x0,1h,2hd,6x2h,204x0,2,2hd,2hv,7x2v,1hvd,6x0,6x2h,205x0,2,2hd,2hv,5x2v,1hvd,8x0,6x2h,205x0,2,2hd,2hv,2x2v,1hvd,11x0,1h,5x2h,205x0,2,2hd,2hv,2x2v,14x0,1h,3x2h,205x0,2,2hd,2hv,2x2v,223x0,2,2hd,2hv,2v,1hvd,223x0,2,2hd,2hv,2v,224x0,2,2hd,2hv,2v,224x0,2,2hd,2hv,2v,224x0,2,2hd,2hv,2v,1v,18x0,2d,204x0,2,2x2hd,2x2v,1v,222x0,2vd,2x2hd,3x2v,222x0,2vd,2x2hd,3x2v,222x0,2,2x2hd,3x2v,222x0,2,2x2hd,2v,2d,2v,1v,12x0,1d,3x2v,205x0,2,2x2hd,4x2v,9x0,1d,2d,5x2v,205x0,2,3x2hd,3x2v,1v,7x0,1d,2h,6x2v,205x0,2,2vd,2x2hd,2hv,3x2v,3x0,1d,5x2h,6x2v,205x0,2,3x2hd,2x2hv,2x2v,3x0,2h,6x2hd,5x2v,205x0,2,2vd,2x2hd,2x2hv,2x2v,3x0,2h,6x2hd,5x2v,205x0,2,2vd,2x2hd,3x2hv,2v,3x0,2h,5x2hd,5x2v,2h,205x0,2,2vd,2x2hd,2hvd,2x2hv,1hvd,3x0,1h,7x2hd,4x2h,205x0,2,2vd,3x2hd,2x2hv,5x0,1h,2x2h,4x2hd,4x2h,205x0,2,2x2vd,2hd,3x2hv,6x0,2hv,6x2hd,3x2h,205x0,2,2vd,5x2hv,5x0,1,2hv,6x2hd,3x2h,205x0,2,2vd,5x2hv,1vd,3x0,1,2hv,8x2hd,2x2h,205x0,8x2hv,3x0,2,9x2hd,2x2h,205x0,8x2hv,3x0,11x2hd,2h,205x0,6x2hv,2,1hv,3x0,2,10x2hd,2h,205x0,5x2hv,1hv,5x0,1hd,11x2hd,205x0,2x2hv,1hv,10x0,1hd,9x2hd,221x0,1hd,2x2hd,1hv,1hd,2x2hd,211x0,1,3x2hd,1vd,10x0,2x2hd,209x0,1,6x2hd,10x0,2x2hd,209x0,7x2hd,1vd,9x0,2x2hd,209x0,8x2hd,9x0,1hd,2hd,209x0,8x2hd,4x0,1,2x2hv,1vd,2x0,2hd,208x0,1,7x2hd,1hv,2x0,1,5x2hv,2x0,2hd,208x0,7x2hd,2hv,3x0,6x2hv,0,1d,2x2d,207x0,6x2hd,2hv,1hv,3x0,6x2hv,0,3x2d,207x0,1hd,5x2hd,2hv,3x0,1,2hd,4x2hv,1hv,0,2x2d,209x0,1hd,2hd,2h,2v,2hv,1hv,2x0,1,4x2hv,1hv,3x0,2x2d,210x0,2x2hd,2hv,1hv,3x0,5x2hv,4x0,2x2d,210x0,2x2hd,2hv,4x0,5x2hv,4x0,2h,2d,210x0,1hd,2hd,1hv,4x0,1hd,3x2hv,1hv,4x0,2h,2d,225x0,1,2h,2d,221x0,1,5x2,2h,218x0,1,8x2,2hv,217x0,1,9x2,2hv,205x0,1vd,2x0,1,2x2hv,1vd,5x0,10x2,2hv,205x0,9x2hv,1vd,2x0,10x2,2hv,205x0,10x2hv,2x0,1hd,9x2,2hv,205x0,10x2hv,3x0,2hv,6x2,2hd,2x2vd,205x0,9x2hv,1hv,3x0,2hv,4x2,2x2hd,2x2vd,2,205x0,8x2hv,2,4x0,2hv,3x2,2hvd,2x2hd,2vd,2x2,205x0,8x2hv,2,4x0,2hv,3x2,2hvd,2x2hd,2vd,2x2,205x0,8x2hv,2,4x0,4x2,2hvd,2x2hd,3x2,205x0,8x2hv,2,4x0,1hd,2x2,2x2hvd,2x2hd,3x2,205x0,8x2hv,1hv,5x0,4x2,3x2hvd,2x2,205x0,5x2hv,1hv,8x0,3x2,5x2hvd,2hd,205x0,4x2hv,1hv,8x0,1,2x2,7x2hvd,205x0,2hv,1hv,11x0,3x2,7x2hvd,210x0,1,2x2hd,2,1vd,3x0,2x2,3x2hvd,3x2,2x2hvd,210x0,3x2hd,2,2hd,3x0,1hd,9x2,206x0,1,2hd,1vd,0,1hd,4x2hd,5x0,1hd,7x2,205x0,4x2hd,2x0,4x2hd,6x0,7x2,205x0,4x2hd,1vd,0,1hd,2hv,2x2hd,6x0,7x2,205x0,2hd,2hv,2x2hd,2vd,3x0,1hd,1hv,5x0,1,7x2,205x0,2x2hv,3x2vd,1vd,9x0,8x2,205x0,2x2hv,2x2vd,3x2hv,2vd,1vd,5x0,1,8x2,205x0,2x2hv,2x2vd,1hv,2x0,1hd,2x2vd,1vd,3x0,9x2,205x0,2x2hv,2x2vd,4x0,3x2vd,3x0,1hd,8x2,205x0,2x2hv,2x2vd,5x0,2hv,2vd,4x0,8x2,205x0,2x2hv,2x2vd,2x0,1,2,3x2vd,4x0,1hd,4x2,2hd,2x2,205x0,2x2hv,2vd,1hv,2x0,4x2,1hv,8x0,1hd,2x2hd,2,205x0,2x2hv,1hv,3x0,1hd,2,1hv,11x0,2x2hd,2,2hv,224x0,2x2hd,2,225x0,2x2hd,2,224x0,1,2x2hd,2,224x0,3x2hd,2,205x0,2,1vd,16x0,1,3x2hd,2,205x0,7x2,2vd,1vd,5x0,1,7x2hd,2,205x0,23x2,129937x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -278,9 +536,9 @@
 									1
 								],
 								"replace-color": [
-									0.16470588235294117,
-									0.01568627450980392,
-									0.2823529411764706,
+									0.22745098039215686,
+									0.2549019607843137,
+									0.2901960784313726,
 									1
 								],
 								"tolerance": 0.01
@@ -289,8 +547,8 @@
 					},
 					"world": {
 						"x": 0,
-						"y": 0,
-						"width": 2211,
+						"y": -1,
+						"width": 3233,
 						"height": 752,
 						"originX": 0,
 						"originY": 0,
@@ -304,7 +562,7 @@
 					}
 				}
 			],
-			"sid": 345867477778436,
+			"sid": 517270158043009,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -337,7 +595,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 724499299618657,
+			"sid": 782984334609804,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -379,7 +637,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 83,
+					"uid": 185,
 					"instanceVariables": {
 						"OriginalWidth": 0,
 						"OriginalHeight": 0,
@@ -391,8 +649,8 @@
 					"world": {
 						"x": 72,
 						"y": 656,
-						"width": 23.808,
-						"height": 23.808,
+						"width": 64,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -406,7 +664,7 @@
 					}
 				}
 			],
-			"sid": 699719697583699,
+			"sid": 212956222028076,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -439,7 +697,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 795217085043334,
+			"sid": 972965785364706,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -472,7 +730,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 290475032939603,
+			"sid": 753592984001855,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -505,7 +763,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 732823357326389,
+			"sid": 445107001881337,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -538,7 +796,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 285337523758950,
+			"sid": 684097171013461,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -567,10 +825,10 @@
 			"global": false
 		}
 	],
-	"sid": 822121861791543,
+	"sid": 989514255779036,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 2211,
+	"width": 3233,
 	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,

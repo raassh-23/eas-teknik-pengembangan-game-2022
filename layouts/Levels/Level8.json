@@ -1,5 +1,5 @@
 {
-	"name": "Level5",
+	"name": "Level8",
 	"layers": [
 		{
 			"name": "GameBackground",
@@ -11,11 +11,11 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Level",
-						"initial-frame": 4,
+						"initial-frame": 7,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 77,
+					"uid": 159,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -36,7 +36,7 @@
 					}
 				}
 			],
-			"sid": 749877356723248,
+			"sid": 540672084401902,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -78,7 +78,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 79,
+					"uid": 160,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -102,8 +102,8 @@
 						}
 					},
 					"world": {
-						"x": 110,
-						"y": 226,
+						"x": 245,
+						"y": 543,
 						"width": 25,
 						"height": 25,
 						"originX": 0.5,
@@ -123,16 +123,16 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 4,
+						"initial-frame": 7,
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 80,
+					"uid": 161,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1934.181818181819,
-						"y": 549.727294921875,
+						"x": 2870,
+						"y": 241,
 						"width": 20,
 						"height": 47,
 						"originX": 0.5,
@@ -166,12 +166,12 @@
 						"blend-margin-x": 0.1,
 						"blend-margin-y": 0.1
 					},
-					"uid": 81,
+					"uid": 162,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1903.5484918164204,
-						"y": 640.9249701512114,
+						"x": 2895,
+						"y": 323,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -185,9 +185,228 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 163,
+					"instanceVariables": {
+						"targetX": 1459,
+						"targetY": 658,
+						"seconds": 4
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.027450980392156862,
+									0.26666666666666666,
+									0.29411764705882354,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 960,
+						"y": 658,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 164,
+					"instanceVariables": {
+						"targetX": 3121,
+						"targetY": 258,
+						"seconds": 5
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.027450980392156862,
+									0.26666666666666666,
+									0.29411764705882354,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 3121,
+						"y": 593,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MovingGround",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 165,
+					"instanceVariables": {
+						"targetX": 1826,
+						"targetY": 305,
+						"seconds": 5
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"ReplaceColor": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0.027450980392156862,
+									0.26666666666666666,
+									0.29411764705882354,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"world": {
+						"x": 2344,
+						"y": 305,
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
-			"sid": 483366869491925,
+			"sid": 735582381392569,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -234,7 +453,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 82,
+					"uid": 166,
 					"instanceVariables": {},
 					"behaviors": {
 						"Physics": {
@@ -254,11 +473,11 @@
 					},
 					"ownData": {
 						"tilemapData": {
-							"width": 69,
+							"width": 105,
 							"height": 23,
-							"max-width": 598,
+							"max-width": 646,
 							"max-height": 228,
-							"data": "23x2,205x0,2,5x2hd,1hv,4x0,1hd,11x2,205x0,2,5x2hd,6x0,11x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,6x0,2x2hd,9x2,205x0,2,5x2hd,1vd,5x0,2x2hd,9x2,205x0,2,6x2hd,1vd,4x0,2x2hd,9x2,205x0,2,7x2hd,3x0,1,2x2hd,9x2,205x0,2,7x2hd,2x0,1,3x2hd,9x2,205x0,2,6x2hd,1hv,2x0,11x2hd,2x2,205x0,2,3x2hv,1hv,5x0,1hd,10x2hd,2x2,205x0,2,1hv,18x0,1hd,2x2,205x0,2,20x0,1hd,2,205x0,2,227x0,2,227x0,2,227x0,2,3x0,1,2hv,1vd,7x0,1,1vd,212x0,2,3x0,2hd,2x2hv,1vd,6x0,2x2hv,212x0,2,3x0,1hd,3x2hv,5x0,1,2x2hv,212x0,2,4x0,3x2hv,1vd,3x0,1,3x2hv,1vd,211x0,2,3x0,1,4x2hv,3x0,5x2hv,211x0,2,3x0,5x2hv,3x0,1hd,4x2hv,211x0,2,3x0,5x2hv,4x0,4x2hv,211x0,2,3x0,1hd,3x2hv,1hv,4x0,4x2hv,211x0,2,4x0,1hd,2hv,1hv,5x0,1hd,2hv,2hd,1hv,211x0,2,13x0,1hd,1hv,212x0,2,227x0,2,227x0,2vd,10x0,1,2hd,1vd,6x0,1,2x2,205x0,4x2vd,1vd,4x0,1,4x2hd,2vd,1vd,4x0,3x2,205x0,2,13x2hd,2,2vd,4x0,3x2,205x0,2,13x2hd,2x2,4x0,3x2,205x0,2,2x2hd,5x2vd,8x2,4x0,3x2,205x0,2,2hd,5x2vd,2x2hd,7x2,3x0,1,3x2,205x0,2,6x2vd,9x2,3x0,2hd,3x2,205x0,2,9x2vd,5x2,1hv,3x0,2hd,3x2,205x0,2,9x2vd,1hv,8x0,2hd,3x2,205x0,2,5x2vd,1hv,12x0,2hd,3x2,205x0,2,2x2vd,1hv,15x0,1hd,3x2,205x0,2,2x2vd,17x0,3x2,205x0,2,2x2vd,17x0,1hd,2x2hd,205x0,2,2x2vd,1vd,224x0,2,2x2vd,2hd,1vd,223x0,2,2hv,3x2hd,223x0,2,4x2hd,223x0,2,4x2hd,5x0,1,2x2hd,1vd,214x0,2,4x2hd,4x0,1,4x2hd,214x0,2,3x2hd,1hv,4x0,5x2hd,1vd,213x0,2,2x2hd,1hv,5x0,6x2hd,213x0,2,2hd,1hv,6x0,6x2hd,213x0,2,2hd,6x0,1,6x2hd,1vd,5x0,1,2,205x0,2,2hd,6x0,8x2hd,1vd,3x0,1,2x2,205x0,2,2hd,1vd,4x0,1,8x2hd,5x2hv,2x2,205x0,2,2x2hd,1vd,3x0,8x2hd,2,3x2hv,4x2,205x0,2,3x2hd,1vd,2x0,8x2hd,2x2,2x2hv,4x2,205x0,2,4x2hd,2x0,1hd,2x2hd,2x2hv,1hv,4x0,1hd,5x2,205x0,2,4x2hd,3x0,3x2hd,1hv,6x0,5x2,205x0,2,4x2hd,3x0,3x2hd,7x0,5x2,205x0,2,3x2hd,1hv,3x0,3x2hd,9x0,3x2,205x0,2,3x2hd,4x0,3x2hd,1vd,5x0,1,5x2,205x0,2,3x2hd,4x0,4x2hd,3x0,1,2x2hd,2x2,2hvd,2x2,205x0,2,3x2hd,4x0,1hd,2x2hd,1hv,3x0,1hd,3x2hv,4x2,205x0,2hv,2x2hd,1hv,5x0,1hd,1hv,5x0,1hd,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,14x0,2hd,5x2,205x0,2,2x2hd,1vd,13x0,2hd,5x2,205x0,6x2hd,1vd,6x0,1,4x2hd,5x2,205x0,19x2hd,4x2,205x0,2,5x0,2x2h,11x0,4x2,205x0,2,3x0,5x2h,10x0,1h,3x2,205x0,2,3x0,5x2h,11x0,1h,2x2,205x0,2,4x0,4x2h,12x0,2x2,205x0,2,4x0,1h,2x2h,1hvd,11x0,1,2x2,205x0,2,17x0,1,4x2,205x0,2,16x0,1,5x2,205x0,2,15x0,1,6x2,205x0,2,15x0,7x2,205x0,2,15x0,7x2,205x0,23x2,118309x0"
+							"data": "23x2,205x0,2,5x2hd,2x2hv,15x2,205x0,2,5x2hd,2x2hv,5x2,2hd,9x2,205x0,2,7x2hd,3x2,3x2hd,5x2hv,4x2,205x0,2,4x2hd,1hv,4x0,1hd,3x2hd,5x2hv,4x2,205x0,2,4x2hd,6x0,1hd,2x2hd,1hv,3x0,1hd,4x2,205x0,2,3x2hd,1hv,7x0,2x2hd,5x0,4x2,205x0,2,3x2hd,7x0,1,2hd,1hv,5x0,4x2,205x0,2,3x2hd,7x0,2x2hd,6x0,4x2,205x0,2,3x2hd,6x0,1,2x2hd,1vd,5x0,1hd,2,1hv,206x0,2,2hd,2hv,1hv,2x0,1,1vd,2x0,3x2hd,1hv,214x0,2,2x2hv,3x0,2hd,2vd,2x0,3x2hd,8x0,1,2,205x0,2,2hd,2hv,3x0,2hd,2vd,2x0,1hd,2hd,1hv,6x0,1,3x2,205x0,2,2hd,2hv,2x0,1,2hd,2vd,1vd,8x0,1,2x2vd,3x2,205x0,2,2hd,2hv,2x0,2x2hd,2x2vd,6x0,1,3x2vd,4x2,205x0,2,2hd,2hv,2x0,2x2hd,2vd,1hv,6x0,2vd,3x2hv,2hd,3x2,205x0,2,2hd,2hv,2x0,2hd,2hv,2hd,0,1,2hd,1vd,2x0,1,2vd,2x2hv,5x2,205x0,2,2hd,1hv,2x0,1hd,2hv,1hv,0,2hd,5x2vd,3x2hv,5x2,205x0,2,2hd,6x0,1,9x2hv,5x2,205x0,2,2hd,6x0,10x2hv,5x2,205x0,2,2hd,6x0,1hd,7x2hv,1hv,0,1hd,4x2,205x0,2,2hd,9x0,1hd,2x2hv,1hv,5x0,1hd,2x2,205x0,2,2hd,19x0,2x2,205x0,2,2hd,19x0,2x2,205x0,2,2hd,19x0,2x2,205x0,2,2hd,19x0,2x2,205x0,2,2hd,19x0,1hd,2,205x0,2,2hd,1vd,225x0,2,2x2hd,225x0,2vd,2x2hd,225x0,2vd,2x2hd,225x0,2,2x2hd,225x0,2,2x2hd,1vd,224x0,2,3x2hd,11x0,1,2hv,1vd,210x0,2,3x2hd,8x0,1,5x2hv,210x0,2,2vd,2x2hd,2x2hv,1vd,2x0,1,8x2hv,210x0,2,3x2hd,14x2hv,1vd,209x0,2,2vd,2x2hd,15x2hv,209x0,2,2vd,2x2hd,15x2hv,209x0,2,2vd,3x2hd,14x2hv,209x0,2,2vd,3x2hd,14x2hv,209x0,2,2x2vd,2hd,14x2hv,1hv,209x0,2,2vd,15x2hv,1hv,210x0,2,2vd,15x2hv,211x0,2,16x2hv,211x0,2,2hd,2hv,2hd,12x2hv,1hv,211x0,2,2hd,14x2hv,212x0,2,2x2hd,13x2hv,212x0,2,2x2hd,6x2hv,1hv,0,1hd,4x2hv,212x0,2,2x2hd,4x2hv,1hv,5x0,1hd,2x2hv,212x0,2,6x2hd,7x0,2x2hv,212x0,2,6x2hd,7x0,2x2hv,212x0,2,6x2hd,7x0,1hd,2hv,212x0,2,6x2hd,1vd,7x0,2hv,1vd,211x0,2,6x2hd,2vd,6x0,1,2x2hv,211x0,2,6x2hd,2vd,6x0,3x2hv,1vd,210x0,2,6x2hd,2vd,5x0,1,4x2hv,210x0,2,3x2hd,3x2,1hv,5x0,5x2hv,210x0,2,2x2hd,2,1hv,8x0,4x2hv,1hv,210x0,2,2hd,1hv,10x0,1hd,2hv,1hv,212x0,2,2hd,19x0,1,2vd,205x0,2,2hd,19x0,2x2vd,205x0,2,2hd,1vd,18x0,2x2vd,205x0,2hv,2x2hd,1vd,16x0,1,2x2vd,205x0,2,3x2hd,8x0,1,2vd,1vd,0,1,6x2vd,205x0,2,3x2hd,1vd,7x0,11x2vd,205x0,2,2hd,4x2vd,1vd,5x0,10x2vd,2hd,205x0,2x2hd,3x2vd,2hv,2vd,4x0,1,2,8x2vd,2hd,2vd,205x0,2x2hd,4x2vd,2hv,1vd,3x0,10x2vd,2hd,2vd,205x0,2,2hv,5x2vd,2hv,3x0,8x2vd,3x2hd,2vd,205x0,2x2vd,2hv,2x2hd,2x2vd,2hv,3x0,2x2vd,2,4x2hd,2vd,2x2hd,2x2vd,205x0,2,2x2vd,3x2hd,2hv,1hv,3x0,2vd,8x2hd,2x2vd,2,205x0,2,2x2vd,3x2hd,1hv,4x0,9x2hd,2vd,2x2,205x0,2,2x2vd,3x2hd,5x0,1hd,8x2hd,2vd,2x2,205x0,3x2vd,3x2hd,6x0,1hd,7x2hd,3x2,205x0,3x2vd,3x2hd,7x0,7x2hd,3x2,205x0,2vd,5x2hd,7x0,6x2hd,1hv,1hd,2x2,205x0,2,2x2vd,3x2hd,1vd,6x0,1hd,3x2hd,1hv,3x0,1hd,2hd,205x0,2,2x2vd,2x2hd,2x2vd,1vd,220x0,2x2,3x2hd,2x2vd,2hd,220x0,2vd,4x2hd,2x2vd,2hd,1vd,9x0,1,4x2hd,205x0,2vd,5x2hd,3x2vd,1vd,6x0,1,6x2hd,205x0,2x2vd,7x2hd,2x2vd,1vd,4x0,7x2hd,205x0,2x2vd,8x2hd,2x2vd,4x0,7x2hd,205x0,2vd,9x2hd,2x2vd,4x0,1hd,2x2hd,1hv,0,1hd,2hd,205x0,2vd,9x2hd,2vd,1hv,216x0,2vd,8x2hd,1hv,218x0,2vd,2hd,4x2hv,1hv,4x0,1,2vd,1vd,6x0,1,3x2vd,204x0,2vd,2hd,2x2hv,1hv,3x0,1,4x2hd,2vd,1vd,2x0,1,5x2vd,205x0,2vd,2hd,1hv,5x0,6x2hd,2vd,2x0,6x2vd,205x0,2vd,2hd,1vd,7x0,4x2hd,2vd,2x0,1hd,2x2hv,3x2vd,205x0,2vd,2x2hd,5x0,6x2hd,2hv,1vd,3x0,1hd,2hv,2x2vd,205x0,2vd,2x2hd,5x0,6x2hd,2x2hv,1vd,3x0,2hv,3x2vd,204x0,2vd,2x2hd,1vd,4x0,1hd,5x2hd,2hv,2,2hv,3x0,1hd,3x2hv,204x0,2,2vd,2x2hv,5x0,1hd,4x2hd,2x2,1hv,211x0,2,3x2hv,1vd,223x0,5x2hv,16x0,1,2hd,205x0,4x2hv,1hv,16x0,2,2hd,205x0,3x2hv,1hv,16x0,1,2,2hd,205x0,2,2x2hv,17x0,2x2,2hd,205x0,2,2x2hv,1vd,3x0,1,4x2vd,1vd,7x0,1hd,2x2hd,205x0,2,2x2hv,2vd,3x0,6x2vd,1vd,214x0,2x2,2x2vd,3x0,1hd,6x2vd,214x0,2hd,3x2vd,1vd,2x0,1,2hv,5x2vd,1vd,3x0,1,3x2vd,2hd,205x0,23x2hd,123553x0"
 						},
 						"tile-width": 32,
 						"tile-height": 32,
@@ -278,9 +497,9 @@
 									1
 								],
 								"replace-color": [
-									0.16470588235294117,
-									0.01568627450980392,
-									0.2823529411764706,
+									0.027450980392156862,
+									0.26666666666666666,
+									0.29411764705882354,
 									1
 								],
 								"tolerance": 0.01
@@ -289,8 +508,8 @@
 					},
 					"world": {
 						"x": 0,
-						"y": 0,
-						"width": 2211,
+						"y": -1,
+						"width": 3362,
 						"height": 752,
 						"originX": 0,
 						"originY": 0,
@@ -304,7 +523,7 @@
 					}
 				}
 			],
-			"sid": 345867477778436,
+			"sid": 495983216666730,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -337,7 +556,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 724499299618657,
+			"sid": 855076433454896,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -379,7 +598,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 83,
+					"uid": 167,
 					"instanceVariables": {
 						"OriginalWidth": 0,
 						"OriginalHeight": 0,
@@ -391,8 +610,8 @@
 					"world": {
 						"x": 72,
 						"y": 656,
-						"width": 23.808,
-						"height": 23.808,
+						"width": 64,
+						"height": 64,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -406,7 +625,7 @@
 					}
 				}
 			],
-			"sid": 699719697583699,
+			"sid": 341273204683854,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -439,7 +658,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 795217085043334,
+			"sid": 744308963975067,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -472,7 +691,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 290475032939603,
+			"sid": 503322727370288,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -505,7 +724,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 732823357326389,
+			"sid": 651155615027915,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -538,7 +757,7 @@
 			"overriden": 1,
 			"subLayers": [],
 			"instances": [],
-			"sid": 285337523758950,
+			"sid": 297111018271150,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -567,10 +786,10 @@
 			"global": false
 		}
 	],
-	"sid": 822121861791543,
+	"sid": 475381239590051,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 2211,
+	"width": 3362,
 	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
