@@ -1792,9 +1792,8 @@
 							}
 						},
 						{
-							"id": "destroy",
-							"objectClass": "Cursor",
-							"sid": 785327778109388
+							"callFunction": "resetAim",
+							"sid": 413263087258111
 						},
 						{
 							"id": "start-timer",
