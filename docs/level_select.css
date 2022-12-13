@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Potta+One');
 
+.container {
+	padding-left: 6em;
+	padding-right: 6em;
+}
 
 .levels {
     display: flex;
@@ -46,7 +50,7 @@
     transform: scale(0.9);
 }
 
-.container {
+.level-container {
     padding: 0.01em 1em;
     display: flex;
     flex-direction: column;
