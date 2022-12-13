@@ -434,6 +434,15 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
+									"sid": 558140315920649,
+									"parameters": {
+										"variable": "inputInseconds",
+										"value": "round(inputInseconds)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
 									"sid": 686811777094126,
 									"parameters": {
 										"variable": "minute",
@@ -443,10 +452,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 727399546921367,
+									"sid": 634071966831999,
 									"parameters": {
 										"variable": "seconds",
-										"value": "round(inputInseconds%60)"
+										"value": "inputInseconds%60"
 									}
 								},
 								{
@@ -628,6 +637,33 @@
 							}
 						},
 						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 264184687998577,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 560705973641426,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 954167203677112,
+							"parameters": {
+								"object": "Trail",
+								"time-scale": "1"
+							}
+						},
+						{
 							"callFunction": "playLose",
 							"sid": 285866886040845
 						},
@@ -769,6 +805,33 @@
 							"objectClass": "System",
 							"sid": 140268843000110,
 							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 319255799766431,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 890722088605323,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 287033731334018,
+							"parameters": {
+								"object": "Trail",
 								"time-scale": "1"
 							}
 						},
@@ -1689,6 +1752,33 @@
 							"objectClass": "System",
 							"sid": 743974339299098,
 							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 962587958898389,
+							"parameters": {
+								"object": "Timer",
+								"time-scale": "1.0"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 812066706975218,
+							"parameters": {
+								"object": "MovingGround",
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 806298666839578,
+							"parameters": {
+								"object": "Trail",
 								"time-scale": "1"
 							}
 						},
@@ -2747,32 +2837,6 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 541819943797506,
-									"parameters": {
-										"type": "log",
-										"message": "\"menu\""
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 324677136736163,
-									"parameters": {
-										"time-scale": "1"
-									}
-								},
-								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 537971621743504,
-									"parameters": {
-										"object": "Timer",
-										"time-scale": "1.0"
-									}
-								},
-								{
 									"id": "go-to-layout",
 									"objectClass": "System",
 									"sid": 957213505274047,
@@ -2798,32 +2862,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 754165853745524,
-									"parameters": {
-										"type": "log",
-										"message": "\"restart\""
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 911960890143179,
-									"parameters": {
-										"time-scale": "1"
-									}
-								},
-								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 605008643924100,
-									"parameters": {
-										"object": "Timer",
-										"time-scale": "1.0"
-									}
-								},
 								{
 									"id": "restart-layout",
 									"objectClass": "System",
