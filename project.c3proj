@@ -172,13 +172,14 @@
 			"Audio",
 			"Browser",
 			"Decoration",
-			"Sprite",
+			"ReverseGravityBackground",
 			"BlackScreen",
 			"BigStar",
 			"Tutorial",
 			"Countdown",
 			"LocalStorage",
-			"BestStrokes"
+			"BestStrokes",
+			"Sprite2"
 		],
 		"subfolders": []
 	},

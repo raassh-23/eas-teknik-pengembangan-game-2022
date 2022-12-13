@@ -123,7 +123,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 4,
+						"initial-frame": 3,
 						"enable-collisions": false,
 						"live-preview": false
 					},
