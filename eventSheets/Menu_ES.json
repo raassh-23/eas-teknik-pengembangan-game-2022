@@ -481,15 +481,48 @@
 			],
 			"actions": [
 				{
-					"id": "load",
-					"objectClass": "levels",
-					"sid": 163446549387455,
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 949139013300838,
 					"parameters": {
-						"json": "LocalStorage.ItemValue"
+						"key": "LEVELS_STORAGE_TAG"
 					}
 				}
 			],
 			"sid": 689500589301356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 540090945007209,
+					"parameters": {
+						"key": "LEVELS_STORAGE_TAG"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "BestStrokes",
+					"sid": 593652618247418,
+					"parameters": {
+						"json": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 875214307668534,
+					"parameters": {
+						"tag": "\"levels\"",
+						"file": "levels.json"
+					}
+				}
+			],
+			"sid": 513444108277471
 		},
 		{
 			"eventType": "block",
@@ -507,7 +540,7 @@
 				{
 					"id": "request-project-file",
 					"objectClass": "AJAX",
-					"sid": 362233378491683,
+					"sid": 857069931139413,
 					"parameters": {
 						"tag": "\"levels\"",
 						"file": "levels.json"
@@ -518,7 +551,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "index:\n0 -> time limit\n1 -> bronze limit\n2 -> silver limit\n3 -> gold limit\n4 -> current best stroke"
+			"text": "index:\n0 -> time limit\n1 -> bronze limit\n2 -> silver limit\n3 -> gold limit"
 		},
 		{
 			"eventType": "block",
@@ -535,7 +568,7 @@
 			"actions": [
 				{
 					"id": "load",
-					"objectClass": "levels",
+					"objectClass": "Levels",
 					"sid": 706619515539944,
 					"parameters": {
 						"json": "AJAX.LastData"
@@ -543,12 +576,12 @@
 				},
 				{
 					"id": "set-size",
-					"objectClass": "levels",
-					"sid": 334379594578109,
+					"objectClass": "BestStrokes",
+					"sid": 294441789762628,
 					"parameters": {
-						"width": "Self.Width",
-						"height": "Self.Height + 1\n",
-						"depth": "Self.Depth"
+						"width": "levels.Width",
+						"height": "1",
+						"depth": "1"
 					}
 				}
 			],

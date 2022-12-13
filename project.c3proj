@@ -165,7 +165,7 @@
 			"ReverseGravityZone",
 			"LevelSelectHtml",
 			"AJAX",
-			"levels",
+			"Levels",
 			"Timer",
 			"Panel",
 			"Bg",
@@ -177,7 +177,8 @@
 			"BigStar",
 			"Tutorial",
 			"Countdown",
-			"LocalStorage"
+			"LocalStorage",
+			"BestStrokes"
 		],
 		"subfolders": []
 	},

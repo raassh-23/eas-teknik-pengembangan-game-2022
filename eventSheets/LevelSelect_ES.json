@@ -34,7 +34,7 @@
 					"conditions": [
 						{
 							"id": "for-each-element",
-							"objectClass": "levels",
+							"objectClass": "Levels",
 							"sid": 568871991413138,
 							"parameters": {
 								"axes": "x"
@@ -45,10 +45,10 @@
 						{
 							"id": "insert-content",
 							"objectClass": "LevelSelectHtml",
-							"sid": 673837786249806,
+							"sid": 985317825359598,
 							"parameters": {
 								"content-type": "html",
-								"string": "Functions.createLevelItem(levels.CurX + 1, levels.CurX > currentOpenLevel, levels.At(levels.CurX, 4))",
+								"string": "Functions.createLevelItem(levels.CurX + 1, levels.CurX > currentOpenLevel, BestStrokes.At(levels.CurX))",
 								"position": "end",
 								"selector": "\".levels\"",
 								"type": "one"
@@ -120,10 +120,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 355605470435827,
+							"sid": 137461501173795,
 							"parameters": {
 								"variable": "temp",
-								"value": "replace(temp, \"{{status}}\", str(Functions.getLevelStatus(levels.At(levels.CurX, 4), levels.CurX)))"
+								"value": "replace(temp, \"{{status}}\", str(Functions.getLevelStatus(best, level-1)))"
 							}
 						},
 						{

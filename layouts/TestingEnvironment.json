@@ -878,7 +878,7 @@
 	"sid": 820097207635083,
 	"nonworld-instances": [
 		{
-			"type": "levels",
+			"type": "Levels",
 			"properties": {
 				"width": 10,
 				"height": 4,

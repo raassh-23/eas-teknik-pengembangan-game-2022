@@ -2467,7 +2467,18 @@
 		}
 	],
 	"sid": 462803663086597,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "BestStrokes",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 84,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1280,
 	"height": 720,

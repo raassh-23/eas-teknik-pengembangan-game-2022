@@ -926,19 +926,19 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 920879874124385,
+									"sid": 696168418479531,
 									"parameters": {
 										"variable": "currentStrokes",
 										"comparison": 2,
-										"value": "levels.At(currentLevelIndex, 4)"
+										"value": "BestStrokes.At(currentLevelIndex)"
 									}
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 359801506238142,
+									"sid": 438713915947364,
 									"parameters": {
-										"first-value": "levels.At(currentLevelIndex, 4)",
+										"first-value": "BestStrokes.At(currentLevelIndex)",
 										"comparison": 0,
 										"second-value": "0"
 									}
@@ -946,22 +946,21 @@
 							],
 							"actions": [
 								{
-									"id": "set-at-xy",
-									"objectClass": "levels",
-									"sid": 530902350151016,
+									"id": "set-at-x",
+									"objectClass": "BestStrokes",
+									"sid": 800232760241162,
 									"parameters": {
 										"x": "currentLevelIndex",
-										"y": "4",
 										"value": "currentStrokes"
 									}
 								},
 								{
 									"id": "set-item",
 									"objectClass": "LocalStorage",
-									"sid": 927834619548304,
+									"sid": 698520644138644,
 									"parameters": {
 										"key": "LEVELS_STORAGE_TAG",
-										"value": "levels.AsJSON"
+										"value": "BestStrokes.AsJSON"
 									}
 								}
 							],
