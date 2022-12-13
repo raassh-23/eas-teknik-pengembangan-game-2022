@@ -2098,7 +2098,25 @@
 								{
 									"id": "set-object-time-scale",
 									"objectClass": "System",
-									"sid": 849257010995956,
+									"sid": 352373675568285,
+									"parameters": {
+										"object": "MovingGround",
+										"time-scale": "0.1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 278931261658662,
+									"parameters": {
+										"object": "Trail",
+										"time-scale": "0.1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 914581138539092,
 									"parameters": {
 										"object": "Timer",
 										"time-scale": "1.0"
@@ -2132,6 +2150,24 @@
 									"parameters": {
 										"object": "Timer",
 										"time-scale": "1.0"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 635197361521763,
+									"parameters": {
+										"object": "MovingGround",
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-object-time-scale",
+									"objectClass": "System",
+									"sid": 594667934966516,
+									"parameters": {
+										"object": "Trail",
+										"time-scale": "1"
 									}
 								}
 							],
