@@ -2327,7 +2327,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 8,
+						"initial-frame": 9,
 						"enable-collisions": false,
 						"live-preview": false
 					},

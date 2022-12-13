@@ -123,7 +123,7 @@
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Default",
-						"initial-frame": 6,
+						"initial-frame": 7,
 						"enable-collisions": false,
 						"live-preview": false
 					},
@@ -199,7 +199,7 @@
 					"instanceVariables": {
 						"targetX": 1459,
 						"targetY": 658,
-						"seconds": 5
+						"seconds": 6
 					},
 					"behaviors": {
 						"Physics": {
